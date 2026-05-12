@@ -7,10 +7,16 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
 
@@ -44,8 +50,7 @@ jobs:
           git commit -m "chore: update catalog"
           git push
 
-      - name: Trigger publish
-        if: steps.diff.outputs.changed == 'true'
-        run: gh workflow run publish.yml
-        env:
-          GH_TOKEN: ${{ github.token }}
+  publish:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/publish.yml
