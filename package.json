@@ -28,6 +28,10 @@
     "autocomplete",
     "valibot"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BeeSolve/iam-policy-ts"
+  },
   "author": "BeeSlove",
   "license": "MIT",
   "dependencies": {
