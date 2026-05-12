@@ -1,0 +1,37 @@
+# Publish workflow for @beesolve/iam-policy-ts
+#
+# Trusted Publishing Configuration (npmjs.com):
+#   Package: @beesolve/iam-policy-ts
+#   Repository: beesolve/iam-policy-ts
+#   Workflow: publish.yml
+#   Environment: (leave empty — no environment required)
+
+name: Publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+
+      - run: npm test
+
+      - run: npm run build
+
+      - run: npm version "$(date -u +'%-y.%-m.%-d')" --no-git-tag-version
+
+      - run: npm publish --provenance --access public

@@ -1,0 +1,51 @@
+name: Update Catalog
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm ci
+
+      - run: npm run generate
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --exit-code src/catalog.ts; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure git user
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git add src/catalog.ts
+          git commit -m "chore: update catalog"
+          git push
+
+      - name: Trigger publish
+        if: steps.diff.outputs.changed == 'true'
+        run: gh workflow run publish.yml
+        env:
+          GH_TOKEN: ${{ github.token }}
