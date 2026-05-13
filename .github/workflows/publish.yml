@@ -33,6 +33,8 @@ jobs:
 
       - run: npm run build
 
+      - run: npm install -g npm@latest
+
       - run: npm version "$(date -u +'%-y.%-m.%-d')" --no-git-tag-version
 
       - run: npm publish --provenance --access public
