@@ -112,15 +112,15 @@ console.log(`${iamActionCatalogActionCount} actions across ${Object.keys(iamActi
 
 ## Updating the Catalog
 
-Run `npm run generate` to fetch the latest IAM action data from AWS and regenerate `src/catalog.ts`.
+The catalog is updated automatically by a daily GitHub Actions workflow that runs at 02:00 UTC. It fetches the latest IAM action data from AWS, and if changes are detected, commits the update and publishes a new version to npm.
 
-The plan is to automate this via a daily Lambda function that publishes new versions when the upstream data changes (see `extracting-package-plan.md` in the parent repo for details). That automation is not yet implemented.
+You can also run `npm run generate` locally to regenerate `src/catalog.ts`.
+
+Source: https://awspolicygen.s3.amazonaws.com/js/policies.js
 
 ## Versioning
 
-Once automated publishing is set up, this package will use date-based versions (`YYYY-MM-DD`). A new version will be published daily only when the upstream AWS IAM action catalog changes.
-
-Source: https://awspolicygen.s3.amazonaws.com/js/policies.js
+This package uses date-based versions in `YY.M.D` format (e.g., `25.7.14`). A new version is published automatically only when the upstream AWS IAM action catalog changes. The version reflects the UTC date the catalog was captured.
 
 ## Types
 
