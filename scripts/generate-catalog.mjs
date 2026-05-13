@@ -55,13 +55,13 @@ async function fetchPoliciesJs() {
   }
 }
 
-function normalizeCatalog(props) {
-  const matched = props.rawSource.match(
+function parseRawServiceMap(rawSource, sourceUrl) {
+  const matched = rawSource.match(
     /app\.PolicyEditorConfig\s*=\s*(\{[\s\S]*\})\s*$/,
   );
   if (matched?.[1] == null) {
     throw new Error(
-      `Could not locate app.PolicyEditorConfig in ${props.sourceUrl}.`,
+      `Could not locate app.PolicyEditorConfig in ${sourceUrl}.`,
     );
   }
 
@@ -69,62 +69,55 @@ function normalizeCatalog(props) {
   const rawServiceMap = parsed?.serviceMap;
   if (rawServiceMap == null || typeof rawServiceMap !== "object") {
     throw new Error(
-      `Unexpected serviceMap payload in ${props.sourceUrl}.`,
+      `Unexpected serviceMap payload in ${sourceUrl}.`,
     );
   }
 
+  return rawServiceMap;
+}
+
+function normalizeCatalog(props) {
+  const rawServiceMap = parseRawServiceMap(props.rawSource, props.sourceUrl);
+
   const serviceEntries = Object.values(rawServiceMap)
-    .map((service) => normalizeService(service))
-    .filter((service) => service != null)
-    .sort((left, right) => left.prefix.localeCompare(right.prefix));
+    .map(normalizeService)
+    .filter((s) => s != null)
+    .sort((a, b) => a.prefix.localeCompare(b.prefix));
 
   const services = Object.fromEntries(
-    serviceEntries.map((service) => [service.prefix, service.actions]),
+    serviceEntries.map((s) => [s.prefix, s.actions]),
   );
 
   return {
     sourceUrl: props.sourceUrl,
     sourceSha256: sha256(props.rawSource),
-    actionCount: serviceEntries.reduce(
-      (total, service) => total + service.actions.length,
-      0,
-    ),
+    actionCount: serviceEntries.reduce((t, s) => t + s.actions.length, 0),
     services,
   };
 }
 
+function extractServicePrefix(service) {
+  if (service == null || typeof service !== "object") return null;
+  if (!("StringPrefix" in service)) return null;
+  const prefix = String(service.StringPrefix ?? "").trim();
+  return prefix.length > 0 ? prefix : null;
+}
+
+function extractUniqueActions(service) {
+  if (!("Actions" in service) || !Array.isArray(service.Actions)) return [];
+  return [...new Set(service.Actions.map((a) => String(a).trim()))]
+    .filter((a) => a.length > 0)
+    .sort((a, b) => a.localeCompare(b));
+}
+
 function normalizeService(service) {
-  if (service == null || typeof service !== "object") {
-    return null;
-  }
+  const prefix = extractServicePrefix(service);
+  if (prefix == null) return null;
 
-  const prefix =
-    "StringPrefix" in service
-      ? String(service.StringPrefix ?? "").trim()
-      : "";
-  const rawActions =
-    "Actions" in service && Array.isArray(service.Actions)
-      ? service.Actions
-      : [];
+  const actions = extractUniqueActions(service);
+  if (actions.length === 0) return null;
 
-  if (prefix.length === 0 || rawActions.length === 0) {
-    return null;
-  }
-
-  const actions = [
-    ...new Set(rawActions.map((action) => String(action).trim())),
-  ]
-    .filter((action) => action.length > 0)
-    .sort((left, right) => left.localeCompare(right));
-
-  if (actions.length === 0) {
-    return null;
-  }
-
-  return {
-    prefix,
-    actions,
-  };
+  return { prefix, actions };
 }
 
 function renderCatalogModule(props) {

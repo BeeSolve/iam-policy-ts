@@ -24,28 +24,27 @@ export function policyToTypescript(
   return renderValue(policy, { indentLevel, parentPropertyName: undefined });
 }
 
-function renderValue(
-  value: unknown,
-  props: { indentLevel: number; parentPropertyName: string | undefined },
-): string {
-  if (value === null) {
-    return "null";
-  }
-  if (value === undefined) {
-    return "undefined";
-  }
-  if (typeof value === "string") {
-    return renderStringValue(value, props);
-  }
-  if (typeof value === "number" || typeof value === "boolean") {
-    return JSON.stringify(value);
-  }
-  if (Array.isArray(value)) {
-    return renderArray(value, props);
-  }
-  if (isRecord(value)) {
-    return renderObject(value, props);
-  }
+type RenderProps = { indentLevel: number; parentPropertyName: string | undefined };
+
+const typeRenderers: Record<
+  string,
+  (value: never, props: RenderProps) => string
+> = {
+  string: (value, props) => renderStringValue(value as string, props),
+  number: (value) => JSON.stringify(value),
+  boolean: (value) => JSON.stringify(value),
+};
+
+function renderValue(value: unknown, props: RenderProps): string {
+  if (value === null) return "null";
+  if (value === undefined) return "undefined";
+
+  const typeRenderer = typeRenderers[typeof value];
+  if (typeRenderer) return typeRenderer(value as never, props);
+
+  if (Array.isArray(value)) return renderArray(value, props);
+  if (isRecord(value)) return renderObject(value, props);
+
   return JSON.stringify(value);
 }
 
@@ -62,30 +61,40 @@ function renderStringValue(
   return JSON.stringify(value);
 }
 
-function renderActionString(value: string): string {
+function parseActionParts(
+  value: string,
+): { servicePrefix: string; actionName: string } | null {
   const separatorIndex = value.indexOf(":");
-  if (separatorIndex <= 0 || separatorIndex === value.length - 1) {
-    return JSON.stringify(value);
-  }
+  if (separatorIndex <= 0 || separatorIndex === value.length - 1) return null;
+  return {
+    servicePrefix: value.slice(0, separatorIndex),
+    actionName: value.slice(separatorIndex + 1),
+  };
+}
 
-  const servicePrefix = value.slice(0, separatorIndex);
-  const actionName = value.slice(separatorIndex + 1);
+function isKnownAction(servicePrefix: string, actionName: string): boolean {
   const knownActions = (
     iamActionCatalog as Record<string, readonly string[] | undefined>
   )[servicePrefix];
-  if (knownActions == null || !knownActions.includes(actionName)) {
+  return knownActions != null && knownActions.includes(actionName);
+}
+
+function renderActionString(value: string): string {
+  const parts = parseActionParts(value);
+  if (parts == null || !isKnownAction(parts.servicePrefix, parts.actionName)) {
     return JSON.stringify(value);
   }
 
-  if (isIdentifierSafe(servicePrefix)) {
-    return `iam.${servicePrefix}(${JSON.stringify(actionName)})`;
-  }
-  return `iam[${JSON.stringify(servicePrefix)}](${JSON.stringify(actionName)})`;
+  const accessor = isIdentifierSafe(parts.servicePrefix)
+    ? `iam.${parts.servicePrefix}`
+    : `iam[${JSON.stringify(parts.servicePrefix)}]`;
+
+  return `${accessor}(${JSON.stringify(parts.actionName)})`;
 }
 
 function renderArray(
   value: unknown[],
-  props: { indentLevel: number; parentPropertyName: string | undefined },
+  props: RenderProps,
 ): string {
   if (value.length === 0) {
     return "[]";
@@ -105,7 +114,7 @@ function renderArray(
 
 function renderObject(
   value: Record<string, unknown>,
-  props: { indentLevel: number; parentPropertyName: string | undefined },
+  props: RenderProps,
 ): string {
   const entries = Object.entries(value).filter(
     ([, entryValue]) => entryValue !== undefined,
