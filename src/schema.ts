@@ -61,6 +61,14 @@ export type IamPolicyStatement = v.InferOutput<typeof iamPolicyStatementSchema>;
 export type IamPolicyDocument = v.InferOutput<typeof iamPolicyDocumentSchema>;
 
 /**
+ * Parses and validates a value as an IAM policy statement.
+ * Throws a ValiError if validation fails.
+ */
+export function assertIamPolicyStatement(value: unknown): IamPolicyStatement {
+  return v.parse(iamPolicyStatementSchema, value);
+}
+
+/**
  * Type guard: checks if a value is a valid IAM policy document.
  */
 export function isIamPolicyDocument(
@@ -128,12 +136,25 @@ export const iamPolicyDocumentStrictSchema = v.strictObject({
   ]),
 });
 
+// Note: structurally identical to IamPolicyStatement at the TypeScript level.
+// The Action/NotAction and Resource/NotResource exclusivity rules are enforced
+// at runtime only — v.check() adds no compile-time narrowing.
 export type IamPolicyStatementStrict = v.InferOutput<
   typeof iamPolicyStatementStrictSchema
 >;
 export type IamPolicyDocumentStrict = v.InferOutput<
   typeof iamPolicyDocumentStrictSchema
 >;
+
+/**
+ * Type guard: checks if a value is a valid IAM policy statement
+ * with strict grammar enforcement.
+ */
+export function isIamPolicyStatementStrict(
+  value: unknown,
+): value is IamPolicyStatementStrict {
+  return v.safeParse(iamPolicyStatementStrictSchema, value).success;
+}
 
 /**
  * Type guard: checks if a value is a valid IAM policy document

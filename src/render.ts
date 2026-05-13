@@ -26,25 +26,14 @@ export function policyToTypescript(
 
 type RenderProps = { indentLevel: number; parentPropertyName: string | undefined };
 
-const typeRenderers: Record<
-  string,
-  (value: never, props: RenderProps) => string
-> = {
-  string: (value, props) => renderStringValue(value as string, props),
-  number: (value) => JSON.stringify(value),
-  boolean: (value) => JSON.stringify(value),
-};
-
 function renderValue(value: unknown, props: RenderProps): string {
   if (value === null) return "null";
   if (value === undefined) return "undefined";
-
-  const typeRenderer = typeRenderers[typeof value];
-  if (typeRenderer) return typeRenderer(value as never, props);
-
+  if (typeof value === "string") return renderStringValue(value, props);
+  if (typeof value === "number") return JSON.stringify(value);
+  if (typeof value === "boolean") return JSON.stringify(value);
   if (Array.isArray(value)) return renderArray(value, props);
   if (isRecord(value)) return renderObject(value, props);
-
   return JSON.stringify(value);
 }
 
@@ -145,7 +134,5 @@ function isIdentifierSafe(value: string): boolean {
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
-  return (
-    value != null && typeof value === "object" && Array.isArray(value) === false
-  );
+  return value != null && typeof value === "object" && !Array.isArray(value);
 }

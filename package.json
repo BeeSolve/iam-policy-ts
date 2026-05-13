@@ -14,10 +14,10 @@
     "!dist/**/*.js.map"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "test": "rm -rf dist-test && tsc -p tsconfig.test.json --outDir dist-test && node --test dist-test/**/*.test.js",
-    "generate": "node scripts/generate-catalog.mjs",
+    "generate": "node scripts/generate-catalog.ts",
     "prepack": "npm run generate && npm run build"
   },
   "keywords": [
@@ -32,7 +32,7 @@
     "type": "git",
     "url": "git+https://github.com/BeeSolve/iam-policy-ts.git"
   },
-  "author": "BeeSlove",
+  "author": "BeeSolve",
   "license": "MIT",
   "dependencies": {
     "valibot": "^1.4.0"

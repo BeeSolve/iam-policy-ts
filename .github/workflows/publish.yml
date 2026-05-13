@@ -35,6 +35,16 @@ jobs:
 
       - run: npm install -g npm@latest
 
-      - run: npm version "$(date -u +'%-y.%-m.%-d')" --no-git-tag-version
+      - name: Set version
+        run: |
+          VERSION="$(date -u +'%-y.%-m.%-d')"
+          npm version "$VERSION" --no-git-tag-version
+          echo "PUBLISH_VERSION=$VERSION" >> "$GITHUB_ENV"
 
-      - run: npm publish --provenance --access public
+      - name: Publish if not already published
+        run: |
+          if npm view "@beesolve/iam-policy-ts@$PUBLISH_VERSION" version 2>/dev/null; then
+            echo "Version $PUBLISH_VERSION already published — skipping."
+          else
+            npm publish --provenance --access public
+          fi

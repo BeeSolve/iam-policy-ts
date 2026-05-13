@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   assertIamPolicyDocument,
+  assertIamPolicyStatement,
   isIamPolicyDocument,
   isIamPolicyStatement,
 } from "./schema.js";
@@ -118,8 +119,50 @@ test("assertIamPolicyDocument throws on invalid input", () => {
   );
 });
 
+test("isIamPolicyStatement rejects an invalid statement", () => {
+  assert.equal(isIamPolicyStatement({ Effect: "Bad" }), false);
+  assert.equal(isIamPolicyStatement(null), false);
+  assert.equal(isIamPolicyStatement("string"), false);
+});
+
+test("assertIamPolicyStatement throws on invalid input", () => {
+  assert.throws(() => assertIamPolicyStatement({ Effect: "Bad" }));
+});
+
+test("isIamPolicyDocument accepts policy with NotPrincipal", () => {
+  const policy = {
+    Statement: [
+      {
+        Effect: "Deny",
+        Action: "s3:GetObject",
+        NotPrincipal: { AWS: ["arn:aws:iam::123456789012:root"] },
+        Resource: "*",
+      },
+    ],
+  };
+  assert.equal(isIamPolicyDocument(policy), true);
+});
+
+test("isIamPolicyDocument accepts Version 2008-10-17", () => {
+  const policy = {
+    Version: "2008-10-17",
+    Statement: [{ Effect: "Allow", Action: "s3:GetObject", Resource: "*" }],
+  };
+  assert.equal(isIamPolicyDocument(policy), true);
+});
+
+test("isIamPolicyDocument accepts Id field", () => {
+  const policy = {
+    Id: "my-policy-id",
+    Version: "2012-10-17",
+    Statement: [{ Effect: "Allow", Action: "s3:GetObject", Resource: "*" }],
+  };
+  assert.equal(isIamPolicyDocument(policy), true);
+});
+
 import {
   isIamPolicyDocumentStrict,
+  isIamPolicyStatementStrict,
   assertIamPolicyDocumentStrict,
 } from "./schema.js";
 
@@ -201,6 +244,20 @@ test("strict: rejects statement with both Resource and NotResource", () => {
         NotResource: "*",
       },
     }),
+    false,
+  );
+});
+
+test("strict: isIamPolicyStatementStrict accepts a valid statement", () => {
+  assert.equal(
+    isIamPolicyStatementStrict({ Effect: "Allow", Action: "s3:GetObject", Resource: "*" }),
+    true,
+  );
+});
+
+test("strict: isIamPolicyStatementStrict rejects statement with no Action/NotAction", () => {
+  assert.equal(
+    isIamPolicyStatementStrict({ Effect: "Allow", Resource: "*" }),
     false,
   );
 });

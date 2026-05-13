@@ -7,13 +7,12 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "dist",
-    "rootDir": "src",
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "types": ["node"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "src/**/*.test.ts"]
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules", "dist"]
 }

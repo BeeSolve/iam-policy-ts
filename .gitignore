@@ -2,3 +2,5 @@ node_modules/
 dist/
 dist-test/
 plan.md
+.claude
+.fallow

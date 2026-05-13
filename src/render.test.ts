@@ -124,3 +124,37 @@ test("policyToTypescript handles actions without colon as plain strings", () => 
   const result = policyToTypescript(policy);
   assert.ok(result.includes('"noColonAction"'));
 });
+
+test("policyToTypescript renders wildcard action as plain string", () => {
+  const policy: IamPolicyDocument = {
+    Statement: [
+      {
+        Effect: "Allow",
+        Action: "s3:*",
+        Resource: "*",
+      },
+    ],
+  };
+
+  const result = policyToTypescript(policy);
+  assert.ok(result.includes('"s3:*"'));
+  assert.ok(!result.includes("iam.s3"));
+});
+
+test("policyToTypescript renders Principal field as plain object", () => {
+  const policy: IamPolicyDocument = {
+    Statement: [
+      {
+        Effect: "Allow",
+        Action: "sts:AssumeRole",
+        Principal: { AWS: ["arn:aws:iam::123456789012:root"] },
+        Resource: "*",
+      },
+    ],
+  };
+
+  const result = policyToTypescript(policy);
+  assert.ok(result.includes("Principal"));
+  assert.ok(result.includes('"arn:aws:iam::123456789012:root"'));
+  assert.ok(!result.includes("iam.arn"));
+});

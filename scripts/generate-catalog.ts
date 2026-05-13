@@ -6,15 +6,22 @@ const sourceUrl = "https://awspolicygen.s3.amazonaws.com/js/policies.js";
 const outputPath = resolve("src/catalog.ts");
 const fetchTimeoutMs = 30_000;
 
-async function main() {
+type NormalizedService = {
+  prefix: string;
+  actions: string[];
+};
+
+type NormalizedCatalog = {
+  sourceUrl: string;
+  sourceSha256: string;
+  actionCount: number;
+  services: Record<string, string[]>;
+};
+
+async function main(): Promise<void> {
   const rawSource = await fetchPoliciesJs();
-  const normalizedCatalog = normalizeCatalog({
-    rawSource,
-    sourceUrl,
-  });
-  const nextContent = renderCatalogModule({
-    catalog: normalizedCatalog,
-  });
+  const normalizedCatalog = normalizeCatalog({ rawSource, sourceUrl });
+  const nextContent = renderCatalogModule({ catalog: normalizedCatalog });
   const currentContent = await readIfExists(outputPath);
 
   if (currentContent === nextContent) {
@@ -32,7 +39,7 @@ async function main() {
   );
 }
 
-async function fetchPoliciesJs() {
+async function fetchPoliciesJs(): Promise<string> {
   const abortController = new AbortController();
   const timeout = setTimeout(() => abortController.abort(), fetchTimeoutMs);
 
@@ -55,7 +62,10 @@ async function fetchPoliciesJs() {
   }
 }
 
-function parseRawServiceMap(rawSource, sourceUrl) {
+function parseRawServiceMap(
+  rawSource: string,
+  sourceUrl: string,
+): Record<string, unknown> {
   const matched = rawSource.match(
     /app\.PolicyEditorConfig\s*=\s*(\{[\s\S]*\})\s*$/,
   );
@@ -65,23 +75,28 @@ function parseRawServiceMap(rawSource, sourceUrl) {
     );
   }
 
-  const parsed = JSON.parse(matched[1]);
-  const rawServiceMap = parsed?.serviceMap;
+  const parsed: unknown = JSON.parse(matched[1]);
+  const rawServiceMap =
+    parsed != null && typeof parsed === "object"
+      ? (parsed as Record<string, unknown>).serviceMap
+      : undefined;
+
   if (rawServiceMap == null || typeof rawServiceMap !== "object") {
-    throw new Error(
-      `Unexpected serviceMap payload in ${sourceUrl}.`,
-    );
+    throw new Error(`Unexpected serviceMap payload in ${sourceUrl}.`);
   }
 
-  return rawServiceMap;
+  return rawServiceMap as Record<string, unknown>;
 }
 
-function normalizeCatalog(props) {
+function normalizeCatalog(props: {
+  rawSource: string;
+  sourceUrl: string;
+}): NormalizedCatalog {
   const rawServiceMap = parseRawServiceMap(props.rawSource, props.sourceUrl);
 
   const serviceEntries = Object.values(rawServiceMap)
     .map(normalizeService)
-    .filter((s) => s != null)
+    .filter((s): s is NormalizedService => s != null)
     .sort((a, b) => a.prefix.localeCompare(b.prefix));
 
   const services = Object.fromEntries(
@@ -96,21 +111,34 @@ function normalizeCatalog(props) {
   };
 }
 
-function extractServicePrefix(service) {
+function extractServicePrefix(service: unknown): string | null {
   if (service == null || typeof service !== "object") return null;
   if (!("StringPrefix" in service)) return null;
-  const prefix = String(service.StringPrefix ?? "").trim();
+  const prefix = String((service as Record<string, unknown>).StringPrefix ?? "").trim();
   return prefix.length > 0 ? prefix : null;
 }
 
-function extractUniqueActions(service) {
-  if (!("Actions" in service) || !Array.isArray(service.Actions)) return [];
-  return [...new Set(service.Actions.map((a) => String(a).trim()))]
+function extractUniqueActions(service: unknown): string[] {
+  if (
+    service == null ||
+    typeof service !== "object" ||
+    !("Actions" in service) ||
+    !Array.isArray((service as Record<string, unknown>).Actions)
+  ) {
+    return [];
+  }
+  return [
+    ...new Set(
+      ((service as Record<string, unknown>).Actions as unknown[]).map((a) =>
+        String(a).trim(),
+      ),
+    ),
+  ]
     .filter((a) => a.length > 0)
     .sort((a, b) => a.localeCompare(b));
 }
 
-function normalizeService(service) {
+function normalizeService(service: unknown): NormalizedService | null {
   const prefix = extractServicePrefix(service);
   if (prefix == null) return null;
 
@@ -120,7 +148,7 @@ function normalizeService(service) {
   return { prefix, actions };
 }
 
-function renderCatalogModule(props) {
+function renderCatalogModule(props: { catalog: NormalizedCatalog }): string {
   const serializedServices = JSON.stringify(props.catalog.services, null, 2);
   const servicePrefixes = Object.keys(props.catalog.services);
   const iamHelperEntries = servicePrefixes
@@ -159,31 +187,29 @@ ${iamHelperEntries}
 `;
 }
 
-function isIdentifierSafe(value) {
+function isIdentifierSafe(value: string): boolean {
   return /^[A-Za-z_$][A-Za-z0-9_$]*$/u.test(value);
 }
 
-async function readIfExists(path) {
+async function readIfExists(path: string): Promise<string | null> {
   try {
     return await readFile(path, "utf8");
   } catch (error) {
-    if (isNotFoundError(error)) {
-      return null;
-    }
+    if (isNotFoundError(error)) return null;
     throw error;
   }
 }
 
-function isNotFoundError(error) {
+function isNotFoundError(error: unknown): boolean {
   return (
     error != null &&
     typeof error === "object" &&
     "code" in error &&
-    error.code === "ENOENT"
+    (error as Record<string, unknown>).code === "ENOENT"
   );
 }
 
-function sha256(value) {
+function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
 }
 
