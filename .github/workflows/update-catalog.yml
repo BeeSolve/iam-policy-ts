@@ -49,5 +49,4 @@ jobs:
 
   publish:
     needs: update
-    if: needs.update.outputs.changed == 'true'
     uses: ./.github/workflows/publish.yml
