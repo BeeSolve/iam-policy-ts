@@ -26,12 +26,15 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
+          package-manager-cache: false
 
       - run: npm ci
 
       - run: npm test
 
       - run: npm run build
+
+      - run: npm install -g npm@latest
 
       - name: Set version
         run: |
@@ -40,6 +43,8 @@ jobs:
           echo "PUBLISH_VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Publish if not already published
+        env:
+          NPM_CONFIG_PROVENANCE: "true"
         run: |
           if npm view "@beesolve/iam-policy-ts@$PUBLISH_VERSION" version 2>/dev/null; then
             echo "Version $PUBLISH_VERSION already published — skipping."
