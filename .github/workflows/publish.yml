@@ -44,12 +44,12 @@ jobs:
 
       - name: Publish if not already published
         env:
-          NPM_CONFIG_PROVENANCE: "true"
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           if npm view "@beesolve/iam-policy-ts@$PUBLISH_VERSION" version 2>/dev/null; then
             echo "Version $PUBLISH_VERSION already published — skipping."
           else
-            npm publish --provenance --access public
+            npm publish --access public
             echo "PUBLISHED=true" >> "$GITHUB_ENV"
           fi
 
