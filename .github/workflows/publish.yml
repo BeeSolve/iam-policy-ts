@@ -1,23 +1,16 @@
-# Publish workflow for @beesolve/iam-policy-ts
-#
-# Trusted Publishing Configuration (npmjs.com):
-#   Package: @beesolve/iam-policy-ts
-#   Repository: BeeSolve/iam-policy-ts
-#   Workflow: publish.yml
-#   Environment: (leave empty — no environment required)
-
-name: Publish
+name: Update & Publish
 
 on:
+  schedule:
+    - cron: "0 2 * * *"
   workflow_dispatch:
-  workflow_call:
 
 permissions:
-  id-token: write
   contents: write
+  id-token: write
 
 jobs:
-  publish:
+  update-and-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -29,6 +22,17 @@ jobs:
           package-manager-cache: false
 
       - run: npm ci
+
+      - run: npm run generate
+
+      - name: Check for catalog changes
+        id: diff
+        run: |
+          if git diff --exit-code src/catalog.ts; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - run: npm test
 
@@ -42,7 +46,8 @@ jobs:
           npm version "$VERSION" --no-git-tag-version
           echo "PUBLISH_VERSION=$VERSION" >> "$GITHUB_ENV"
 
-      - name: Publish if not already published
+      - name: Publish
+        if: steps.diff.outputs.changed == 'true' || vars.DEBUG == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
@@ -53,11 +58,11 @@ jobs:
             echo "PUBLISHED=true" >> "$GITHUB_ENV"
           fi
 
-      - name: Commit version back to repo
-        if: env.PUBLISHED == 'true'
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true' || env.PUBLISHED == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package.json package-lock.json
-          git commit -m "v$PUBLISH_VERSION"
+          git add src/catalog.ts package.json package-lock.json
+          git diff --cached --quiet || git commit -m "v$PUBLISH_VERSION"
           git push
