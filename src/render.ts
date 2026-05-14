@@ -61,24 +61,53 @@ function parseActionParts(
   };
 }
 
-function isKnownAction(servicePrefix: string, actionName: string): boolean {
+function findCanonicalAction(
+  servicePrefix: string,
+  actionName: string,
+): string | null {
   const knownActions = (
     iamActionCatalog as Record<string, readonly string[] | undefined>
   )[servicePrefix];
-  return knownActions != null && knownActions.includes(actionName);
+  if (knownActions == null) return null;
+  const lowerAction = actionName.toLowerCase();
+  return knownActions.find((a) => a.toLowerCase() === lowerAction) ?? null;
+}
+
+function isKnownServicePrefix(servicePrefix: string): boolean {
+  return (
+    (iamActionCatalog as Record<string, readonly string[] | undefined>)[
+      servicePrefix
+    ] != null
+  );
 }
 
 function renderActionString(value: string): string {
   const parts = parseActionParts(value);
-  if (parts == null || !isKnownAction(parts.servicePrefix, parts.actionName)) {
-    return JSON.stringify(value);
+  if (parts == null) return JSON.stringify(value);
+
+  const isWildcard = parts.actionName === "*";
+  if (!isWildcard) {
+    const canonicalAction = findCanonicalAction(
+      parts.servicePrefix,
+      parts.actionName,
+    );
+    if (canonicalAction == null) return JSON.stringify(value);
+
+    const accessor = isIdentifierSafe(parts.servicePrefix)
+      ? `iam.${parts.servicePrefix}`
+      : `iam[${JSON.stringify(parts.servicePrefix)}]`;
+
+    return `${accessor}(${JSON.stringify(canonicalAction)})`;
   }
+
+  // Wildcard: render as iam.s3("*") if the service prefix is known
+  if (!isKnownServicePrefix(parts.servicePrefix)) return JSON.stringify(value);
 
   const accessor = isIdentifierSafe(parts.servicePrefix)
     ? `iam.${parts.servicePrefix}`
     : `iam[${JSON.stringify(parts.servicePrefix)}]`;
 
-  return `${accessor}(${JSON.stringify(parts.actionName)})`;
+  return `${accessor}("*")`;
 }
 
 function renderArray(

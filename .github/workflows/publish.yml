@@ -2,7 +2,7 @@
 #
 # Trusted Publishing Configuration (npmjs.com):
 #   Package: @beesolve/iam-policy-ts
-#   Repository: beesolve/iam-policy-ts
+#   Repository: BeeSolve/iam-policy-ts
 #   Workflow: publish.yml
 #   Environment: (leave empty — no environment required)
 
@@ -14,7 +14,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
   publish:
@@ -33,8 +33,6 @@ jobs:
 
       - run: npm run build
 
-      - run: npm install -g npm@latest
-
       - name: Set version
         run: |
           VERSION="$(date -u +'%-y.%-m.%-d')"
@@ -47,4 +45,14 @@ jobs:
             echo "Version $PUBLISH_VERSION already published — skipping."
           else
             npm publish --provenance --access public
+            echo "PUBLISHED=true" >> "$GITHUB_ENV"
           fi
+
+      - name: Commit version back to repo
+        if: env.PUBLISHED == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "v$PUBLISH_VERSION"
+          git push

@@ -125,7 +125,7 @@ test("policyToTypescript handles actions without colon as plain strings", () => 
   assert.ok(result.includes('"noColonAction"'));
 });
 
-test("policyToTypescript renders wildcard action as plain string", () => {
+test("policyToTypescript renders wildcard action with iam helper", () => {
   const policy: IamPolicyDocument = {
     Statement: [
       {
@@ -137,8 +137,23 @@ test("policyToTypescript renders wildcard action as plain string", () => {
   };
 
   const result = policyToTypescript(policy);
-  assert.ok(result.includes('"s3:*"'));
-  assert.ok(!result.includes("iam.s3"));
+  assert.ok(result.includes('iam.s3("*")'));
+});
+
+test("policyToTypescript renders unknown service wildcard as plain string", () => {
+  const policy: IamPolicyDocument = {
+    Statement: [
+      {
+        Effect: "Allow",
+        Action: "custom:*",
+        Resource: "*",
+      },
+    ],
+  };
+
+  const result = policyToTypescript(policy);
+  assert.ok(result.includes('"custom:*"'));
+  assert.ok(!result.includes("iam.custom"));
 });
 
 test("policyToTypescript renders Principal field as plain object", () => {
