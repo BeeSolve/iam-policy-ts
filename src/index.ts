@@ -1,19 +1,4 @@
-export {
-  iamActionCatalog,
-  iamActionCatalogSourceUrl,
-  iamActionCatalogSourceSha256,
-  iamActionCatalogActionCount,
-  iam,
-} from "./catalog.js";
-
-export {
-  iamAction,
-  type IamActionCatalog,
-  type IamPolicyServicePrefix,
-  type IamPolicyActionNameByService,
-  type IamPolicyActionForService,
-  type IamHelperObject,
-} from "./helpers.js";
+export * from "./catalog/index.js";
 
 export {
   iamPolicyDocumentSchema,

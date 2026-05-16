@@ -1,0 +1,45 @@
+export const m2Actions = [
+  "CancelBatchJobExecution",
+  "CreateApplication",
+  "CreateDataSetExportTask",
+  "CreateDataSetImportTask",
+  "CreateDeployment",
+  "CreateEnvironment",
+  "DeleteApplication",
+  "DeleteApplicationFromEnvironment",
+  "DeleteEnvironment",
+  "GetApplication",
+  "GetApplicationVersion",
+  "GetBatchJobExecution",
+  "GetDataSetDetails",
+  "GetDataSetExportTask",
+  "GetDataSetImportTask",
+  "GetDeployment",
+  "GetEnvironment",
+  "GetSignedBluinsightsUrl",
+  "ListApplications",
+  "ListApplicationVersions",
+  "ListBatchJobDefinitions",
+  "ListBatchJobExecutions",
+  "ListBatchJobRestartPoints",
+  "ListDataSetExportHistory",
+  "ListDataSetImportHistory",
+  "ListDataSets",
+  "ListDeployments",
+  "ListEngineVersions",
+  "ListEnvironments",
+  "ListTagsForResource",
+  "StartApplication",
+  "StartBatchJob",
+  "StopApplication",
+  "TagResource",
+  "UntagResource",
+  "UpdateApplication",
+  "UpdateEnvironment",
+] as const;
+
+export type M2Action = (typeof m2Actions)[number];
+
+export function m2(action: M2Action | "*"): `m2:${M2Action | "*"}` {
+  return `m2:${action}` as `m2:${M2Action | "*"}`;
+}

@@ -1,0 +1,48 @@
+export const launchwizardActions = [
+  "CreateAdditionalNode",
+  "CreateDeployment",
+  "CreateSettingsSet",
+  "DeleteAdditionalNode",
+  "DeleteApp",
+  "DeleteDeployment",
+  "DeleteSettingsSet",
+  "DescribeAdditionalNode",
+  "DescribeProvisionedApp",
+  "DescribeProvisioningEvents",
+  "DescribeSettingsSet",
+  "GetDeployment",
+  "GetDeploymentPatternVersion",
+  "GetInfrastructureSuggestion",
+  "GetIpAddress",
+  "GetResourceCostEstimate",
+  "GetResourceRecommendation",
+  "GetSettingsSet",
+  "GetWorkload",
+  "GetWorkloadAsset",
+  "GetWorkloadAssets",
+  "GetWorkloadDeploymentPattern",
+  "ListAdditionalNodes",
+  "ListAllowedResources",
+  "ListDeploymentEvents",
+  "ListDeploymentPatternVersions",
+  "ListDeployments",
+  "ListProvisionedApps",
+  "ListResourceCostEstimates",
+  "ListSettingsSets",
+  "ListTagsForResource",
+  "ListWorkloadDeploymentOptions",
+  "ListWorkloadDeploymentPatterns",
+  "ListWorkloads",
+  "PutSettingsSet",
+  "StartProvisioning",
+  "TagResource",
+  "UntagResource",
+  "UpdateDeployment",
+  "UpdateSettingsSet",
+] as const;
+
+export type LaunchwizardAction = (typeof launchwizardActions)[number];
+
+export function launchwizard(action: LaunchwizardAction | "*"): `launchwizard:${LaunchwizardAction | "*"}` {
+  return `launchwizard:${action}` as `launchwizard:${LaunchwizardAction | "*"}`;
+}

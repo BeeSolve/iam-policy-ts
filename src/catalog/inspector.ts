@@ -1,0 +1,45 @@
+export const inspectorActions = [
+  "AddAttributesToFindings",
+  "CreateAssessmentTarget",
+  "CreateAssessmentTemplate",
+  "CreateExclusionsPreview",
+  "CreateResourceGroup",
+  "DeleteAssessmentRun",
+  "DeleteAssessmentTarget",
+  "DeleteAssessmentTemplate",
+  "DescribeAssessmentRuns",
+  "DescribeAssessmentTargets",
+  "DescribeAssessmentTemplates",
+  "DescribeCrossAccountAccessRole",
+  "DescribeExclusions",
+  "DescribeFindings",
+  "DescribeResourceGroups",
+  "DescribeRulesPackages",
+  "GetAssessmentReport",
+  "GetExclusionsPreview",
+  "GetTelemetryMetadata",
+  "ListAssessmentRunAgents",
+  "ListAssessmentRuns",
+  "ListAssessmentTargets",
+  "ListAssessmentTemplates",
+  "ListEventSubscriptions",
+  "ListExclusions",
+  "ListFindings",
+  "ListRulesPackages",
+  "ListTagsForResource",
+  "PreviewAgents",
+  "RegisterCrossAccountAccessRole",
+  "RemoveAttributesFromFindings",
+  "SetTagsForResource",
+  "StartAssessmentRun",
+  "StopAssessmentRun",
+  "SubscribeToEvent",
+  "UnsubscribeFromEvent",
+  "UpdateAssessmentTarget",
+] as const;
+
+export type InspectorAction = (typeof inspectorActions)[number];
+
+export function inspector(action: InspectorAction | "*"): `inspector:${InspectorAction | "*"}` {
+  return `inspector:${action}` as `inspector:${InspectorAction | "*"}`;
+}

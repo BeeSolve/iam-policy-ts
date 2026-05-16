@@ -1,0 +1,48 @@
+export const observabilityadminActions = [
+  "CreateCentralizationRuleForOrganization",
+  "CreateS3TableIntegration",
+  "CreateTelemetryPipeline",
+  "CreateTelemetryRule",
+  "CreateTelemetryRuleForOrganization",
+  "DeleteCentralizationRuleForOrganization",
+  "DeleteS3TableIntegration",
+  "DeleteTelemetryPipeline",
+  "DeleteTelemetryRule",
+  "DeleteTelemetryRuleForOrganization",
+  "GetCentralizationRuleForOrganization",
+  "GetS3TableIntegration",
+  "GetTelemetryEnrichmentStatus",
+  "GetTelemetryEvaluationStatus",
+  "GetTelemetryEvaluationStatusForOrganization",
+  "GetTelemetryPipeline",
+  "GetTelemetryRule",
+  "GetTelemetryRuleForOrganization",
+  "ListCentralizationRulesForOrganization",
+  "ListResourceTelemetry",
+  "ListResourceTelemetryForOrganization",
+  "ListS3TableIntegrations",
+  "ListTagsForResource",
+  "ListTelemetryPipelines",
+  "ListTelemetryRules",
+  "ListTelemetryRulesForOrganization",
+  "StartTelemetryEnrichment",
+  "StartTelemetryEvaluation",
+  "StartTelemetryEvaluationForOrganization",
+  "StopTelemetryEnrichment",
+  "StopTelemetryEvaluation",
+  "StopTelemetryEvaluationForOrganization",
+  "TagResource",
+  "TestTelemetryPipeline",
+  "UntagResource",
+  "UpdateCentralizationRuleForOrganization",
+  "UpdateTelemetryPipeline",
+  "UpdateTelemetryRule",
+  "UpdateTelemetryRuleForOrganization",
+  "ValidateTelemetryPipelineConfiguration",
+] as const;
+
+export type ObservabilityadminAction = (typeof observabilityadminActions)[number];
+
+export function observabilityadmin(action: ObservabilityadminAction | "*"): `observabilityadmin:${ObservabilityadminAction | "*"}` {
+  return `observabilityadmin:${action}` as `observabilityadmin:${ObservabilityadminAction | "*"}`;
+}

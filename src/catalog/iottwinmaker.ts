@@ -1,0 +1,48 @@
+export const iottwinmakerActions = [
+  "BatchPutPropertyValues",
+  "CancelMetadataTransferJob",
+  "CreateComponentType",
+  "CreateEntity",
+  "CreateMetadataTransferJob",
+  "CreateScene",
+  "CreateSyncJob",
+  "CreateWorkspace",
+  "DeleteComponentType",
+  "DeleteEntity",
+  "DeleteScene",
+  "DeleteSyncJob",
+  "DeleteWorkspace",
+  "ExecuteQuery",
+  "GetComponentType",
+  "GetEntity",
+  "GetMetadataTransferJob",
+  "GetPricingPlan",
+  "GetPropertyValue",
+  "GetPropertyValueHistory",
+  "GetScene",
+  "GetSyncJob",
+  "GetWorkspace",
+  "ListComponents",
+  "ListComponentTypes",
+  "ListEntities",
+  "ListMetadataTransferJobs",
+  "ListProperties",
+  "ListScenes",
+  "ListSyncJobs",
+  "ListSyncResources",
+  "ListTagsForResource",
+  "ListWorkspaces",
+  "TagResource",
+  "UntagResource",
+  "UpdateComponentType",
+  "UpdateEntity",
+  "UpdatePricingPlan",
+  "UpdateScene",
+  "UpdateWorkspace",
+] as const;
+
+export type IottwinmakerAction = (typeof iottwinmakerActions)[number];
+
+export function iottwinmaker(action: IottwinmakerAction | "*"): `iottwinmaker:${IottwinmakerAction | "*"}` {
+  return `iottwinmaker:${action}` as `iottwinmaker:${IottwinmakerAction | "*"}`;
+}

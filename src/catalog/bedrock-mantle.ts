@@ -1,0 +1,43 @@
+export const bedrockMantleActions = [
+  "ArchiveProject",
+  "AssociateCustomizedModel",
+  "CallWithBearerToken",
+  "CancelFineTuningJob",
+  "CancelInference",
+  "CreateCustomizedModel",
+  "CreateFile",
+  "CreateFineTuningJob",
+  "CreateInference",
+  "CreateProject",
+  "CreateReservation",
+  "DeleteCustomizedModel",
+  "DeleteFile",
+  "DeleteInference",
+  "DeleteReservation",
+  "DisassociateCustomizedModel",
+  "GetCustomizedModel",
+  "GetFile",
+  "GetFineTuningJob",
+  "GetInference",
+  "GetModel",
+  "GetProject",
+  "GetReservation",
+  "ListCustomizedModelAssociations",
+  "ListCustomizedModels",
+  "ListFiles",
+  "ListFineTuningJobs",
+  "ListModels",
+  "ListProjects",
+  "ListReservations",
+  "ListTagsForResource",
+  "TagResource",
+  "UntagResource",
+  "UpdateProject",
+  "UpdateReservation",
+] as const;
+
+export type BedrockMantleAction = (typeof bedrockMantleActions)[number];
+
+export function bedrockMantle(action: BedrockMantleAction | "*"): `bedrock-mantle:${BedrockMantleAction | "*"}` {
+  return `bedrock-mantle:${action}` as `bedrock-mantle:${BedrockMantleAction | "*"}`;
+}

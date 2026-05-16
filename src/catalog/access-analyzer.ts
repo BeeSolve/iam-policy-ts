@@ -1,0 +1,45 @@
+export const accessAnalyzerActions = [
+  "ApplyArchiveRule",
+  "CancelPolicyGeneration",
+  "CheckAccessNotGranted",
+  "CheckNoNewAccess",
+  "CheckNoPublicAccess",
+  "CreateAccessPreview",
+  "CreateAnalyzer",
+  "CreateArchiveRule",
+  "CreateServiceLinkedAnalyzer",
+  "DeleteAnalyzer",
+  "DeleteArchiveRule",
+  "DeleteServiceLinkedAnalyzer",
+  "GenerateFindingRecommendation",
+  "GetAccessPreview",
+  "GetAnalyzedResource",
+  "GetAnalyzer",
+  "GetArchiveRule",
+  "GetFinding",
+  "GetFindingRecommendation",
+  "GetFindingsStatistics",
+  "GetGeneratedPolicy",
+  "ListAccessPreviewFindings",
+  "ListAccessPreviews",
+  "ListAnalyzedResources",
+  "ListAnalyzers",
+  "ListArchiveRules",
+  "ListFindings",
+  "ListPolicyGenerations",
+  "ListTagsForResource",
+  "StartPolicyGeneration",
+  "StartResourceScan",
+  "TagResource",
+  "UntagResource",
+  "UpdateAnalyzer",
+  "UpdateArchiveRule",
+  "UpdateFindings",
+  "ValidatePolicy",
+] as const;
+
+export type AccessAnalyzerAction = (typeof accessAnalyzerActions)[number];
+
+export function accessAnalyzer(action: AccessAnalyzerAction | "*"): `access-analyzer:${AccessAnalyzerAction | "*"}` {
+  return `access-analyzer:${action}` as `access-analyzer:${AccessAnalyzerAction | "*"}`;
+}

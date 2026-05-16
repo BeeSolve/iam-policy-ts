@@ -1,0 +1,36 @@
+export const machinelearningActions = [
+  "AddTags",
+  "CreateBatchPrediction",
+  "CreateDataSourceFromRDS",
+  "CreateDataSourceFromRedshift",
+  "CreateDataSourceFromS3",
+  "CreateEvaluation",
+  "CreateMLModel",
+  "CreateRealtimeEndpoint",
+  "DeleteBatchPrediction",
+  "DeleteDataSource",
+  "DeleteEvaluation",
+  "DeleteMLModel",
+  "DeleteRealtimeEndpoint",
+  "DeleteTags",
+  "DescribeBatchPredictions",
+  "DescribeDataSources",
+  "DescribeEvaluations",
+  "DescribeMLModels",
+  "DescribeTags",
+  "GetBatchPrediction",
+  "GetDataSource",
+  "GetEvaluation",
+  "GetMLModel",
+  "Predict",
+  "UpdateBatchPrediction",
+  "UpdateDataSource",
+  "UpdateEvaluation",
+  "UpdateMLModel",
+] as const;
+
+export type MachinelearningAction = (typeof machinelearningActions)[number];
+
+export function machinelearning(action: MachinelearningAction | "*"): `machinelearning:${MachinelearningAction | "*"}` {
+  return `machinelearning:${action}` as `machinelearning:${MachinelearningAction | "*"}`;
+}

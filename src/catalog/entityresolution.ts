@@ -1,0 +1,48 @@
+export const entityresolutionActions = [
+  "AddPolicyStatement",
+  "BatchDeleteUniqueId",
+  "CreateIdMappingWorkflow",
+  "CreateIdNamespace",
+  "CreateMatchingWorkflow",
+  "CreateSchemaMapping",
+  "DeleteIdMappingWorkflow",
+  "DeleteIdNamespace",
+  "DeleteMatchingWorkflow",
+  "DeletePolicyStatement",
+  "DeleteSchemaMapping",
+  "GenerateMatchId",
+  "GetIdMappingJob",
+  "GetIdMappingWorkflow",
+  "GetIdNamespace",
+  "GetMatchId",
+  "GetMatchingJob",
+  "GetMatchingWorkflow",
+  "GetPolicy",
+  "GetProviderService",
+  "GetSchemaMapping",
+  "ListIdMappingJobs",
+  "ListIdMappingWorkflows",
+  "ListIdNamespaces",
+  "ListMatchingJobs",
+  "ListMatchingWorkflows",
+  "ListProviderServices",
+  "ListSchemaMappings",
+  "ListTagsForResource",
+  "PutPolicy",
+  "StartIdMappingJob",
+  "StartMatchingJob",
+  "TagResource",
+  "UntagResource",
+  "UpdateIdMappingWorkflow",
+  "UpdateIdNamespace",
+  "UpdateMatchingWorkflow",
+  "UpdateSchemaMapping",
+  "UseIdNamespace",
+  "UseWorkflow",
+] as const;
+
+export type EntityresolutionAction = (typeof entityresolutionActions)[number];
+
+export function entityresolution(action: EntityresolutionAction | "*"): `entityresolution:${EntityresolutionAction | "*"}` {
+  return `entityresolution:${action}` as `entityresolution:${EntityresolutionAction | "*"}`;
+}

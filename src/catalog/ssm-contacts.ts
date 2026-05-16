@@ -1,0 +1,48 @@
+export const ssmContactsActions = [
+  "AcceptPage",
+  "ActivateContactChannel",
+  "AssociateContact",
+  "CreateContact",
+  "CreateContactChannel",
+  "CreateRotation",
+  "CreateRotationOverride",
+  "DeactivateContactChannel",
+  "DeleteContact",
+  "DeleteContactChannel",
+  "DeleteRotation",
+  "DeleteRotationOverride",
+  "DescribeEngagement",
+  "DescribePage",
+  "GetContact",
+  "GetContactChannel",
+  "GetContactPolicy",
+  "GetRotation",
+  "GetRotationOverride",
+  "ListContactChannels",
+  "ListContacts",
+  "ListEngagements",
+  "ListPageReceipts",
+  "ListPageResolutions",
+  "ListPagesByContact",
+  "ListPagesByEngagement",
+  "ListPreviewRotationShifts",
+  "ListRotationOverrides",
+  "ListRotations",
+  "ListRotationShifts",
+  "ListTagsForResource",
+  "PutContactPolicy",
+  "SendActivationCode",
+  "StartEngagement",
+  "StopEngagement",
+  "TagResource",
+  "UntagResource",
+  "UpdateContact",
+  "UpdateContactChannel",
+  "UpdateRotation",
+] as const;
+
+export type SsmContactsAction = (typeof ssmContactsActions)[number];
+
+export function ssmContacts(action: SsmContactsAction | "*"): `ssm-contacts:${SsmContactsAction | "*"}` {
+  return `ssm-contacts:${action}` as `ssm-contacts:${SsmContactsAction | "*"}`;
+}

@@ -1,9 +1,12 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+import { renderBarrelFile } from "./render-barrel-file.ts";
+import { renderMetaFile } from "./render-meta-file.ts";
+import { renderServiceFile } from "./render-service-file.ts";
 
 const sourceUrl = "https://awspolicygen.s3.amazonaws.com/js/policies.js";
-const outputPath = resolve("src/catalog.ts");
 const fetchTimeoutMs = 30_000;
 
 type NormalizedService = {
@@ -20,23 +23,113 @@ type NormalizedCatalog = {
 
 async function main(): Promise<void> {
   const rawSource = await fetchPoliciesJs();
-  const normalizedCatalog = normalizeCatalog({ rawSource, sourceUrl });
-  const nextContent = renderCatalogModule({ catalog: normalizedCatalog });
-  const currentContent = await readIfExists(outputPath);
+  const catalog = normalizeCatalog({ rawSource, sourceUrl });
+  const catalogDir = resolve("src/catalog");
 
-  if (currentContent === nextContent) {
-    console.log(
-      `IAM action catalog is up to date (${Object.keys(normalizedCatalog.services).length} services, ${normalizedCatalog.actionCount} actions).`,
-    );
-    return;
+  await mkdir(catalogDir, { recursive: true });
+
+  let written = 0;
+  let skipped = 0;
+
+  // Generate per-service files
+  for (const [prefix, actions] of Object.entries(catalog.services)) {
+    const content = renderServiceFile({ prefix, actions });
+    const changed = await writeIfChanged(resolve(catalogDir, `${prefix}.ts`), content);
+    if (changed) written++;
+    else skipped++;
   }
 
-  await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, nextContent, "utf8");
+  // Generate _meta.ts
+  const metaContent = renderMetaFile(catalog);
+  const metaChanged = await writeIfChanged(resolve(catalogDir, "_meta.ts"), metaContent);
+  if (metaChanged) written++;
+  else skipped++;
+
+  // Generate barrel index.ts
+  const barrelContent = renderBarrelFile(Object.keys(catalog.services));
+  const barrelChanged = await writeIfChanged(resolve(catalogDir, "index.ts"), barrelContent);
+  if (barrelChanged) written++;
+  else skipped++;
+
+  // Remove stale service files
+  const entries = await readdir(catalogDir);
+  const serviceKeys = new Set(Object.keys(catalog.services));
+  for (const entry of entries) {
+    if (!entry.endsWith(".ts")) continue;
+    if (entry === "_meta.ts" || entry === "index.ts") continue;
+    const prefix = entry.slice(0, -3); // strip .ts
+    if (!serviceKeys.has(prefix)) {
+      try {
+        await unlink(resolve(catalogDir, entry));
+        console.log(`Removed stale file: src/catalog/${entry}`);
+      } catch (err) {
+        console.warn(`Warning: failed to remove stale file src/catalog/${entry}:`, err);
+      }
+    }
+  }
+
+  // Update package.json exports map
+  await updatePackageJsonExports(catalog.services);
 
   console.log(
-    `Updated ${outputPath} (${Object.keys(normalizedCatalog.services).length} services, ${normalizedCatalog.actionCount} actions).`,
+    `IAM catalog generation complete: ${Object.keys(catalog.services).length} services, ${catalog.actionCount} actions. ` +
+      `Files written: ${written}, skipped (unchanged): ${skipped}.`,
   );
+}
+
+/**
+ * Writes content to a file only if the content differs from what's already on disk.
+ * Returns true if the file was written, false if skipped.
+ */
+async function writeIfChanged(filePath: string, content: string): Promise<boolean> {
+  const existing = await readIfExists(filePath);
+  if (existing === content) {
+    return false;
+  }
+  await writeFile(filePath, content, "utf8");
+  return true;
+}
+
+/**
+ * Updates package.json exports map with subpath entries for each service,
+ * plus the root "." and "./_meta" entries. Also sets "sideEffects": false.
+ * Only writes if the content actually changed.
+ */
+async function updatePackageJsonExports(services: Record<string, string[]>): Promise<void> {
+  const pkgPath = resolve("package.json");
+  const pkgRaw = await readFile(pkgPath, "utf8");
+  const pkg = JSON.parse(pkgRaw) as Record<string, unknown>;
+
+  const exportsMap: Record<string, { import: string; types: string }> = {};
+
+  // "." entry first
+  exportsMap["."] = {
+    import: "./dist/index.js",
+    types: "./dist/index.d.ts",
+  };
+
+  // "./_meta" entry second
+  exportsMap["./_meta"] = {
+    import: "./dist/catalog/_meta.js",
+    types: "./dist/catalog/_meta.d.ts",
+  };
+
+  // One entry per service prefix, sorted alphabetically
+  const sortedPrefixes = Object.keys(services).sort((a, b) => a.localeCompare(b));
+  for (const prefix of sortedPrefixes) {
+    exportsMap[`./${prefix}`] = {
+      import: `./dist/catalog/${prefix}.js`,
+      types: `./dist/catalog/${prefix}.d.ts`,
+    };
+  }
+
+  pkg.exports = exportsMap;
+  pkg.sideEffects = false;
+
+  const updatedRaw = JSON.stringify(pkg, null, 2) + "\n";
+  if (pkgRaw === updatedRaw) return;
+
+  await writeFile(pkgPath, updatedRaw, "utf8");
 }
 
 async function fetchPoliciesJs(): Promise<string> {
@@ -146,49 +239,6 @@ function normalizeService(service: unknown): NormalizedService | null {
   if (actions.length === 0) return null;
 
   return { prefix, actions };
-}
-
-function renderCatalogModule(props: { catalog: NormalizedCatalog }): string {
-  const serializedServices = JSON.stringify(props.catalog.services, null, 2);
-  const servicePrefixes = Object.keys(props.catalog.services);
-  const iamHelperEntries = servicePrefixes
-    .map((prefix) => {
-      const key = isIdentifierSafe(prefix) ? prefix : JSON.stringify(prefix);
-      return `  ${key}: (action) => \`${prefix}:\${action}\`,`;
-    })
-    .join("\n");
-
-  return `/**
- * Generated by "npm run generate".
- * Source: ${props.catalog.sourceUrl}
- * Source SHA256: ${props.catalog.sourceSha256}
- *
- * Do not edit by hand.
- */
-export const iamActionCatalog = ${serializedServices} as const;
-
-export const iamActionCatalogSourceUrl = ${JSON.stringify(props.catalog.sourceUrl)};
-export const iamActionCatalogSourceSha256 = ${JSON.stringify(props.catalog.sourceSha256)};
-export const iamActionCatalogActionCount = ${props.catalog.actionCount};
-
-import type { IamHelperObject } from "./helpers.js";
-
-/**
- * Per-service IAM action helpers for inline policies.
- *
- * @example
- * iam.s3("GetObject")                          // "s3:GetObject"
- * iam.identitystore("CreateGroupMembership")   // "identitystore:CreateGroupMembership"
- * iam["sso-directory"]("SearchUsers")          // "sso-directory:SearchUsers"
- */
-export const iam: IamHelperObject = {
-${iamHelperEntries}
-} as IamHelperObject;
-`;
-}
-
-function isIdentifierSafe(value: string): boolean {
-  return /^[A-Za-z_$][A-Za-z0-9_$]*$/u.test(value);
 }
 
 async function readIfExists(path: string): Promise<string | null> {

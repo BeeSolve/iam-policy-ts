@@ -1,0 +1,46 @@
+export const codestarConnectionsActions = [
+  "CreateConnection",
+  "CreateHost",
+  "CreateRepositoryLink",
+  "CreateSyncConfiguration",
+  "DeleteConnection",
+  "DeleteHost",
+  "DeleteRepositoryLink",
+  "DeleteSyncConfiguration",
+  "GetConnection",
+  "GetConnectionToken",
+  "GetHost",
+  "GetIndividualAccessToken",
+  "GetInstallationUrl",
+  "GetRepositoryLink",
+  "GetRepositorySyncStatus",
+  "GetResourceSyncStatus",
+  "GetSyncBlockerSummary",
+  "GetSyncConfiguration",
+  "ListConnections",
+  "ListHosts",
+  "ListInstallationTargets",
+  "ListRepositoryLinks",
+  "ListRepositorySyncDefinitions",
+  "ListSyncConfigurations",
+  "ListTagsForResource",
+  "PassConnection",
+  "PassRepository",
+  "RegisterAppCode",
+  "StartAppRegistrationHandshake",
+  "StartOAuthHandshake",
+  "TagResource",
+  "UntagResource",
+  "UpdateConnectionInstallation",
+  "UpdateHost",
+  "UpdateRepositoryLink",
+  "UpdateSyncBlocker",
+  "UpdateSyncConfiguration",
+  "UseConnection",
+] as const;
+
+export type CodestarConnectionsAction = (typeof codestarConnectionsActions)[number];
+
+export function codestarConnections(action: CodestarConnectionsAction | "*"): `codestar-connections:${CodestarConnectionsAction | "*"}` {
+  return `codestar-connections:${action}` as `codestar-connections:${CodestarConnectionsAction | "*"}`;
+}

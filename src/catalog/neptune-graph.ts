@@ -1,0 +1,46 @@
+export const neptuneGraphActions = [
+  "CancelExportTask",
+  "CancelImportTask",
+  "CancelQuery",
+  "CreateGraph",
+  "CreateGraphSnapshot",
+  "CreateGraphUsingImportTask",
+  "CreatePrivateGraphEndpoint",
+  "DeleteDataViaQuery",
+  "DeleteGraph",
+  "DeleteGraphSnapshot",
+  "DeletePrivateGraphEndpoint",
+  "GetEngineStatus",
+  "GetExportTask",
+  "GetGraph",
+  "GetGraphSnapshot",
+  "GetGraphSummary",
+  "GetImportTask",
+  "GetPrivateGraphEndpoint",
+  "GetQueryStatus",
+  "GetStatisticsStatus",
+  "ListExportTasks",
+  "ListGraphs",
+  "ListGraphSnapshots",
+  "ListImportTasks",
+  "ListPrivateGraphEndpoints",
+  "ListQueries",
+  "ListTagsForResource",
+  "ReadDataViaQuery",
+  "ResetGraph",
+  "RestoreGraphFromSnapshot",
+  "StartExportTask",
+  "StartGraph",
+  "StartImportTask",
+  "StopGraph",
+  "TagResource",
+  "UntagResource",
+  "UpdateGraph",
+  "WriteDataViaQuery",
+] as const;
+
+export type NeptuneGraphAction = (typeof neptuneGraphActions)[number];
+
+export function neptuneGraph(action: NeptuneGraphAction | "*"): `neptune-graph:${NeptuneGraphAction | "*"}` {
+  return `neptune-graph:${action}` as `neptune-graph:${NeptuneGraphAction | "*"}`;
+}

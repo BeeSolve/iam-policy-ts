@@ -1,0 +1,47 @@
+export const appmeshPreviewActions = [
+  "CreateGatewayRoute",
+  "CreateMesh",
+  "CreateRoute",
+  "CreateVirtualGateway",
+  "CreateVirtualNode",
+  "CreateVirtualRouter",
+  "CreateVirtualService",
+  "DeleteGatewayRoute",
+  "DeleteMesh",
+  "DeleteMeshPolicy",
+  "DeleteRoute",
+  "DeleteVirtualGateway",
+  "DeleteVirtualNode",
+  "DeleteVirtualRouter",
+  "DeleteVirtualService",
+  "DescribeGatewayRoute",
+  "DescribeMesh",
+  "DescribeRoute",
+  "DescribeVirtualGateway",
+  "DescribeVirtualNode",
+  "DescribeVirtualRouter",
+  "DescribeVirtualService",
+  "GetMeshPolicy",
+  "ListGatewayRoutes",
+  "ListMeshes",
+  "ListRoutes",
+  "ListVirtualGateways",
+  "ListVirtualNodes",
+  "ListVirtualRouters",
+  "ListVirtualServices",
+  "PutMeshPolicy",
+  "StreamAggregatedResources",
+  "UpdateGatewayRoute",
+  "UpdateMesh",
+  "UpdateRoute",
+  "UpdateVirtualGateway",
+  "UpdateVirtualNode",
+  "UpdateVirtualRouter",
+  "UpdateVirtualService",
+] as const;
+
+export type AppmeshPreviewAction = (typeof appmeshPreviewActions)[number];
+
+export function appmeshPreview(action: AppmeshPreviewAction | "*"): `appmesh-preview:${AppmeshPreviewAction | "*"}` {
+  return `appmesh-preview:${action}` as `appmesh-preview:${AppmeshPreviewAction | "*"}`;
+}

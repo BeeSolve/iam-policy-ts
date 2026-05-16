@@ -1,0 +1,45 @@
+export const timestreamActions = [
+  "CancelQuery",
+  "CreateBatchLoadTask",
+  "CreateDatabase",
+  "CreateScheduledQuery",
+  "CreateTable",
+  "DeleteDatabase",
+  "DeleteScheduledQuery",
+  "DeleteTable",
+  "DescribeAccountSettings",
+  "DescribeBatchLoadTask",
+  "DescribeDatabase",
+  "DescribeEndpoints",
+  "DescribeScheduledQuery",
+  "DescribeTable",
+  "ExecuteScheduledQuery",
+  "GetAwsBackupStatus",
+  "GetAwsRestoreStatus",
+  "ListBatchLoadTasks",
+  "ListDatabases",
+  "ListMeasures",
+  "ListScheduledQueries",
+  "ListTables",
+  "ListTagsForResource",
+  "PrepareQuery",
+  "ResumeBatchLoadTask",
+  "Select",
+  "SelectValues",
+  "StartAwsBackupJob",
+  "StartAwsRestoreJob",
+  "TagResource",
+  "Unload",
+  "UntagResource",
+  "UpdateAccountSettings",
+  "UpdateDatabase",
+  "UpdateScheduledQuery",
+  "UpdateTable",
+  "WriteRecords",
+] as const;
+
+export type TimestreamAction = (typeof timestreamActions)[number];
+
+export function timestream(action: TimestreamAction | "*"): `timestream:${TimestreamAction | "*"}` {
+  return `timestream:${action}` as `timestream:${TimestreamAction | "*"}`;
+}

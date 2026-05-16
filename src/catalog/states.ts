@@ -1,0 +1,47 @@
+export const statesActions = [
+  "CreateActivity",
+  "CreateStateMachine",
+  "CreateStateMachineAlias",
+  "DeleteActivity",
+  "DeleteStateMachine",
+  "DeleteStateMachineAlias",
+  "DeleteStateMachineVersion",
+  "DescribeActivity",
+  "DescribeExecution",
+  "DescribeMapRun",
+  "DescribeStateMachine",
+  "DescribeStateMachineAlias",
+  "DescribeStateMachineForExecution",
+  "GetActivityTask",
+  "GetExecutionHistory",
+  "InvokeHTTPEndpoint",
+  "ListActivities",
+  "ListExecutions",
+  "ListMapRuns",
+  "ListStateMachineAliases",
+  "ListStateMachines",
+  "ListStateMachineVersions",
+  "ListTagsForResource",
+  "PublishStateMachineVersion",
+  "RedriveExecution",
+  "RevealSecrets",
+  "SendTaskFailure",
+  "SendTaskHeartbeat",
+  "SendTaskSuccess",
+  "StartExecution",
+  "StartSyncExecution",
+  "StopExecution",
+  "TagResource",
+  "TestState",
+  "UntagResource",
+  "UpdateMapRun",
+  "UpdateStateMachine",
+  "UpdateStateMachineAlias",
+  "ValidateStateMachineDefinition",
+] as const;
+
+export type StatesAction = (typeof statesActions)[number];
+
+export function states(action: StatesAction | "*"): `states:${StatesAction | "*"}` {
+  return `states:${action}` as `states:${StatesAction | "*"}`;
+}

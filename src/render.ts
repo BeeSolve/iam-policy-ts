@@ -1,9 +1,9 @@
-import { iamActionCatalog } from "./catalog.js";
+import { iamActionCatalog } from "./catalog/_meta.js";
 import type { IamPolicyDocument } from "./schema.js";
 
 /**
- * Renders an IAM policy document as TypeScript source code using `iam.*` helpers
- * for known actions. Unknown actions are rendered as plain string literals.
+ * Renders an IAM policy document as TypeScript source code using per-service
+ * function calls for known actions. Unknown actions are rendered as plain string literals.
  *
  * @example
  * const ts = policyToTypescript({
@@ -14,7 +14,7 @@ import type { IamPolicyDocument } from "./schema.js";
  *     Resource: "*",
  *   }],
  * });
- * // Returns TypeScript source with iam.s3("GetObject"), iam.s3("ListBucket"), etc.
+ * // Returns TypeScript source with s3("GetObject"), s3("ListBucket"), etc.
  */
 export function policyToTypescript(
   policy: IamPolicyDocument,
@@ -81,6 +81,14 @@ function isKnownServicePrefix(servicePrefix: string): boolean {
   );
 }
 
+/**
+ * Converts a hyphenated service prefix to a camelCase identifier.
+ * Examples: "s3" → "s3", "access-analyzer" → "accessAnalyzer", "acm-pca" → "acmPca"
+ */
+function prefixToCamelCase(prefix: string): string {
+  return prefix.replace(/-([a-z0-9])/g, (_, char) => char.toUpperCase());
+}
+
 function renderActionString(value: string): string {
   const parts = parseActionParts(value);
   if (parts == null) return JSON.stringify(value);
@@ -92,22 +100,13 @@ function renderActionString(value: string): string {
       parts.actionName,
     );
     if (canonicalAction == null) return JSON.stringify(value);
-
-    const accessor = isIdentifierSafe(parts.servicePrefix)
-      ? `iam.${parts.servicePrefix}`
-      : `iam[${JSON.stringify(parts.servicePrefix)}]`;
-
-    return `${accessor}(${JSON.stringify(canonicalAction)})`;
+    const fnName = prefixToCamelCase(parts.servicePrefix);
+    return `${fnName}(${JSON.stringify(canonicalAction)})`;
   }
 
-  // Wildcard: render as iam.s3("*") if the service prefix is known
   if (!isKnownServicePrefix(parts.servicePrefix)) return JSON.stringify(value);
-
-  const accessor = isIdentifierSafe(parts.servicePrefix)
-    ? `iam.${parts.servicePrefix}`
-    : `iam[${JSON.stringify(parts.servicePrefix)}]`;
-
-  return `${accessor}("*")`;
+  const fnName = prefixToCamelCase(parts.servicePrefix);
+  return `${fnName}("*")`;
 }
 
 function renderArray(
