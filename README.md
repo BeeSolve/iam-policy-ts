@@ -1,8 +1,8 @@
 # @beesolve/iam-policy-ts
 
-Type-safe IAM policy helpers with an auto-generated action catalog from AWS.
+Tree-shakeable, type-safe IAM policy helpers with an auto-generated action catalog from AWS.
 
-Provides full autocomplete for all AWS IAM actions when writing inline policies in TypeScript.
+Each of the ~450 AWS services lives in its own module. Import only what you use — your bundler drops the rest. Full autocomplete for all AWS IAM actions when writing inline policies in TypeScript.
 
 ## Installation
 
@@ -33,6 +33,19 @@ import { accessAnalyzer, ssoDirectory } from "@beesolve/iam-policy-ts";
 accessAnalyzer("ListAnalyzers");  // "access-analyzer:ListAnalyzers"
 ssoDirectory("SearchUsers");      // "sso-directory:SearchUsers"
 ```
+
+### Namespace Import
+
+If you prefer a single namespace (similar to the old `iam` object), you can use a namespace import:
+
+```typescript
+import * as iam from "@beesolve/iam-policy-ts";
+
+iam.s3("GetObject");              // "s3:GetObject"
+iam.accessAnalyzer("ListAnalyzers"); // "access-analyzer:ListAnalyzers"
+```
+
+Tree-shaking works with namespace imports in modern bundlers (esbuild, Rollup, Vite, webpack 5). They statically analyze which properties you access on the namespace and drop the rest. This is the same pattern used by [Valibot](https://valibot.dev/guides/installation/) (`import * as v from 'valibot'`).
 
 ### Subpath Imports (Tree-Shaking)
 
@@ -268,13 +281,37 @@ Node.js 24+ and TypeScript 6+. The package is ESM-only (`"type": "module"`).
 
 ### Is the catalog tree-shakeable?
 
-Yes. Each AWS service is in its own module. If you import only `s3`, your bundler will exclude all other services. For maximum tree-shaking, use subpath imports:
+Yes. Each AWS service is in its own module (~450 files). The package declares `"sideEffects": false` and provides per-service subpath exports.
+
+**Pros:**
+- Import 2-3 services and your bundle includes only those — not the full ~18K-action catalog
+- Subpath imports give bundlers the strongest possible signal (no barrel analysis needed)
+- Works with esbuild, Rollup, webpack, Vite, and any bundler that supports `package.json` `"exports"`
+- Zero runtime overhead — each service function is a one-liner that returns a template literal
+
+**Cons / Limitations:**
+- ~450 source files in the package (larger install size on disk, though npm compresses well)
+- TypeScript language server may be slower to index on first open due to file count
+- The barrel import (`import { s3 } from "@beesolve/iam-policy-ts"`) re-exports all services — tree-shaking depends on your bundler's ability to prune unused re-exports
+
+**When tree-shaking works:**
+- esbuild, Rollup, Vite — these handle barrel re-exports and namespace imports well; they'll drop unused services even from `import * as iam`
+- `import * as iam from "@beesolve/iam-policy-ts"` — modern bundlers statically analyze property accesses (`iam.s3`, `iam.ec2`) and include only those
+- Subpath imports (`@beesolve/iam-policy-ts/s3`) — guaranteed to work with any bundler since only one module is loaded
+- Any environment where `"sideEffects": false` is respected
+
+**When tree-shaking may not work:**
+- Node.js without a bundler — all modules are available but there's no dead-code elimination at runtime (not a problem since this is a dev-time/build-time concern)
+- Older webpack versions (< 5) with barrel imports — may pull in the entire barrel. Use subpath imports as a workaround.
+- If you import `iamActionCatalog` from the main entry — the full catalog object (~18K actions) is included. Use `@beesolve/iam-policy-ts/_meta` to isolate it.
+- Dynamic access patterns like `const fn = services[prefix]` defeat static analysis — stick to named imports or static `iam.s3(...)` property accesses
+- Passing the namespace object around (`doSomething(iam)`) — the bundler can't trace which properties are accessed inside the callee
+
+For maximum tree-shaking, use subpath imports:
 
 ```ts
 import { s3 } from "@beesolve/iam-policy-ts/s3";
 ```
-
-The `iamActionCatalog` object contains the full catalog — if you import it, the entire dataset is included. Use the `@beesolve/iam-policy-ts/_meta` subpath to import only the metadata without pulling in all service functions.
 
 ### How do I regenerate the catalog locally?
 
@@ -283,6 +320,20 @@ npm run generate
 ```
 
 This runs `scripts/generate-catalog.ts`, fetches the latest AWS source, and produces per-service files under `src/catalog/`.
+
+### Should I use the main entry or subpath imports?
+
+It depends on your setup:
+
+| Scenario | Recommendation |
+|---|---|
+| esbuild / Vite / Rollup | Main entry is fine — these tree-shake barrel re-exports |
+| webpack 5 | Main entry usually works, but subpath is safer |
+| webpack 4 or older | Use subpath imports |
+| Node.js (no bundler) | Doesn't matter — no dead-code elimination either way |
+| Lambda / edge functions (size-sensitive) | Subpath imports for guaranteed minimal size |
+
+If in doubt, subpath imports are always the safest choice. They bypass barrel analysis entirely.
 
 ## License
 
