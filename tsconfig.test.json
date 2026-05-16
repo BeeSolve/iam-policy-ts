@@ -5,6 +5,8 @@
     "declaration": false,
     "declarationMap": false,
     "sourceMap": false,
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"],

@@ -1,0 +1,48 @@
+export const connectCampaignsActions = [
+  "CreateCampaign",
+  "DeleteCampaign",
+  "DeleteCampaignChannelSubtypeConfig",
+  "DeleteCampaignCommunicationLimits",
+  "DeleteCampaignCommunicationTime",
+  "DeleteCampaignEntryLimits",
+  "DeleteConnectInstanceConfig",
+  "DeleteConnectInstanceIntegration",
+  "DeleteInstanceOnboardingJob",
+  "DescribeCampaign",
+  "GetCampaignState",
+  "GetCampaignStateBatch",
+  "GetConnectInstanceConfig",
+  "GetInstanceCommunicationLimits",
+  "GetInstanceOnboardingJobStatus",
+  "ListCampaigns",
+  "ListConnectInstanceIntegrations",
+  "ListTagsForResource",
+  "PauseCampaign",
+  "PutConnectInstanceIntegration",
+  "PutDialRequestBatch",
+  "PutInstanceCommunicationLimits",
+  "PutOutboundRequestBatch",
+  "PutProfileOutboundRequestBatch",
+  "ResumeCampaign",
+  "StartCampaign",
+  "StartInstanceOnboardingJob",
+  "StopCampaign",
+  "TagResource",
+  "UntagResource",
+  "UpdateCampaignChannelSubtypeConfig",
+  "UpdateCampaignCommunicationLimits",
+  "UpdateCampaignCommunicationTime",
+  "UpdateCampaignDialerConfig",
+  "UpdateCampaignEntryLimits",
+  "UpdateCampaignFlowAssociation",
+  "UpdateCampaignName",
+  "UpdateCampaignOutboundCallConfig",
+  "UpdateCampaignSchedule",
+  "UpdateCampaignSource",
+] as const;
+
+export type ConnectCampaignsAction = (typeof connectCampaignsActions)[number];
+
+export function connectCampaigns(action: ConnectCampaignsAction | "*"): `connect-campaigns:${ConnectCampaignsAction | "*"}` {
+  return `connect-campaigns:${action}` as `connect-campaigns:${ConnectCampaignsAction | "*"}`;
+}

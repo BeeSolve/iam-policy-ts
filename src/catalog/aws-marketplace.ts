@@ -1,0 +1,45 @@
+export const awsMarketplaceActions = [
+  "AcceptAgreementApprovalRequest",
+  "AcceptAgreementCancellationRequest",
+  "AcceptAgreementPaymentRequest",
+  "AcceptAgreementRequest",
+  "BatchCreateBillingAdjustmentRequest",
+  "CancelAgreement",
+  "CancelAgreementCancellationRequest",
+  "CancelAgreementPaymentRequest",
+  "CancelAgreementRequest",
+  "CreateAgreementRequest",
+  "DescribeAgreement",
+  "GetAgreementApprovalRequest",
+  "GetAgreementCancellationRequest",
+  "GetAgreementEntitlements",
+  "GetAgreementPaymentRequest",
+  "GetAgreementRequest",
+  "GetAgreementTerms",
+  "GetBillingAdjustmentRequest",
+  "ListAgreementApprovalRequests",
+  "ListAgreementCancellationRequests",
+  "ListAgreementCharges",
+  "ListAgreementInvoiceLineItems",
+  "ListAgreementPaymentRequests",
+  "ListAgreementRequests",
+  "ListBillingAdjustmentRequests",
+  "ListEntitlementDetails",
+  "RejectAgreementApprovalRequest",
+  "RejectAgreementCancellationRequest",
+  "RejectAgreementPaymentRequest",
+  "SearchAgreements",
+  "SendAgreementCancellationRequest",
+  "SendAgreementPaymentRequest",
+  "Subscribe",
+  "Unsubscribe",
+  "UpdateAgreementApprovalRequest",
+  "UpdatePurchaseOrders",
+  "ViewSubscriptions",
+] as const;
+
+export type AwsMarketplaceAction = (typeof awsMarketplaceActions)[number];
+
+export function awsMarketplace(action: AwsMarketplaceAction | "*"): `aws-marketplace:${AwsMarketplaceAction | "*"}` {
+  return `aws-marketplace:${action}` as `aws-marketplace:${AwsMarketplaceAction | "*"}`;
+}

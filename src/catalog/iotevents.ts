@@ -1,0 +1,47 @@
+export const ioteventsActions = [
+  "BatchAcknowledgeAlarm",
+  "BatchDeleteDetector",
+  "BatchDisableAlarm",
+  "BatchEnableAlarm",
+  "BatchPutMessage",
+  "BatchResetAlarm",
+  "BatchSnoozeAlarm",
+  "BatchUpdateDetector",
+  "CreateAlarmModel",
+  "CreateDetectorModel",
+  "CreateInput",
+  "DeleteAlarmModel",
+  "DeleteDetectorModel",
+  "DeleteInput",
+  "DescribeAlarm",
+  "DescribeAlarmModel",
+  "DescribeDetector",
+  "DescribeDetectorModel",
+  "DescribeDetectorModelAnalysis",
+  "DescribeInput",
+  "DescribeLoggingOptions",
+  "GetDetectorModelAnalysisResults",
+  "ListAlarmModels",
+  "ListAlarmModelVersions",
+  "ListAlarms",
+  "ListDetectorModels",
+  "ListDetectorModelVersions",
+  "ListDetectors",
+  "ListInputRoutings",
+  "ListInputs",
+  "ListTagsForResource",
+  "PutLoggingOptions",
+  "StartDetectorModelAnalysis",
+  "TagResource",
+  "UntagResource",
+  "UpdateAlarmModel",
+  "UpdateDetectorModel",
+  "UpdateInput",
+  "UpdateInputRouting",
+] as const;
+
+export type IoteventsAction = (typeof ioteventsActions)[number];
+
+export function iotevents(action: IoteventsAction | "*"): `iotevents:${IoteventsAction | "*"}` {
+  return `iotevents:${action}` as `iotevents:${IoteventsAction | "*"}`;
+}

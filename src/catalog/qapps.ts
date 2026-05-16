@@ -1,0 +1,47 @@
+export const qappsActions = [
+  "AssociateLibraryItemReview",
+  "AssociateQAppWithUser",
+  "BatchCreateCategory",
+  "BatchDeleteCategory",
+  "BatchUpdateCategory",
+  "CopyQApp",
+  "CreateLibraryItem",
+  "CreateLibraryItemReview",
+  "CreateQApp",
+  "CreateSubscriptionToken",
+  "DeleteLibraryItem",
+  "DeleteQApp",
+  "DescribeQAppPermissions",
+  "DisassociateLibraryItemReview",
+  "DisassociateQAppFromUser",
+  "ExportQAppSessionData",
+  "GetLibraryItem",
+  "GetQApp",
+  "GetQAppSession",
+  "GetQAppSessionMetadata",
+  "ImportDocument",
+  "ListCategories",
+  "ListLibraryItems",
+  "ListQApps",
+  "ListQAppSessionData",
+  "ListTagsForResource",
+  "PredictProblemStatementFromConversation",
+  "PredictQApp",
+  "PredictQAppFromProblemStatement",
+  "StartQAppSession",
+  "StopQAppSession",
+  "TagResource",
+  "UntagResource",
+  "UpdateLibraryItem",
+  "UpdateLibraryItemMetadata",
+  "UpdateQApp",
+  "UpdateQAppPermissions",
+  "UpdateQAppSession",
+  "UpdateQAppSessionMetadata",
+] as const;
+
+export type QappsAction = (typeof qappsActions)[number];
+
+export function qapps(action: QappsAction | "*"): `qapps:${QappsAction | "*"}` {
+  return `qapps:${action}` as `qapps:${QappsAction | "*"}`;
+}

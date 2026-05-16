@@ -1,0 +1,48 @@
+export const kinesisActions = [
+  "AddTagsToStream",
+  "CreateStream",
+  "DecreaseStreamRetentionPeriod",
+  "DeleteResourcePolicy",
+  "DeleteStream",
+  "DeregisterStreamConsumer",
+  "DescribeAccountSettings",
+  "DescribeLimits",
+  "DescribeStream",
+  "DescribeStreamConsumer",
+  "DescribeStreamSummary",
+  "DisableEnhancedMonitoring",
+  "EnableEnhancedMonitoring",
+  "GetRecords",
+  "GetResourcePolicy",
+  "GetShardIterator",
+  "IncreaseStreamRetentionPeriod",
+  "InjectApiError",
+  "ListShards",
+  "ListStreamConsumers",
+  "ListStreams",
+  "ListTagsForResource",
+  "ListTagsForStream",
+  "MergeShards",
+  "PutRecord",
+  "PutRecords",
+  "PutResourcePolicy",
+  "RegisterStreamConsumer",
+  "RemoveTagsFromStream",
+  "SplitShard",
+  "StartStreamEncryption",
+  "StopStreamEncryption",
+  "SubscribeToShard",
+  "TagResource",
+  "UntagResource",
+  "UpdateAccountSettings",
+  "UpdateMaxRecordSize",
+  "UpdateShardCount",
+  "UpdateStreamMode",
+  "UpdateStreamWarmThroughput",
+] as const;
+
+export type KinesisAction = (typeof kinesisActions)[number];
+
+export function kinesis(action: KinesisAction | "*"): `kinesis:${KinesisAction | "*"}` {
+  return `kinesis:${action}` as `kinesis:${KinesisAction | "*"}`;
+}

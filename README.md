@@ -14,17 +14,40 @@ npm install @beesolve/iam-policy-ts
 
 ### IAM Action Helpers
 
+Each AWS service is exported as a standalone function with full type safety and autocomplete:
+
 ```typescript
-import { iam, iamAction } from "@beesolve/iam-policy-ts";
+import { s3, ec2, organizations } from "@beesolve/iam-policy-ts";
 
-// Per-service helper with autocomplete
-iam.s3("GetObject");                          // "s3:GetObject"
-iam.organizations("ListAccounts");            // "organizations:ListAccounts"
-iam["sso-directory"]("SearchUsers");          // "sso-directory:SearchUsers"
-
-// Lower-level function
-iamAction("s3", "GetObject");                 // "s3:GetObject"
+s3("GetObject");              // "s3:GetObject"
+ec2("RunInstances");          // "ec2:RunInstances"
+organizations("ListAccounts"); // "organizations:ListAccounts"
+s3("*");                      // "s3:*"
 ```
+
+Hyphenated service prefixes use camelCase function names:
+
+```typescript
+import { accessAnalyzer, ssoDirectory } from "@beesolve/iam-policy-ts";
+
+accessAnalyzer("ListAnalyzers");  // "access-analyzer:ListAnalyzers"
+ssoDirectory("SearchUsers");      // "sso-directory:SearchUsers"
+```
+
+### Subpath Imports (Tree-Shaking)
+
+For optimal bundle size, import only the services you need via subpath exports:
+
+```typescript
+// Import only what you need — optimal for tree-shaking
+import { s3 } from "@beesolve/iam-policy-ts/s3";
+import { accessAnalyzer } from "@beesolve/iam-policy-ts/access-analyzer";
+
+s3("GetObject");                  // "s3:GetObject"
+accessAnalyzer("ListAnalyzers");  // "access-analyzer:ListAnalyzers"
+```
+
+Each service has its own subpath matching the AWS service prefix (with hyphens preserved).
 
 ### Policy Validation
 
@@ -79,15 +102,15 @@ const ts = policyToTypescript({
   }],
 });
 
-// Output uses iam.* helpers for known actions:
+// Output uses per-service functions for known actions:
 // {
 //   Version: "2012-10-17",
 //   Statement: [
 //     {
 //       Effect: "Allow",
 //       Action: [
-//         iam.s3("GetObject"),
-//         iam.s3("ListBucket")
+//         s3("GetObject"),
+//         s3("ListBucket")
 //       ],
 //       Resource: "*"
 //     }
@@ -97,12 +120,22 @@ const ts = policyToTypescript({
 
 ### Access the Raw Catalog
 
+The full action catalog is available from the main entry or via a dedicated subpath:
+
 ```typescript
+// From main entry
 import {
   iamActionCatalog,
   iamActionCatalogSourceSha256,
   iamActionCatalogActionCount,
 } from "@beesolve/iam-policy-ts";
+
+// Or via dedicated subpath (avoids pulling in all service functions)
+import {
+  iamActionCatalog,
+  iamActionCatalogSourceSha256,
+  iamActionCatalogActionCount,
+} from "@beesolve/iam-policy-ts/_meta";
 
 // iamActionCatalog is a typed const object:
 // { s3: ["AbortMultipartUpload", ...], kms: ["CancelKeyDeletion", ...], ... }
@@ -110,11 +143,61 @@ import {
 console.log(`${iamActionCatalogActionCount} actions across ${Object.keys(iamActionCatalog).length} services`);
 ```
 
+## Migration Guide (from v25 / v26)
+
+This version introduces a breaking change: the monolithic `iam` helper object and `iamAction()` function have been removed in favor of per-service function imports that enable tree-shaking.
+
+### Removed Exports
+
+| Removed Export | Replacement |
+|---|---|
+| `iam` (runtime object) | Per-service functions (e.g., `s3`, `ec2`, `accessAnalyzer`) |
+| `iamAction(prefix, action)` | Per-service functions (e.g., `s3("GetObject")`) |
+| `IamHelperObject` (type) | Removed — no replacement needed |
+
+### Migration Examples
+
+**Before:**
+```typescript
+import { iam, iamAction } from "@beesolve/iam-policy-ts";
+
+iam.s3("GetObject");                        // "s3:GetObject"
+iam["access-analyzer"]("ListAnalyzers");    // "access-analyzer:ListAnalyzers"
+iamAction("s3", "GetObject");               // "s3:GetObject"
+```
+
+**After:**
+```typescript
+import { s3, accessAnalyzer } from "@beesolve/iam-policy-ts";
+
+s3("GetObject");                  // "s3:GetObject"
+accessAnalyzer("ListAnalyzers");  // "access-analyzer:ListAnalyzers"
+```
+
+### Quick Reference
+
+| Old Pattern | New Pattern |
+|---|---|
+| `iam.s3("GetObject")` | `s3("GetObject")` |
+| `iam.ec2("RunInstances")` | `ec2("RunInstances")` |
+| `iam["access-analyzer"]("ListAnalyzers")` | `accessAnalyzer("ListAnalyzers")` |
+| `iam["acm-pca"]("IssueCertificate")` | `acmPca("IssueCertificate")` |
+| `iamAction("s3", "GetObject")` | `s3("GetObject")` |
+
+### Render Output Changes
+
+The `policyToTypescript` function now emits per-service function calls instead of `iam.*` property accesses:
+
+| Before | After |
+|---|---|
+| `iam.s3("GetObject")` | `s3("GetObject")` |
+| `iam["access-analyzer"]("ListAnalyzers")` | `accessAnalyzer("ListAnalyzers")` |
+
 ## Updating the Catalog
 
 The catalog is updated automatically by a daily GitHub Actions workflow that runs at 02:00 UTC. It fetches the latest IAM action data from AWS, and if changes are detected, commits the update and publishes a new version to npm.
 
-You can also run `npm run generate` locally to regenerate `src/catalog.ts`.
+You can also run `npm run generate` locally to regenerate the catalog under `src/catalog/`.
 
 Source: https://awspolicygen.s3.amazonaws.com/js/policies.js
 
@@ -135,15 +218,17 @@ All IAM policy types are exported:
 - `IamPolicyScalar`
 - `IamPolicyScalarList`
 - `IamPolicyVersion`
-- `IamPolicyServicePrefix`
-- `IamPolicyActionNameByService<TService>`
-- `IamPolicyActionForService<TService>`
+
+Per-service types are also available:
+
+- `S3Action`, `Ec2Action`, `AccessAnalyzerAction`, etc. — union types of valid actions per service
+- `s3Actions`, `ec2Actions`, `accessAnalyzerActions`, etc. — const tuples of action names
 
 ## FAQ
 
 ### Does this validate that IAM actions actually exist in AWS?
 
-No. The schema validation (`isIamPolicyDocument`, `assertIamPolicyDocument`, etc.) checks structural shape only — correct field types, allowed keys, non-empty strings. It does not verify that an action string like `"s3:GetObject"` corresponds to a real AWS action. The `iam.*` helpers provide compile-time autocomplete from the catalog, but the schema layer is intentionally decoupled from it.
+No. The schema validation (`isIamPolicyDocument`, `assertIamPolicyDocument`, etc.) checks structural shape only — correct field types, allowed keys, non-empty strings. It does not verify that an action string like `"s3:GetObject"` corresponds to a real AWS action. The per-service functions provide compile-time autocomplete from the catalog, but the schema layer is intentionally decoupled from it.
 
 ### What's the difference between permissive and strict validation?
 
@@ -153,10 +238,10 @@ Strict additionally enforces IAM grammar rules: a statement must have exactly on
 
 ### Can I use wildcard actions like `s3:*`?
 
-Yes. The `iam.*` helpers accept `"*"` as a valid action name:
+Yes. The per-service functions accept `"*"` as a valid action name:
 
 ```ts
-iam.s3("*")  // "s3:*"
+s3("*")  // "s3:*"
 ```
 
 The schema layer also accepts any non-empty string in `Action`/`NotAction`, so wildcards like `"s3:Get*"` pass validation.
@@ -171,7 +256,7 @@ The catalog is derived from `https://awspolicygen.s3.amazonaws.com/js/policies.j
 
 ### Does this package make network calls at runtime?
 
-No. The catalog is generated at build time and shipped as a static TypeScript const object. There are zero runtime network calls.
+No. The catalog is generated at build time and shipped as static TypeScript const objects. There are zero runtime network calls.
 
 ### Does this work with CDK / Pulumi / SST / Terraform CDK?
 
@@ -183,7 +268,13 @@ Node.js 24+ and TypeScript 6+. The package is ESM-only (`"type": "module"`).
 
 ### Is the catalog tree-shakeable?
 
-Partially. The package uses named exports, so bundlers can drop unused schema or render code. However, `iamActionCatalog` and the `iam` helper object reference the full catalog — if you import either, the entire catalog is included. In practice the catalog is ~200 KB of static data and compresses well.
+Yes. Each AWS service is in its own module. If you import only `s3`, your bundler will exclude all other services. For maximum tree-shaking, use subpath imports:
+
+```ts
+import { s3 } from "@beesolve/iam-policy-ts/s3";
+```
+
+The `iamActionCatalog` object contains the full catalog — if you import it, the entire dataset is included. Use the `@beesolve/iam-policy-ts/_meta` subpath to import only the metadata without pulling in all service functions.
 
 ### How do I regenerate the catalog locally?
 
@@ -191,7 +282,7 @@ Partially. The package uses named exports, so bundlers can drop unused schema or
 npm run generate
 ```
 
-This runs `scripts/generate-catalog.ts`, fetches the latest AWS source, and overwrites `src/catalog.ts`.
+This runs `scripts/generate-catalog.ts`, fetches the latest AWS source, and produces per-service files under `src/catalog/`.
 
 ## License
 

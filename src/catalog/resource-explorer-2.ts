@@ -1,0 +1,45 @@
+export const resourceExplorer2Actions = [
+  "AssociateDefaultView",
+  "BatchGetView",
+  "CreateIndex",
+  "CreateManagedView",
+  "CreateResourceExplorerSetup",
+  "CreateStreamingAccessForService",
+  "CreateView",
+  "DeleteIndex",
+  "DeleteResourceExplorerSetup",
+  "DeleteResourcePolicy",
+  "DeleteStreamingAccessForService",
+  "DeleteView",
+  "DisassociateDefaultView",
+  "GetAccountLevelServiceConfiguration",
+  "GetDefaultView",
+  "GetIndex",
+  "GetManagedView",
+  "GetResourceExplorerSetup",
+  "GetResourcePolicy",
+  "GetServiceIndex",
+  "GetServiceView",
+  "GetView",
+  "ListIndexes",
+  "ListIndexesForMembers",
+  "ListManagedViews",
+  "ListServiceIndexes",
+  "ListServiceViews",
+  "ListStreamingAccessForServices",
+  "ListSupportedResourceTypes",
+  "ListTagsForResource",
+  "ListViews",
+  "PutResourcePolicy",
+  "Search",
+  "TagResource",
+  "UntagResource",
+  "UpdateIndexType",
+  "UpdateView",
+] as const;
+
+export type ResourceExplorer2Action = (typeof resourceExplorer2Actions)[number];
+
+export function resourceExplorer2(action: ResourceExplorer2Action | "*"): `resource-explorer-2:${ResourceExplorer2Action | "*"}` {
+  return `resource-explorer-2:${action}` as `resource-explorer-2:${ResourceExplorer2Action | "*"}`;
+}

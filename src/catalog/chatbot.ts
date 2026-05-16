@@ -1,0 +1,47 @@
+export const chatbotActions = [
+  "AssociateToConfiguration",
+  "CreateChimeWebhookConfiguration",
+  "CreateCustomAction",
+  "CreateMicrosoftTeamsChannelConfiguration",
+  "CreateSlackChannelConfiguration",
+  "DeleteChimeWebhookConfiguration",
+  "DeleteCustomAction",
+  "DeleteMicrosoftTeamsChannelConfiguration",
+  "DeleteMicrosoftTeamsConfiguredTeam",
+  "DeleteMicrosoftTeamsUserIdentity",
+  "DeleteSlackChannelConfiguration",
+  "DeleteSlackUserIdentity",
+  "DeleteSlackWorkspaceAuthorization",
+  "DescribeChimeWebhookConfigurations",
+  "DescribeSlackChannelConfigurations",
+  "DescribeSlackChannels",
+  "DescribeSlackUserIdentities",
+  "DescribeSlackWorkspaces",
+  "DisassociateFromConfiguration",
+  "GetAccountPreferences",
+  "GetCustomAction",
+  "GetMicrosoftTeamsChannelConfiguration",
+  "GetMicrosoftTeamsOauthParameters",
+  "GetSlackOauthParameters",
+  "ListAssociations",
+  "ListCustomActions",
+  "ListMicrosoftTeamsChannelConfigurations",
+  "ListMicrosoftTeamsConfiguredTeams",
+  "ListMicrosoftTeamsUserIdentities",
+  "ListTagsForResource",
+  "RedeemMicrosoftTeamsOauthCode",
+  "RedeemSlackOauthCode",
+  "TagResource",
+  "UntagResource",
+  "UpdateAccountPreferences",
+  "UpdateChimeWebhookConfiguration",
+  "UpdateCustomAction",
+  "UpdateMicrosoftTeamsChannelConfiguration",
+  "UpdateSlackChannelConfiguration",
+] as const;
+
+export type ChatbotAction = (typeof chatbotActions)[number];
+
+export function chatbot(action: ChatbotAction | "*"): `chatbot:${ChatbotAction | "*"}` {
+  return `chatbot:${action}` as `chatbot:${ChatbotAction | "*"}`;
+}

@@ -1,0 +1,45 @@
+export const smsActions = [
+  "CreateApp",
+  "CreateReplicationJob",
+  "DeleteApp",
+  "DeleteAppLaunchConfiguration",
+  "DeleteAppReplicationConfiguration",
+  "DeleteAppValidationConfiguration",
+  "DeleteReplicationJob",
+  "DeleteServerCatalog",
+  "DisassociateConnector",
+  "GenerateChangeSet",
+  "GenerateTemplate",
+  "GetApp",
+  "GetAppLaunchConfiguration",
+  "GetAppReplicationConfiguration",
+  "GetAppValidationConfiguration",
+  "GetAppValidationOutput",
+  "GetConnectors",
+  "GetMessages",
+  "GetReplicationJobs",
+  "GetReplicationRuns",
+  "GetServers",
+  "ImportAppCatalog",
+  "ImportServerCatalog",
+  "LaunchApp",
+  "ListApps",
+  "NotifyAppValidationOutput",
+  "PutAppLaunchConfiguration",
+  "PutAppReplicationConfiguration",
+  "PutAppValidationConfiguration",
+  "SendMessage",
+  "StartAppReplication",
+  "StartOnDemandAppReplication",
+  "StartOnDemandReplicationRun",
+  "StopAppReplication",
+  "TerminateApp",
+  "UpdateApp",
+  "UpdateReplicationJob",
+] as const;
+
+export type SmsAction = (typeof smsActions)[number];
+
+export function sms(action: SmsAction | "*"): `sms:${SmsAction | "*"}` {
+  return `sms:${action}` as `sms:${SmsAction | "*"}`;
+}

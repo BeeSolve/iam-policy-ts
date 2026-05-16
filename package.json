@@ -7,6 +7,1806 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./_meta": {
+      "import": "./dist/catalog/_meta.js",
+      "types": "./dist/catalog/_meta.d.ts"
+    },
+    "./a2c": {
+      "import": "./dist/catalog/a2c.js",
+      "types": "./dist/catalog/a2c.d.ts"
+    },
+    "./a4b": {
+      "import": "./dist/catalog/a4b.js",
+      "types": "./dist/catalog/a4b.d.ts"
+    },
+    "./access-analyzer": {
+      "import": "./dist/catalog/access-analyzer.js",
+      "types": "./dist/catalog/access-analyzer.d.ts"
+    },
+    "./account": {
+      "import": "./dist/catalog/account.js",
+      "types": "./dist/catalog/account.d.ts"
+    },
+    "./acm": {
+      "import": "./dist/catalog/acm.js",
+      "types": "./dist/catalog/acm.d.ts"
+    },
+    "./acm-pca": {
+      "import": "./dist/catalog/acm-pca.js",
+      "types": "./dist/catalog/acm-pca.d.ts"
+    },
+    "./aco-automation": {
+      "import": "./dist/catalog/aco-automation.js",
+      "types": "./dist/catalog/aco-automation.d.ts"
+    },
+    "./action-recommendations": {
+      "import": "./dist/catalog/action-recommendations.js",
+      "types": "./dist/catalog/action-recommendations.d.ts"
+    },
+    "./activate": {
+      "import": "./dist/catalog/activate.js",
+      "types": "./dist/catalog/activate.d.ts"
+    },
+    "./agentaccess-mcp": {
+      "import": "./dist/catalog/agentaccess-mcp.js",
+      "types": "./dist/catalog/agentaccess-mcp.d.ts"
+    },
+    "./aidevops": {
+      "import": "./dist/catalog/aidevops.js",
+      "types": "./dist/catalog/aidevops.d.ts"
+    },
+    "./aiops": {
+      "import": "./dist/catalog/aiops.js",
+      "types": "./dist/catalog/aiops.d.ts"
+    },
+    "./airflow": {
+      "import": "./dist/catalog/airflow.js",
+      "types": "./dist/catalog/airflow.d.ts"
+    },
+    "./airflow-serverless": {
+      "import": "./dist/catalog/airflow-serverless.js",
+      "types": "./dist/catalog/airflow-serverless.d.ts"
+    },
+    "./amplify": {
+      "import": "./dist/catalog/amplify.js",
+      "types": "./dist/catalog/amplify.d.ts"
+    },
+    "./amplifybackend": {
+      "import": "./dist/catalog/amplifybackend.js",
+      "types": "./dist/catalog/amplifybackend.d.ts"
+    },
+    "./amplifyuibuilder": {
+      "import": "./dist/catalog/amplifyuibuilder.js",
+      "types": "./dist/catalog/amplifyuibuilder.d.ts"
+    },
+    "./aoss": {
+      "import": "./dist/catalog/aoss.js",
+      "types": "./dist/catalog/aoss.d.ts"
+    },
+    "./apigateway": {
+      "import": "./dist/catalog/apigateway.js",
+      "types": "./dist/catalog/apigateway.d.ts"
+    },
+    "./app-integrations": {
+      "import": "./dist/catalog/app-integrations.js",
+      "types": "./dist/catalog/app-integrations.d.ts"
+    },
+    "./appconfig": {
+      "import": "./dist/catalog/appconfig.js",
+      "types": "./dist/catalog/appconfig.d.ts"
+    },
+    "./appfabric": {
+      "import": "./dist/catalog/appfabric.js",
+      "types": "./dist/catalog/appfabric.d.ts"
+    },
+    "./appflow": {
+      "import": "./dist/catalog/appflow.js",
+      "types": "./dist/catalog/appflow.d.ts"
+    },
+    "./application-autoscaling": {
+      "import": "./dist/catalog/application-autoscaling.js",
+      "types": "./dist/catalog/application-autoscaling.d.ts"
+    },
+    "./application-signals": {
+      "import": "./dist/catalog/application-signals.js",
+      "types": "./dist/catalog/application-signals.d.ts"
+    },
+    "./application-signals-mcp": {
+      "import": "./dist/catalog/application-signals-mcp.js",
+      "types": "./dist/catalog/application-signals-mcp.d.ts"
+    },
+    "./application-transformation": {
+      "import": "./dist/catalog/application-transformation.js",
+      "types": "./dist/catalog/application-transformation.d.ts"
+    },
+    "./applicationinsights": {
+      "import": "./dist/catalog/applicationinsights.js",
+      "types": "./dist/catalog/applicationinsights.d.ts"
+    },
+    "./appmesh": {
+      "import": "./dist/catalog/appmesh.js",
+      "types": "./dist/catalog/appmesh.d.ts"
+    },
+    "./appmesh-preview": {
+      "import": "./dist/catalog/appmesh-preview.js",
+      "types": "./dist/catalog/appmesh-preview.d.ts"
+    },
+    "./apprunner": {
+      "import": "./dist/catalog/apprunner.js",
+      "types": "./dist/catalog/apprunner.d.ts"
+    },
+    "./appstream": {
+      "import": "./dist/catalog/appstream.js",
+      "types": "./dist/catalog/appstream.d.ts"
+    },
+    "./appstudio": {
+      "import": "./dist/catalog/appstudio.js",
+      "types": "./dist/catalog/appstudio.d.ts"
+    },
+    "./appsync": {
+      "import": "./dist/catalog/appsync.js",
+      "types": "./dist/catalog/appsync.d.ts"
+    },
+    "./apptest": {
+      "import": "./dist/catalog/apptest.js",
+      "types": "./dist/catalog/apptest.d.ts"
+    },
+    "./aps": {
+      "import": "./dist/catalog/aps.js",
+      "types": "./dist/catalog/aps.d.ts"
+    },
+    "./arc-region-switch": {
+      "import": "./dist/catalog/arc-region-switch.js",
+      "types": "./dist/catalog/arc-region-switch.d.ts"
+    },
+    "./arc-zonal-shift": {
+      "import": "./dist/catalog/arc-zonal-shift.js",
+      "types": "./dist/catalog/arc-zonal-shift.d.ts"
+    },
+    "./arsenal": {
+      "import": "./dist/catalog/arsenal.js",
+      "types": "./dist/catalog/arsenal.d.ts"
+    },
+    "./artifact": {
+      "import": "./dist/catalog/artifact.js",
+      "types": "./dist/catalog/artifact.d.ts"
+    },
+    "./athena": {
+      "import": "./dist/catalog/athena.js",
+      "types": "./dist/catalog/athena.d.ts"
+    },
+    "./auditmanager": {
+      "import": "./dist/catalog/auditmanager.js",
+      "types": "./dist/catalog/auditmanager.d.ts"
+    },
+    "./autoscaling": {
+      "import": "./dist/catalog/autoscaling.js",
+      "types": "./dist/catalog/autoscaling.d.ts"
+    },
+    "./autoscaling-plans": {
+      "import": "./dist/catalog/autoscaling-plans.js",
+      "types": "./dist/catalog/autoscaling-plans.d.ts"
+    },
+    "./aws-external-anthropic": {
+      "import": "./dist/catalog/aws-external-anthropic.js",
+      "types": "./dist/catalog/aws-external-anthropic.d.ts"
+    },
+    "./aws-marketplace": {
+      "import": "./dist/catalog/aws-marketplace.js",
+      "types": "./dist/catalog/aws-marketplace.d.ts"
+    },
+    "./aws-marketplace-management": {
+      "import": "./dist/catalog/aws-marketplace-management.js",
+      "types": "./dist/catalog/aws-marketplace-management.d.ts"
+    },
+    "./aws-portal": {
+      "import": "./dist/catalog/aws-portal.js",
+      "types": "./dist/catalog/aws-portal.d.ts"
+    },
+    "./awsconnector": {
+      "import": "./dist/catalog/awsconnector.js",
+      "types": "./dist/catalog/awsconnector.d.ts"
+    },
+    "./b2bi": {
+      "import": "./dist/catalog/b2bi.js",
+      "types": "./dist/catalog/b2bi.d.ts"
+    },
+    "./backup": {
+      "import": "./dist/catalog/backup.js",
+      "types": "./dist/catalog/backup.d.ts"
+    },
+    "./backup-gateway": {
+      "import": "./dist/catalog/backup-gateway.js",
+      "types": "./dist/catalog/backup-gateway.d.ts"
+    },
+    "./backup-search": {
+      "import": "./dist/catalog/backup-search.js",
+      "types": "./dist/catalog/backup-search.d.ts"
+    },
+    "./backup-storage": {
+      "import": "./dist/catalog/backup-storage.js",
+      "types": "./dist/catalog/backup-storage.d.ts"
+    },
+    "./batch": {
+      "import": "./dist/catalog/batch.js",
+      "types": "./dist/catalog/batch.d.ts"
+    },
+    "./bcm-dashboards": {
+      "import": "./dist/catalog/bcm-dashboards.js",
+      "types": "./dist/catalog/bcm-dashboards.d.ts"
+    },
+    "./bcm-data-exports": {
+      "import": "./dist/catalog/bcm-data-exports.js",
+      "types": "./dist/catalog/bcm-data-exports.d.ts"
+    },
+    "./bcm-pricing-calculator": {
+      "import": "./dist/catalog/bcm-pricing-calculator.js",
+      "types": "./dist/catalog/bcm-pricing-calculator.d.ts"
+    },
+    "./bcm-recommended-actions": {
+      "import": "./dist/catalog/bcm-recommended-actions.js",
+      "types": "./dist/catalog/bcm-recommended-actions.d.ts"
+    },
+    "./bedrock": {
+      "import": "./dist/catalog/bedrock.js",
+      "types": "./dist/catalog/bedrock.d.ts"
+    },
+    "./bedrock-agentcore": {
+      "import": "./dist/catalog/bedrock-agentcore.js",
+      "types": "./dist/catalog/bedrock-agentcore.d.ts"
+    },
+    "./bedrock-mantle": {
+      "import": "./dist/catalog/bedrock-mantle.js",
+      "types": "./dist/catalog/bedrock-mantle.d.ts"
+    },
+    "./billing": {
+      "import": "./dist/catalog/billing.js",
+      "types": "./dist/catalog/billing.d.ts"
+    },
+    "./billingconductor": {
+      "import": "./dist/catalog/billingconductor.js",
+      "types": "./dist/catalog/billingconductor.d.ts"
+    },
+    "./braket": {
+      "import": "./dist/catalog/braket.js",
+      "types": "./dist/catalog/braket.d.ts"
+    },
+    "./budgets": {
+      "import": "./dist/catalog/budgets.js",
+      "types": "./dist/catalog/budgets.d.ts"
+    },
+    "./bugbust": {
+      "import": "./dist/catalog/bugbust.js",
+      "types": "./dist/catalog/bugbust.d.ts"
+    },
+    "./cases": {
+      "import": "./dist/catalog/cases.js",
+      "types": "./dist/catalog/cases.d.ts"
+    },
+    "./cassandra": {
+      "import": "./dist/catalog/cassandra.js",
+      "types": "./dist/catalog/cassandra.d.ts"
+    },
+    "./ce": {
+      "import": "./dist/catalog/ce.js",
+      "types": "./dist/catalog/ce.d.ts"
+    },
+    "./chatbot": {
+      "import": "./dist/catalog/chatbot.js",
+      "types": "./dist/catalog/chatbot.d.ts"
+    },
+    "./chime": {
+      "import": "./dist/catalog/chime.js",
+      "types": "./dist/catalog/chime.d.ts"
+    },
+    "./cleanrooms": {
+      "import": "./dist/catalog/cleanrooms.js",
+      "types": "./dist/catalog/cleanrooms.d.ts"
+    },
+    "./cleanrooms-ml": {
+      "import": "./dist/catalog/cleanrooms-ml.js",
+      "types": "./dist/catalog/cleanrooms-ml.d.ts"
+    },
+    "./cloud9": {
+      "import": "./dist/catalog/cloud9.js",
+      "types": "./dist/catalog/cloud9.d.ts"
+    },
+    "./clouddirectory": {
+      "import": "./dist/catalog/clouddirectory.js",
+      "types": "./dist/catalog/clouddirectory.d.ts"
+    },
+    "./cloudformation": {
+      "import": "./dist/catalog/cloudformation.js",
+      "types": "./dist/catalog/cloudformation.d.ts"
+    },
+    "./cloudfront": {
+      "import": "./dist/catalog/cloudfront.js",
+      "types": "./dist/catalog/cloudfront.d.ts"
+    },
+    "./cloudfront-keyvaluestore": {
+      "import": "./dist/catalog/cloudfront-keyvaluestore.js",
+      "types": "./dist/catalog/cloudfront-keyvaluestore.d.ts"
+    },
+    "./cloudhsm": {
+      "import": "./dist/catalog/cloudhsm.js",
+      "types": "./dist/catalog/cloudhsm.d.ts"
+    },
+    "./cloudsearch": {
+      "import": "./dist/catalog/cloudsearch.js",
+      "types": "./dist/catalog/cloudsearch.d.ts"
+    },
+    "./cloudshell": {
+      "import": "./dist/catalog/cloudshell.js",
+      "types": "./dist/catalog/cloudshell.d.ts"
+    },
+    "./cloudtrail": {
+      "import": "./dist/catalog/cloudtrail.js",
+      "types": "./dist/catalog/cloudtrail.d.ts"
+    },
+    "./cloudtrail-data": {
+      "import": "./dist/catalog/cloudtrail-data.js",
+      "types": "./dist/catalog/cloudtrail-data.d.ts"
+    },
+    "./cloudwatch": {
+      "import": "./dist/catalog/cloudwatch.js",
+      "types": "./dist/catalog/cloudwatch.d.ts"
+    },
+    "./codeartifact": {
+      "import": "./dist/catalog/codeartifact.js",
+      "types": "./dist/catalog/codeartifact.d.ts"
+    },
+    "./codebuild": {
+      "import": "./dist/catalog/codebuild.js",
+      "types": "./dist/catalog/codebuild.d.ts"
+    },
+    "./codecatalyst": {
+      "import": "./dist/catalog/codecatalyst.js",
+      "types": "./dist/catalog/codecatalyst.d.ts"
+    },
+    "./codecommit": {
+      "import": "./dist/catalog/codecommit.js",
+      "types": "./dist/catalog/codecommit.d.ts"
+    },
+    "./codeconnections": {
+      "import": "./dist/catalog/codeconnections.js",
+      "types": "./dist/catalog/codeconnections.d.ts"
+    },
+    "./codedeploy": {
+      "import": "./dist/catalog/codedeploy.js",
+      "types": "./dist/catalog/codedeploy.d.ts"
+    },
+    "./codedeploy-commands-secure": {
+      "import": "./dist/catalog/codedeploy-commands-secure.js",
+      "types": "./dist/catalog/codedeploy-commands-secure.d.ts"
+    },
+    "./codeguru": {
+      "import": "./dist/catalog/codeguru.js",
+      "types": "./dist/catalog/codeguru.d.ts"
+    },
+    "./codeguru-profiler": {
+      "import": "./dist/catalog/codeguru-profiler.js",
+      "types": "./dist/catalog/codeguru-profiler.d.ts"
+    },
+    "./codeguru-reviewer": {
+      "import": "./dist/catalog/codeguru-reviewer.js",
+      "types": "./dist/catalog/codeguru-reviewer.d.ts"
+    },
+    "./codeguru-security": {
+      "import": "./dist/catalog/codeguru-security.js",
+      "types": "./dist/catalog/codeguru-security.d.ts"
+    },
+    "./codepipeline": {
+      "import": "./dist/catalog/codepipeline.js",
+      "types": "./dist/catalog/codepipeline.d.ts"
+    },
+    "./codestar": {
+      "import": "./dist/catalog/codestar.js",
+      "types": "./dist/catalog/codestar.d.ts"
+    },
+    "./codestar-connections": {
+      "import": "./dist/catalog/codestar-connections.js",
+      "types": "./dist/catalog/codestar-connections.d.ts"
+    },
+    "./codestar-notifications": {
+      "import": "./dist/catalog/codestar-notifications.js",
+      "types": "./dist/catalog/codestar-notifications.d.ts"
+    },
+    "./codewhisperer": {
+      "import": "./dist/catalog/codewhisperer.js",
+      "types": "./dist/catalog/codewhisperer.d.ts"
+    },
+    "./cognito-identity": {
+      "import": "./dist/catalog/cognito-identity.js",
+      "types": "./dist/catalog/cognito-identity.d.ts"
+    },
+    "./cognito-idp": {
+      "import": "./dist/catalog/cognito-idp.js",
+      "types": "./dist/catalog/cognito-idp.d.ts"
+    },
+    "./cognito-sync": {
+      "import": "./dist/catalog/cognito-sync.js",
+      "types": "./dist/catalog/cognito-sync.d.ts"
+    },
+    "./comprehend": {
+      "import": "./dist/catalog/comprehend.js",
+      "types": "./dist/catalog/comprehend.d.ts"
+    },
+    "./comprehendmedical": {
+      "import": "./dist/catalog/comprehendmedical.js",
+      "types": "./dist/catalog/comprehendmedical.d.ts"
+    },
+    "./compute-optimizer": {
+      "import": "./dist/catalog/compute-optimizer.js",
+      "types": "./dist/catalog/compute-optimizer.d.ts"
+    },
+    "./config": {
+      "import": "./dist/catalog/config.js",
+      "types": "./dist/catalog/config.d.ts"
+    },
+    "./connect": {
+      "import": "./dist/catalog/connect.js",
+      "types": "./dist/catalog/connect.d.ts"
+    },
+    "./connect-campaigns": {
+      "import": "./dist/catalog/connect-campaigns.js",
+      "types": "./dist/catalog/connect-campaigns.d.ts"
+    },
+    "./consoleapp": {
+      "import": "./dist/catalog/consoleapp.js",
+      "types": "./dist/catalog/consoleapp.d.ts"
+    },
+    "./consolidatedbilling": {
+      "import": "./dist/catalog/consolidatedbilling.js",
+      "types": "./dist/catalog/consolidatedbilling.d.ts"
+    },
+    "./controlcatalog": {
+      "import": "./dist/catalog/controlcatalog.js",
+      "types": "./dist/catalog/controlcatalog.d.ts"
+    },
+    "./controltower": {
+      "import": "./dist/catalog/controltower.js",
+      "types": "./dist/catalog/controltower.d.ts"
+    },
+    "./cost-optimization-hub": {
+      "import": "./dist/catalog/cost-optimization-hub.js",
+      "types": "./dist/catalog/cost-optimization-hub.d.ts"
+    },
+    "./cur": {
+      "import": "./dist/catalog/cur.js",
+      "types": "./dist/catalog/cur.d.ts"
+    },
+    "./customer-verification": {
+      "import": "./dist/catalog/customer-verification.js",
+      "types": "./dist/catalog/customer-verification.d.ts"
+    },
+    "./databrew": {
+      "import": "./dist/catalog/databrew.js",
+      "types": "./dist/catalog/databrew.d.ts"
+    },
+    "./dataexchange": {
+      "import": "./dist/catalog/dataexchange.js",
+      "types": "./dist/catalog/dataexchange.d.ts"
+    },
+    "./datapipeline": {
+      "import": "./dist/catalog/datapipeline.js",
+      "types": "./dist/catalog/datapipeline.d.ts"
+    },
+    "./datasync": {
+      "import": "./dist/catalog/datasync.js",
+      "types": "./dist/catalog/datasync.d.ts"
+    },
+    "./datazone": {
+      "import": "./dist/catalog/datazone.js",
+      "types": "./dist/catalog/datazone.d.ts"
+    },
+    "./dax": {
+      "import": "./dist/catalog/dax.js",
+      "types": "./dist/catalog/dax.d.ts"
+    },
+    "./dbqms": {
+      "import": "./dist/catalog/dbqms.js",
+      "types": "./dist/catalog/dbqms.d.ts"
+    },
+    "./deadline": {
+      "import": "./dist/catalog/deadline.js",
+      "types": "./dist/catalog/deadline.d.ts"
+    },
+    "./detective": {
+      "import": "./dist/catalog/detective.js",
+      "types": "./dist/catalog/detective.d.ts"
+    },
+    "./devicefarm": {
+      "import": "./dist/catalog/devicefarm.js",
+      "types": "./dist/catalog/devicefarm.d.ts"
+    },
+    "./devops-guru": {
+      "import": "./dist/catalog/devops-guru.js",
+      "types": "./dist/catalog/devops-guru.d.ts"
+    },
+    "./directconnect": {
+      "import": "./dist/catalog/directconnect.js",
+      "types": "./dist/catalog/directconnect.d.ts"
+    },
+    "./discovery": {
+      "import": "./dist/catalog/discovery.js",
+      "types": "./dist/catalog/discovery.d.ts"
+    },
+    "./dlm": {
+      "import": "./dist/catalog/dlm.js",
+      "types": "./dist/catalog/dlm.d.ts"
+    },
+    "./dms": {
+      "import": "./dist/catalog/dms.js",
+      "types": "./dist/catalog/dms.d.ts"
+    },
+    "./docdb-elastic": {
+      "import": "./dist/catalog/docdb-elastic.js",
+      "types": "./dist/catalog/docdb-elastic.d.ts"
+    },
+    "./drs": {
+      "import": "./dist/catalog/drs.js",
+      "types": "./dist/catalog/drs.d.ts"
+    },
+    "./ds": {
+      "import": "./dist/catalog/ds.js",
+      "types": "./dist/catalog/ds.d.ts"
+    },
+    "./ds-data": {
+      "import": "./dist/catalog/ds-data.js",
+      "types": "./dist/catalog/ds-data.d.ts"
+    },
+    "./dsql": {
+      "import": "./dist/catalog/dsql.js",
+      "types": "./dist/catalog/dsql.d.ts"
+    },
+    "./dynamodb": {
+      "import": "./dist/catalog/dynamodb.js",
+      "types": "./dist/catalog/dynamodb.d.ts"
+    },
+    "./ebs": {
+      "import": "./dist/catalog/ebs.js",
+      "types": "./dist/catalog/ebs.d.ts"
+    },
+    "./ec2": {
+      "import": "./dist/catalog/ec2.js",
+      "types": "./dist/catalog/ec2.d.ts"
+    },
+    "./ec2-instance-connect": {
+      "import": "./dist/catalog/ec2-instance-connect.js",
+      "types": "./dist/catalog/ec2-instance-connect.d.ts"
+    },
+    "./ec2messages": {
+      "import": "./dist/catalog/ec2messages.js",
+      "types": "./dist/catalog/ec2messages.d.ts"
+    },
+    "./ecr": {
+      "import": "./dist/catalog/ecr.js",
+      "types": "./dist/catalog/ecr.d.ts"
+    },
+    "./ecr-public": {
+      "import": "./dist/catalog/ecr-public.js",
+      "types": "./dist/catalog/ecr-public.d.ts"
+    },
+    "./ecs": {
+      "import": "./dist/catalog/ecs.js",
+      "types": "./dist/catalog/ecs.d.ts"
+    },
+    "./ecs-mcp": {
+      "import": "./dist/catalog/ecs-mcp.js",
+      "types": "./dist/catalog/ecs-mcp.d.ts"
+    },
+    "./eks": {
+      "import": "./dist/catalog/eks.js",
+      "types": "./dist/catalog/eks.d.ts"
+    },
+    "./eks-auth": {
+      "import": "./dist/catalog/eks-auth.js",
+      "types": "./dist/catalog/eks-auth.d.ts"
+    },
+    "./eks-mcp": {
+      "import": "./dist/catalog/eks-mcp.js",
+      "types": "./dist/catalog/eks-mcp.d.ts"
+    },
+    "./elasticache": {
+      "import": "./dist/catalog/elasticache.js",
+      "types": "./dist/catalog/elasticache.d.ts"
+    },
+    "./elasticbeanstalk": {
+      "import": "./dist/catalog/elasticbeanstalk.js",
+      "types": "./dist/catalog/elasticbeanstalk.d.ts"
+    },
+    "./elasticfilesystem": {
+      "import": "./dist/catalog/elasticfilesystem.js",
+      "types": "./dist/catalog/elasticfilesystem.d.ts"
+    },
+    "./elasticloadbalancing": {
+      "import": "./dist/catalog/elasticloadbalancing.js",
+      "types": "./dist/catalog/elasticloadbalancing.d.ts"
+    },
+    "./elasticmapreduce": {
+      "import": "./dist/catalog/elasticmapreduce.js",
+      "types": "./dist/catalog/elasticmapreduce.d.ts"
+    },
+    "./elastictranscoder": {
+      "import": "./dist/catalog/elastictranscoder.js",
+      "types": "./dist/catalog/elastictranscoder.d.ts"
+    },
+    "./elemental-activations": {
+      "import": "./dist/catalog/elemental-activations.js",
+      "types": "./dist/catalog/elemental-activations.d.ts"
+    },
+    "./elemental-appliances-software": {
+      "import": "./dist/catalog/elemental-appliances-software.js",
+      "types": "./dist/catalog/elemental-appliances-software.d.ts"
+    },
+    "./elemental-inference": {
+      "import": "./dist/catalog/elemental-inference.js",
+      "types": "./dist/catalog/elemental-inference.d.ts"
+    },
+    "./elemental-support-cases": {
+      "import": "./dist/catalog/elemental-support-cases.js",
+      "types": "./dist/catalog/elemental-support-cases.d.ts"
+    },
+    "./elemental-support-content": {
+      "import": "./dist/catalog/elemental-support-content.js",
+      "types": "./dist/catalog/elemental-support-content.d.ts"
+    },
+    "./emr-containers": {
+      "import": "./dist/catalog/emr-containers.js",
+      "types": "./dist/catalog/emr-containers.d.ts"
+    },
+    "./emr-serverless": {
+      "import": "./dist/catalog/emr-serverless.js",
+      "types": "./dist/catalog/emr-serverless.d.ts"
+    },
+    "./entityresolution": {
+      "import": "./dist/catalog/entityresolution.js",
+      "types": "./dist/catalog/entityresolution.d.ts"
+    },
+    "./es": {
+      "import": "./dist/catalog/es.js",
+      "types": "./dist/catalog/es.d.ts"
+    },
+    "./events": {
+      "import": "./dist/catalog/events.js",
+      "types": "./dist/catalog/events.d.ts"
+    },
+    "./evidently": {
+      "import": "./dist/catalog/evidently.js",
+      "types": "./dist/catalog/evidently.d.ts"
+    },
+    "./evs": {
+      "import": "./dist/catalog/evs.js",
+      "types": "./dist/catalog/evs.d.ts"
+    },
+    "./execute-api": {
+      "import": "./dist/catalog/execute-api.js",
+      "types": "./dist/catalog/execute-api.d.ts"
+    },
+    "./finspace": {
+      "import": "./dist/catalog/finspace.js",
+      "types": "./dist/catalog/finspace.d.ts"
+    },
+    "./finspace-api": {
+      "import": "./dist/catalog/finspace-api.js",
+      "types": "./dist/catalog/finspace-api.d.ts"
+    },
+    "./firehose": {
+      "import": "./dist/catalog/firehose.js",
+      "types": "./dist/catalog/firehose.d.ts"
+    },
+    "./fis": {
+      "import": "./dist/catalog/fis.js",
+      "types": "./dist/catalog/fis.d.ts"
+    },
+    "./fms": {
+      "import": "./dist/catalog/fms.js",
+      "types": "./dist/catalog/fms.d.ts"
+    },
+    "./forecast": {
+      "import": "./dist/catalog/forecast.js",
+      "types": "./dist/catalog/forecast.d.ts"
+    },
+    "./frauddetector": {
+      "import": "./dist/catalog/frauddetector.js",
+      "types": "./dist/catalog/frauddetector.d.ts"
+    },
+    "./freertos": {
+      "import": "./dist/catalog/freertos.js",
+      "types": "./dist/catalog/freertos.d.ts"
+    },
+    "./freetier": {
+      "import": "./dist/catalog/freetier.js",
+      "types": "./dist/catalog/freetier.d.ts"
+    },
+    "./fsx": {
+      "import": "./dist/catalog/fsx.js",
+      "types": "./dist/catalog/fsx.d.ts"
+    },
+    "./gamelift": {
+      "import": "./dist/catalog/gamelift.js",
+      "types": "./dist/catalog/gamelift.d.ts"
+    },
+    "./gameliftstreams": {
+      "import": "./dist/catalog/gameliftstreams.js",
+      "types": "./dist/catalog/gameliftstreams.d.ts"
+    },
+    "./geo": {
+      "import": "./dist/catalog/geo.js",
+      "types": "./dist/catalog/geo.d.ts"
+    },
+    "./geo-maps": {
+      "import": "./dist/catalog/geo-maps.js",
+      "types": "./dist/catalog/geo-maps.d.ts"
+    },
+    "./geo-places": {
+      "import": "./dist/catalog/geo-places.js",
+      "types": "./dist/catalog/geo-places.d.ts"
+    },
+    "./geo-routes": {
+      "import": "./dist/catalog/geo-routes.js",
+      "types": "./dist/catalog/geo-routes.d.ts"
+    },
+    "./glacier": {
+      "import": "./dist/catalog/glacier.js",
+      "types": "./dist/catalog/glacier.d.ts"
+    },
+    "./globalaccelerator": {
+      "import": "./dist/catalog/globalaccelerator.js",
+      "types": "./dist/catalog/globalaccelerator.d.ts"
+    },
+    "./glue": {
+      "import": "./dist/catalog/glue.js",
+      "types": "./dist/catalog/glue.d.ts"
+    },
+    "./grafana": {
+      "import": "./dist/catalog/grafana.js",
+      "types": "./dist/catalog/grafana.d.ts"
+    },
+    "./greengrass": {
+      "import": "./dist/catalog/greengrass.js",
+      "types": "./dist/catalog/greengrass.d.ts"
+    },
+    "./groundstation": {
+      "import": "./dist/catalog/groundstation.js",
+      "types": "./dist/catalog/groundstation.d.ts"
+    },
+    "./groundtruthlabeling": {
+      "import": "./dist/catalog/groundtruthlabeling.js",
+      "types": "./dist/catalog/groundtruthlabeling.d.ts"
+    },
+    "./guardduty": {
+      "import": "./dist/catalog/guardduty.js",
+      "types": "./dist/catalog/guardduty.d.ts"
+    },
+    "./health": {
+      "import": "./dist/catalog/health.js",
+      "types": "./dist/catalog/health.d.ts"
+    },
+    "./health-agent": {
+      "import": "./dist/catalog/health-agent.js",
+      "types": "./dist/catalog/health-agent.d.ts"
+    },
+    "./healthlake": {
+      "import": "./dist/catalog/healthlake.js",
+      "types": "./dist/catalog/healthlake.d.ts"
+    },
+    "./honeycode": {
+      "import": "./dist/catalog/honeycode.js",
+      "types": "./dist/catalog/honeycode.d.ts"
+    },
+    "./iam": {
+      "import": "./dist/catalog/iam.js",
+      "types": "./dist/catalog/iam.d.ts"
+    },
+    "./identity-sync": {
+      "import": "./dist/catalog/identity-sync.js",
+      "types": "./dist/catalog/identity-sync.d.ts"
+    },
+    "./identitystore": {
+      "import": "./dist/catalog/identitystore.js",
+      "types": "./dist/catalog/identitystore.d.ts"
+    },
+    "./identitystore-auth": {
+      "import": "./dist/catalog/identitystore-auth.js",
+      "types": "./dist/catalog/identitystore-auth.d.ts"
+    },
+    "./imagebuilder": {
+      "import": "./dist/catalog/imagebuilder.js",
+      "types": "./dist/catalog/imagebuilder.d.ts"
+    },
+    "./importexport": {
+      "import": "./dist/catalog/importexport.js",
+      "types": "./dist/catalog/importexport.d.ts"
+    },
+    "./inspector": {
+      "import": "./dist/catalog/inspector.js",
+      "types": "./dist/catalog/inspector.d.ts"
+    },
+    "./inspector-scan": {
+      "import": "./dist/catalog/inspector-scan.js",
+      "types": "./dist/catalog/inspector-scan.d.ts"
+    },
+    "./inspector2": {
+      "import": "./dist/catalog/inspector2.js",
+      "types": "./dist/catalog/inspector2.d.ts"
+    },
+    "./inspector2-telemetry": {
+      "import": "./dist/catalog/inspector2-telemetry.js",
+      "types": "./dist/catalog/inspector2-telemetry.d.ts"
+    },
+    "./interconnect": {
+      "import": "./dist/catalog/interconnect.js",
+      "types": "./dist/catalog/interconnect.d.ts"
+    },
+    "./internetmonitor": {
+      "import": "./dist/catalog/internetmonitor.js",
+      "types": "./dist/catalog/internetmonitor.d.ts"
+    },
+    "./invoicing": {
+      "import": "./dist/catalog/invoicing.js",
+      "types": "./dist/catalog/invoicing.d.ts"
+    },
+    "./iot": {
+      "import": "./dist/catalog/iot.js",
+      "types": "./dist/catalog/iot.d.ts"
+    },
+    "./iot-device-tester": {
+      "import": "./dist/catalog/iot-device-tester.js",
+      "types": "./dist/catalog/iot-device-tester.d.ts"
+    },
+    "./iotanalytics": {
+      "import": "./dist/catalog/iotanalytics.js",
+      "types": "./dist/catalog/iotanalytics.d.ts"
+    },
+    "./iotdeviceadvisor": {
+      "import": "./dist/catalog/iotdeviceadvisor.js",
+      "types": "./dist/catalog/iotdeviceadvisor.d.ts"
+    },
+    "./iotevents": {
+      "import": "./dist/catalog/iotevents.js",
+      "types": "./dist/catalog/iotevents.d.ts"
+    },
+    "./iotfleethub": {
+      "import": "./dist/catalog/iotfleethub.js",
+      "types": "./dist/catalog/iotfleethub.d.ts"
+    },
+    "./iotfleetwise": {
+      "import": "./dist/catalog/iotfleetwise.js",
+      "types": "./dist/catalog/iotfleetwise.d.ts"
+    },
+    "./iotjobsdata": {
+      "import": "./dist/catalog/iotjobsdata.js",
+      "types": "./dist/catalog/iotjobsdata.d.ts"
+    },
+    "./iotmanagedintegrations": {
+      "import": "./dist/catalog/iotmanagedintegrations.js",
+      "types": "./dist/catalog/iotmanagedintegrations.d.ts"
+    },
+    "./iotsitewise": {
+      "import": "./dist/catalog/iotsitewise.js",
+      "types": "./dist/catalog/iotsitewise.d.ts"
+    },
+    "./iottwinmaker": {
+      "import": "./dist/catalog/iottwinmaker.js",
+      "types": "./dist/catalog/iottwinmaker.d.ts"
+    },
+    "./iotwireless": {
+      "import": "./dist/catalog/iotwireless.js",
+      "types": "./dist/catalog/iotwireless.d.ts"
+    },
+    "./iq": {
+      "import": "./dist/catalog/iq.js",
+      "types": "./dist/catalog/iq.d.ts"
+    },
+    "./iq-permission": {
+      "import": "./dist/catalog/iq-permission.js",
+      "types": "./dist/catalog/iq-permission.d.ts"
+    },
+    "./ivs": {
+      "import": "./dist/catalog/ivs.js",
+      "types": "./dist/catalog/ivs.d.ts"
+    },
+    "./ivschat": {
+      "import": "./dist/catalog/ivschat.js",
+      "types": "./dist/catalog/ivschat.d.ts"
+    },
+    "./kafka": {
+      "import": "./dist/catalog/kafka.js",
+      "types": "./dist/catalog/kafka.d.ts"
+    },
+    "./kafka-cluster": {
+      "import": "./dist/catalog/kafka-cluster.js",
+      "types": "./dist/catalog/kafka-cluster.d.ts"
+    },
+    "./kafkaconnect": {
+      "import": "./dist/catalog/kafkaconnect.js",
+      "types": "./dist/catalog/kafkaconnect.d.ts"
+    },
+    "./kendra": {
+      "import": "./dist/catalog/kendra.js",
+      "types": "./dist/catalog/kendra.d.ts"
+    },
+    "./kendra-ranking": {
+      "import": "./dist/catalog/kendra-ranking.js",
+      "types": "./dist/catalog/kendra-ranking.d.ts"
+    },
+    "./kinesis": {
+      "import": "./dist/catalog/kinesis.js",
+      "types": "./dist/catalog/kinesis.d.ts"
+    },
+    "./kinesisanalytics": {
+      "import": "./dist/catalog/kinesisanalytics.js",
+      "types": "./dist/catalog/kinesisanalytics.d.ts"
+    },
+    "./kinesisvideo": {
+      "import": "./dist/catalog/kinesisvideo.js",
+      "types": "./dist/catalog/kinesisvideo.d.ts"
+    },
+    "./kms": {
+      "import": "./dist/catalog/kms.js",
+      "types": "./dist/catalog/kms.d.ts"
+    },
+    "./lakeformation": {
+      "import": "./dist/catalog/lakeformation.js",
+      "types": "./dist/catalog/lakeformation.d.ts"
+    },
+    "./lambda": {
+      "import": "./dist/catalog/lambda.js",
+      "types": "./dist/catalog/lambda.d.ts"
+    },
+    "./launchwizard": {
+      "import": "./dist/catalog/launchwizard.js",
+      "types": "./dist/catalog/launchwizard.d.ts"
+    },
+    "./lex": {
+      "import": "./dist/catalog/lex.js",
+      "types": "./dist/catalog/lex.d.ts"
+    },
+    "./license-manager": {
+      "import": "./dist/catalog/license-manager.js",
+      "types": "./dist/catalog/license-manager.d.ts"
+    },
+    "./license-manager-linux-subscriptions": {
+      "import": "./dist/catalog/license-manager-linux-subscriptions.js",
+      "types": "./dist/catalog/license-manager-linux-subscriptions.d.ts"
+    },
+    "./license-manager-user-subscriptions": {
+      "import": "./dist/catalog/license-manager-user-subscriptions.js",
+      "types": "./dist/catalog/license-manager-user-subscriptions.d.ts"
+    },
+    "./lightsail": {
+      "import": "./dist/catalog/lightsail.js",
+      "types": "./dist/catalog/lightsail.d.ts"
+    },
+    "./logs": {
+      "import": "./dist/catalog/logs.js",
+      "types": "./dist/catalog/logs.d.ts"
+    },
+    "./lookoutequipment": {
+      "import": "./dist/catalog/lookoutequipment.js",
+      "types": "./dist/catalog/lookoutequipment.d.ts"
+    },
+    "./lookoutmetrics": {
+      "import": "./dist/catalog/lookoutmetrics.js",
+      "types": "./dist/catalog/lookoutmetrics.d.ts"
+    },
+    "./lookoutvision": {
+      "import": "./dist/catalog/lookoutvision.js",
+      "types": "./dist/catalog/lookoutvision.d.ts"
+    },
+    "./m2": {
+      "import": "./dist/catalog/m2.js",
+      "types": "./dist/catalog/m2.d.ts"
+    },
+    "./machinelearning": {
+      "import": "./dist/catalog/machinelearning.js",
+      "types": "./dist/catalog/machinelearning.d.ts"
+    },
+    "./macie2": {
+      "import": "./dist/catalog/macie2.js",
+      "types": "./dist/catalog/macie2.d.ts"
+    },
+    "./managedblockchain": {
+      "import": "./dist/catalog/managedblockchain.js",
+      "types": "./dist/catalog/managedblockchain.d.ts"
+    },
+    "./managedblockchain-query": {
+      "import": "./dist/catalog/managedblockchain-query.js",
+      "types": "./dist/catalog/managedblockchain-query.d.ts"
+    },
+    "./mapcredits": {
+      "import": "./dist/catalog/mapcredits.js",
+      "types": "./dist/catalog/mapcredits.d.ts"
+    },
+    "./marketplacecommerceanalytics": {
+      "import": "./dist/catalog/marketplacecommerceanalytics.js",
+      "types": "./dist/catalog/marketplacecommerceanalytics.d.ts"
+    },
+    "./mechanicalturk": {
+      "import": "./dist/catalog/mechanicalturk.js",
+      "types": "./dist/catalog/mechanicalturk.d.ts"
+    },
+    "./mediaconnect": {
+      "import": "./dist/catalog/mediaconnect.js",
+      "types": "./dist/catalog/mediaconnect.d.ts"
+    },
+    "./mediaconvert": {
+      "import": "./dist/catalog/mediaconvert.js",
+      "types": "./dist/catalog/mediaconvert.d.ts"
+    },
+    "./mediaimport": {
+      "import": "./dist/catalog/mediaimport.js",
+      "types": "./dist/catalog/mediaimport.d.ts"
+    },
+    "./medialive": {
+      "import": "./dist/catalog/medialive.js",
+      "types": "./dist/catalog/medialive.d.ts"
+    },
+    "./mediapackage": {
+      "import": "./dist/catalog/mediapackage.js",
+      "types": "./dist/catalog/mediapackage.d.ts"
+    },
+    "./mediapackage-vod": {
+      "import": "./dist/catalog/mediapackage-vod.js",
+      "types": "./dist/catalog/mediapackage-vod.d.ts"
+    },
+    "./mediapackagev2": {
+      "import": "./dist/catalog/mediapackagev2.js",
+      "types": "./dist/catalog/mediapackagev2.d.ts"
+    },
+    "./mediastore": {
+      "import": "./dist/catalog/mediastore.js",
+      "types": "./dist/catalog/mediastore.d.ts"
+    },
+    "./mediatailor": {
+      "import": "./dist/catalog/mediatailor.js",
+      "types": "./dist/catalog/mediatailor.d.ts"
+    },
+    "./medical-imaging": {
+      "import": "./dist/catalog/medical-imaging.js",
+      "types": "./dist/catalog/medical-imaging.d.ts"
+    },
+    "./memorydb": {
+      "import": "./dist/catalog/memorydb.js",
+      "types": "./dist/catalog/memorydb.d.ts"
+    },
+    "./mgh": {
+      "import": "./dist/catalog/mgh.js",
+      "types": "./dist/catalog/mgh.d.ts"
+    },
+    "./mgn": {
+      "import": "./dist/catalog/mgn.js",
+      "types": "./dist/catalog/mgn.d.ts"
+    },
+    "./migrationhub-orchestrator": {
+      "import": "./dist/catalog/migrationhub-orchestrator.js",
+      "types": "./dist/catalog/migrationhub-orchestrator.d.ts"
+    },
+    "./migrationhub-strategy": {
+      "import": "./dist/catalog/migrationhub-strategy.js",
+      "types": "./dist/catalog/migrationhub-strategy.d.ts"
+    },
+    "./mobileanalytics": {
+      "import": "./dist/catalog/mobileanalytics.js",
+      "types": "./dist/catalog/mobileanalytics.d.ts"
+    },
+    "./mobiletargeting": {
+      "import": "./dist/catalog/mobiletargeting.js",
+      "types": "./dist/catalog/mobiletargeting.d.ts"
+    },
+    "./monitron": {
+      "import": "./dist/catalog/monitron.js",
+      "types": "./dist/catalog/monitron.d.ts"
+    },
+    "./mpa": {
+      "import": "./dist/catalog/mpa.js",
+      "types": "./dist/catalog/mpa.d.ts"
+    },
+    "./mq": {
+      "import": "./dist/catalog/mq.js",
+      "types": "./dist/catalog/mq.d.ts"
+    },
+    "./neptune-db": {
+      "import": "./dist/catalog/neptune-db.js",
+      "types": "./dist/catalog/neptune-db.d.ts"
+    },
+    "./neptune-graph": {
+      "import": "./dist/catalog/neptune-graph.js",
+      "types": "./dist/catalog/neptune-graph.d.ts"
+    },
+    "./network-firewall": {
+      "import": "./dist/catalog/network-firewall.js",
+      "types": "./dist/catalog/network-firewall.d.ts"
+    },
+    "./network-security-director": {
+      "import": "./dist/catalog/network-security-director.js",
+      "types": "./dist/catalog/network-security-director.d.ts"
+    },
+    "./networkflowmonitor": {
+      "import": "./dist/catalog/networkflowmonitor.js",
+      "types": "./dist/catalog/networkflowmonitor.d.ts"
+    },
+    "./networkmanager": {
+      "import": "./dist/catalog/networkmanager.js",
+      "types": "./dist/catalog/networkmanager.d.ts"
+    },
+    "./networkmanager-chat": {
+      "import": "./dist/catalog/networkmanager-chat.js",
+      "types": "./dist/catalog/networkmanager-chat.d.ts"
+    },
+    "./networkmonitor": {
+      "import": "./dist/catalog/networkmonitor.js",
+      "types": "./dist/catalog/networkmonitor.d.ts"
+    },
+    "./nimble": {
+      "import": "./dist/catalog/nimble.js",
+      "types": "./dist/catalog/nimble.d.ts"
+    },
+    "./notifications": {
+      "import": "./dist/catalog/notifications.js",
+      "types": "./dist/catalog/notifications.d.ts"
+    },
+    "./notifications-contacts": {
+      "import": "./dist/catalog/notifications-contacts.js",
+      "types": "./dist/catalog/notifications-contacts.d.ts"
+    },
+    "./nova-act": {
+      "import": "./dist/catalog/nova-act.js",
+      "types": "./dist/catalog/nova-act.d.ts"
+    },
+    "./oam": {
+      "import": "./dist/catalog/oam.js",
+      "types": "./dist/catalog/oam.d.ts"
+    },
+    "./observabilityadmin": {
+      "import": "./dist/catalog/observabilityadmin.js",
+      "types": "./dist/catalog/observabilityadmin.d.ts"
+    },
+    "./odb": {
+      "import": "./dist/catalog/odb.js",
+      "types": "./dist/catalog/odb.d.ts"
+    },
+    "./omics": {
+      "import": "./dist/catalog/omics.js",
+      "types": "./dist/catalog/omics.d.ts"
+    },
+    "./one": {
+      "import": "./dist/catalog/one.js",
+      "types": "./dist/catalog/one.d.ts"
+    },
+    "./opensearch": {
+      "import": "./dist/catalog/opensearch.js",
+      "types": "./dist/catalog/opensearch.d.ts"
+    },
+    "./opsworks": {
+      "import": "./dist/catalog/opsworks.js",
+      "types": "./dist/catalog/opsworks.d.ts"
+    },
+    "./opsworks-cm": {
+      "import": "./dist/catalog/opsworks-cm.js",
+      "types": "./dist/catalog/opsworks-cm.d.ts"
+    },
+    "./organizations": {
+      "import": "./dist/catalog/organizations.js",
+      "types": "./dist/catalog/organizations.d.ts"
+    },
+    "./osis": {
+      "import": "./dist/catalog/osis.js",
+      "types": "./dist/catalog/osis.d.ts"
+    },
+    "./outposts": {
+      "import": "./dist/catalog/outposts.js",
+      "types": "./dist/catalog/outposts.d.ts"
+    },
+    "./panorama": {
+      "import": "./dist/catalog/panorama.js",
+      "types": "./dist/catalog/panorama.d.ts"
+    },
+    "./partnercentral": {
+      "import": "./dist/catalog/partnercentral.js",
+      "types": "./dist/catalog/partnercentral.d.ts"
+    },
+    "./partnercentral-account-management": {
+      "import": "./dist/catalog/partnercentral-account-management.js",
+      "types": "./dist/catalog/partnercentral-account-management.d.ts"
+    },
+    "./payment-cryptography": {
+      "import": "./dist/catalog/payment-cryptography.js",
+      "types": "./dist/catalog/payment-cryptography.d.ts"
+    },
+    "./payments": {
+      "import": "./dist/catalog/payments.js",
+      "types": "./dist/catalog/payments.d.ts"
+    },
+    "./pca-connector-ad": {
+      "import": "./dist/catalog/pca-connector-ad.js",
+      "types": "./dist/catalog/pca-connector-ad.d.ts"
+    },
+    "./pca-connector-scep": {
+      "import": "./dist/catalog/pca-connector-scep.js",
+      "types": "./dist/catalog/pca-connector-scep.d.ts"
+    },
+    "./pcs": {
+      "import": "./dist/catalog/pcs.js",
+      "types": "./dist/catalog/pcs.d.ts"
+    },
+    "./personalize": {
+      "import": "./dist/catalog/personalize.js",
+      "types": "./dist/catalog/personalize.d.ts"
+    },
+    "./pi": {
+      "import": "./dist/catalog/pi.js",
+      "types": "./dist/catalog/pi.d.ts"
+    },
+    "./pipes": {
+      "import": "./dist/catalog/pipes.js",
+      "types": "./dist/catalog/pipes.d.ts"
+    },
+    "./polly": {
+      "import": "./dist/catalog/polly.js",
+      "types": "./dist/catalog/polly.d.ts"
+    },
+    "./pricing": {
+      "import": "./dist/catalog/pricing.js",
+      "types": "./dist/catalog/pricing.d.ts"
+    },
+    "./pricingplanmanager": {
+      "import": "./dist/catalog/pricingplanmanager.js",
+      "types": "./dist/catalog/pricingplanmanager.d.ts"
+    },
+    "./private-networks": {
+      "import": "./dist/catalog/private-networks.js",
+      "types": "./dist/catalog/private-networks.d.ts"
+    },
+    "./profile": {
+      "import": "./dist/catalog/profile.js",
+      "types": "./dist/catalog/profile.d.ts"
+    },
+    "./proton": {
+      "import": "./dist/catalog/proton.js",
+      "types": "./dist/catalog/proton.d.ts"
+    },
+    "./purchase-orders": {
+      "import": "./dist/catalog/purchase-orders.js",
+      "types": "./dist/catalog/purchase-orders.d.ts"
+    },
+    "./q": {
+      "import": "./dist/catalog/q.js",
+      "types": "./dist/catalog/q.d.ts"
+    },
+    "./qapps": {
+      "import": "./dist/catalog/qapps.js",
+      "types": "./dist/catalog/qapps.d.ts"
+    },
+    "./qbusiness": {
+      "import": "./dist/catalog/qbusiness.js",
+      "types": "./dist/catalog/qbusiness.d.ts"
+    },
+    "./qdeveloper": {
+      "import": "./dist/catalog/qdeveloper.js",
+      "types": "./dist/catalog/qdeveloper.d.ts"
+    },
+    "./qldb": {
+      "import": "./dist/catalog/qldb.js",
+      "types": "./dist/catalog/qldb.d.ts"
+    },
+    "./quicksight": {
+      "import": "./dist/catalog/quicksight.js",
+      "types": "./dist/catalog/quicksight.d.ts"
+    },
+    "./ram": {
+      "import": "./dist/catalog/ram.js",
+      "types": "./dist/catalog/ram.d.ts"
+    },
+    "./rbin": {
+      "import": "./dist/catalog/rbin.js",
+      "types": "./dist/catalog/rbin.d.ts"
+    },
+    "./rds": {
+      "import": "./dist/catalog/rds.js",
+      "types": "./dist/catalog/rds.d.ts"
+    },
+    "./rds-data": {
+      "import": "./dist/catalog/rds-data.js",
+      "types": "./dist/catalog/rds-data.d.ts"
+    },
+    "./rds-db": {
+      "import": "./dist/catalog/rds-db.js",
+      "types": "./dist/catalog/rds-db.d.ts"
+    },
+    "./redshift": {
+      "import": "./dist/catalog/redshift.js",
+      "types": "./dist/catalog/redshift.d.ts"
+    },
+    "./redshift-data": {
+      "import": "./dist/catalog/redshift-data.js",
+      "types": "./dist/catalog/redshift-data.d.ts"
+    },
+    "./redshift-serverless": {
+      "import": "./dist/catalog/redshift-serverless.js",
+      "types": "./dist/catalog/redshift-serverless.d.ts"
+    },
+    "./refactor-spaces": {
+      "import": "./dist/catalog/refactor-spaces.js",
+      "types": "./dist/catalog/refactor-spaces.d.ts"
+    },
+    "./rekognition": {
+      "import": "./dist/catalog/rekognition.js",
+      "types": "./dist/catalog/rekognition.d.ts"
+    },
+    "./repostspace": {
+      "import": "./dist/catalog/repostspace.js",
+      "types": "./dist/catalog/repostspace.d.ts"
+    },
+    "./researchstudio": {
+      "import": "./dist/catalog/researchstudio.js",
+      "types": "./dist/catalog/researchstudio.d.ts"
+    },
+    "./resiliencehub": {
+      "import": "./dist/catalog/resiliencehub.js",
+      "types": "./dist/catalog/resiliencehub.d.ts"
+    },
+    "./resource-explorer": {
+      "import": "./dist/catalog/resource-explorer.js",
+      "types": "./dist/catalog/resource-explorer.d.ts"
+    },
+    "./resource-explorer-2": {
+      "import": "./dist/catalog/resource-explorer-2.js",
+      "types": "./dist/catalog/resource-explorer-2.d.ts"
+    },
+    "./resource-groups": {
+      "import": "./dist/catalog/resource-groups.js",
+      "types": "./dist/catalog/resource-groups.d.ts"
+    },
+    "./rhelkb": {
+      "import": "./dist/catalog/rhelkb.js",
+      "types": "./dist/catalog/rhelkb.d.ts"
+    },
+    "./robomaker": {
+      "import": "./dist/catalog/robomaker.js",
+      "types": "./dist/catalog/robomaker.d.ts"
+    },
+    "./rolesanywhere": {
+      "import": "./dist/catalog/rolesanywhere.js",
+      "types": "./dist/catalog/rolesanywhere.d.ts"
+    },
+    "./route53": {
+      "import": "./dist/catalog/route53.js",
+      "types": "./dist/catalog/route53.d.ts"
+    },
+    "./route53-recovery-cluster": {
+      "import": "./dist/catalog/route53-recovery-cluster.js",
+      "types": "./dist/catalog/route53-recovery-cluster.d.ts"
+    },
+    "./route53-recovery-control-config": {
+      "import": "./dist/catalog/route53-recovery-control-config.js",
+      "types": "./dist/catalog/route53-recovery-control-config.d.ts"
+    },
+    "./route53-recovery-readiness": {
+      "import": "./dist/catalog/route53-recovery-readiness.js",
+      "types": "./dist/catalog/route53-recovery-readiness.d.ts"
+    },
+    "./route53domains": {
+      "import": "./dist/catalog/route53domains.js",
+      "types": "./dist/catalog/route53domains.d.ts"
+    },
+    "./route53globalresolver": {
+      "import": "./dist/catalog/route53globalresolver.js",
+      "types": "./dist/catalog/route53globalresolver.d.ts"
+    },
+    "./route53profiles": {
+      "import": "./dist/catalog/route53profiles.js",
+      "types": "./dist/catalog/route53profiles.d.ts"
+    },
+    "./route53resolver": {
+      "import": "./dist/catalog/route53resolver.js",
+      "types": "./dist/catalog/route53resolver.d.ts"
+    },
+    "./rtbfabric": {
+      "import": "./dist/catalog/rtbfabric.js",
+      "types": "./dist/catalog/rtbfabric.d.ts"
+    },
+    "./rum": {
+      "import": "./dist/catalog/rum.js",
+      "types": "./dist/catalog/rum.d.ts"
+    },
+    "./s3": {
+      "import": "./dist/catalog/s3.js",
+      "types": "./dist/catalog/s3.d.ts"
+    },
+    "./s3-object-lambda": {
+      "import": "./dist/catalog/s3-object-lambda.js",
+      "types": "./dist/catalog/s3-object-lambda.d.ts"
+    },
+    "./s3-outposts": {
+      "import": "./dist/catalog/s3-outposts.js",
+      "types": "./dist/catalog/s3-outposts.d.ts"
+    },
+    "./s3express": {
+      "import": "./dist/catalog/s3express.js",
+      "types": "./dist/catalog/s3express.d.ts"
+    },
+    "./s3files": {
+      "import": "./dist/catalog/s3files.js",
+      "types": "./dist/catalog/s3files.d.ts"
+    },
+    "./s3tables": {
+      "import": "./dist/catalog/s3tables.js",
+      "types": "./dist/catalog/s3tables.d.ts"
+    },
+    "./s3vectors": {
+      "import": "./dist/catalog/s3vectors.js",
+      "types": "./dist/catalog/s3vectors.d.ts"
+    },
+    "./sagemaker": {
+      "import": "./dist/catalog/sagemaker.js",
+      "types": "./dist/catalog/sagemaker.d.ts"
+    },
+    "./sagemaker-data-science-assistant": {
+      "import": "./dist/catalog/sagemaker-data-science-assistant.js",
+      "types": "./dist/catalog/sagemaker-data-science-assistant.d.ts"
+    },
+    "./sagemaker-geospatial": {
+      "import": "./dist/catalog/sagemaker-geospatial.js",
+      "types": "./dist/catalog/sagemaker-geospatial.d.ts"
+    },
+    "./sagemaker-mlflow": {
+      "import": "./dist/catalog/sagemaker-mlflow.js",
+      "types": "./dist/catalog/sagemaker-mlflow.d.ts"
+    },
+    "./sagemaker-unified-studio-mcp": {
+      "import": "./dist/catalog/sagemaker-unified-studio-mcp.js",
+      "types": "./dist/catalog/sagemaker-unified-studio-mcp.d.ts"
+    },
+    "./savingsplans": {
+      "import": "./dist/catalog/savingsplans.js",
+      "types": "./dist/catalog/savingsplans.d.ts"
+    },
+    "./scheduler": {
+      "import": "./dist/catalog/scheduler.js",
+      "types": "./dist/catalog/scheduler.d.ts"
+    },
+    "./schemas": {
+      "import": "./dist/catalog/schemas.js",
+      "types": "./dist/catalog/schemas.d.ts"
+    },
+    "./scn": {
+      "import": "./dist/catalog/scn.js",
+      "types": "./dist/catalog/scn.d.ts"
+    },
+    "./sdb": {
+      "import": "./dist/catalog/sdb.js",
+      "types": "./dist/catalog/sdb.d.ts"
+    },
+    "./secretsmanager": {
+      "import": "./dist/catalog/secretsmanager.js",
+      "types": "./dist/catalog/secretsmanager.d.ts"
+    },
+    "./security-ir": {
+      "import": "./dist/catalog/security-ir.js",
+      "types": "./dist/catalog/security-ir.d.ts"
+    },
+    "./securityagent": {
+      "import": "./dist/catalog/securityagent.js",
+      "types": "./dist/catalog/securityagent.d.ts"
+    },
+    "./securityhub": {
+      "import": "./dist/catalog/securityhub.js",
+      "types": "./dist/catalog/securityhub.d.ts"
+    },
+    "./securitylake": {
+      "import": "./dist/catalog/securitylake.js",
+      "types": "./dist/catalog/securitylake.d.ts"
+    },
+    "./serverlessrepo": {
+      "import": "./dist/catalog/serverlessrepo.js",
+      "types": "./dist/catalog/serverlessrepo.d.ts"
+    },
+    "./servicecatalog": {
+      "import": "./dist/catalog/servicecatalog.js",
+      "types": "./dist/catalog/servicecatalog.d.ts"
+    },
+    "./servicediscovery": {
+      "import": "./dist/catalog/servicediscovery.js",
+      "types": "./dist/catalog/servicediscovery.d.ts"
+    },
+    "./serviceextract": {
+      "import": "./dist/catalog/serviceextract.js",
+      "types": "./dist/catalog/serviceextract.d.ts"
+    },
+    "./servicequotas": {
+      "import": "./dist/catalog/servicequotas.js",
+      "types": "./dist/catalog/servicequotas.d.ts"
+    },
+    "./ses": {
+      "import": "./dist/catalog/ses.js",
+      "types": "./dist/catalog/ses.d.ts"
+    },
+    "./shield": {
+      "import": "./dist/catalog/shield.js",
+      "types": "./dist/catalog/shield.d.ts"
+    },
+    "./signer": {
+      "import": "./dist/catalog/signer.js",
+      "types": "./dist/catalog/signer.d.ts"
+    },
+    "./signin": {
+      "import": "./dist/catalog/signin.js",
+      "types": "./dist/catalog/signin.d.ts"
+    },
+    "./simspaceweaver": {
+      "import": "./dist/catalog/simspaceweaver.js",
+      "types": "./dist/catalog/simspaceweaver.d.ts"
+    },
+    "./sms": {
+      "import": "./dist/catalog/sms.js",
+      "types": "./dist/catalog/sms.d.ts"
+    },
+    "./sms-voice": {
+      "import": "./dist/catalog/sms-voice.js",
+      "types": "./dist/catalog/sms-voice.d.ts"
+    },
+    "./snow-device-management": {
+      "import": "./dist/catalog/snow-device-management.js",
+      "types": "./dist/catalog/snow-device-management.d.ts"
+    },
+    "./snowball": {
+      "import": "./dist/catalog/snowball.js",
+      "types": "./dist/catalog/snowball.d.ts"
+    },
+    "./sns": {
+      "import": "./dist/catalog/sns.js",
+      "types": "./dist/catalog/sns.d.ts"
+    },
+    "./social-messaging": {
+      "import": "./dist/catalog/social-messaging.js",
+      "types": "./dist/catalog/social-messaging.d.ts"
+    },
+    "./sqlworkbench": {
+      "import": "./dist/catalog/sqlworkbench.js",
+      "types": "./dist/catalog/sqlworkbench.d.ts"
+    },
+    "./sqs": {
+      "import": "./dist/catalog/sqs.js",
+      "types": "./dist/catalog/sqs.d.ts"
+    },
+    "./ssm": {
+      "import": "./dist/catalog/ssm.js",
+      "types": "./dist/catalog/ssm.d.ts"
+    },
+    "./ssm-contacts": {
+      "import": "./dist/catalog/ssm-contacts.js",
+      "types": "./dist/catalog/ssm-contacts.d.ts"
+    },
+    "./ssm-guiconnect": {
+      "import": "./dist/catalog/ssm-guiconnect.js",
+      "types": "./dist/catalog/ssm-guiconnect.d.ts"
+    },
+    "./ssm-incidents": {
+      "import": "./dist/catalog/ssm-incidents.js",
+      "types": "./dist/catalog/ssm-incidents.d.ts"
+    },
+    "./ssm-quicksetup": {
+      "import": "./dist/catalog/ssm-quicksetup.js",
+      "types": "./dist/catalog/ssm-quicksetup.d.ts"
+    },
+    "./ssm-sap": {
+      "import": "./dist/catalog/ssm-sap.js",
+      "types": "./dist/catalog/ssm-sap.d.ts"
+    },
+    "./ssmmessages": {
+      "import": "./dist/catalog/ssmmessages.js",
+      "types": "./dist/catalog/ssmmessages.d.ts"
+    },
+    "./sso": {
+      "import": "./dist/catalog/sso.js",
+      "types": "./dist/catalog/sso.d.ts"
+    },
+    "./sso-directory": {
+      "import": "./dist/catalog/sso-directory.js",
+      "types": "./dist/catalog/sso-directory.d.ts"
+    },
+    "./sso-oauth": {
+      "import": "./dist/catalog/sso-oauth.js",
+      "types": "./dist/catalog/sso-oauth.d.ts"
+    },
+    "./states": {
+      "import": "./dist/catalog/states.js",
+      "types": "./dist/catalog/states.d.ts"
+    },
+    "./storagegateway": {
+      "import": "./dist/catalog/storagegateway.js",
+      "types": "./dist/catalog/storagegateway.d.ts"
+    },
+    "./sts": {
+      "import": "./dist/catalog/sts.js",
+      "types": "./dist/catalog/sts.d.ts"
+    },
+    "./support": {
+      "import": "./dist/catalog/support.js",
+      "types": "./dist/catalog/support.d.ts"
+    },
+    "./support-console": {
+      "import": "./dist/catalog/support-console.js",
+      "types": "./dist/catalog/support-console.d.ts"
+    },
+    "./supportapp": {
+      "import": "./dist/catalog/supportapp.js",
+      "types": "./dist/catalog/supportapp.d.ts"
+    },
+    "./supportplans": {
+      "import": "./dist/catalog/supportplans.js",
+      "types": "./dist/catalog/supportplans.d.ts"
+    },
+    "./sustainability": {
+      "import": "./dist/catalog/sustainability.js",
+      "types": "./dist/catalog/sustainability.d.ts"
+    },
+    "./swf": {
+      "import": "./dist/catalog/swf.js",
+      "types": "./dist/catalog/swf.d.ts"
+    },
+    "./synthetics": {
+      "import": "./dist/catalog/synthetics.js",
+      "types": "./dist/catalog/synthetics.d.ts"
+    },
+    "./tag": {
+      "import": "./dist/catalog/tag.js",
+      "types": "./dist/catalog/tag.d.ts"
+    },
+    "./tax": {
+      "import": "./dist/catalog/tax.js",
+      "types": "./dist/catalog/tax.d.ts"
+    },
+    "./textract": {
+      "import": "./dist/catalog/textract.js",
+      "types": "./dist/catalog/textract.d.ts"
+    },
+    "./thinclient": {
+      "import": "./dist/catalog/thinclient.js",
+      "types": "./dist/catalog/thinclient.d.ts"
+    },
+    "./timestream": {
+      "import": "./dist/catalog/timestream.js",
+      "types": "./dist/catalog/timestream.d.ts"
+    },
+    "./timestream-influxdb": {
+      "import": "./dist/catalog/timestream-influxdb.js",
+      "types": "./dist/catalog/timestream-influxdb.d.ts"
+    },
+    "./tiros": {
+      "import": "./dist/catalog/tiros.js",
+      "types": "./dist/catalog/tiros.d.ts"
+    },
+    "./tnb": {
+      "import": "./dist/catalog/tnb.js",
+      "types": "./dist/catalog/tnb.d.ts"
+    },
+    "./transcribe": {
+      "import": "./dist/catalog/transcribe.js",
+      "types": "./dist/catalog/transcribe.d.ts"
+    },
+    "./transfer": {
+      "import": "./dist/catalog/transfer.js",
+      "types": "./dist/catalog/transfer.d.ts"
+    },
+    "./transform": {
+      "import": "./dist/catalog/transform.js",
+      "types": "./dist/catalog/transform.d.ts"
+    },
+    "./transform-custom": {
+      "import": "./dist/catalog/transform-custom.js",
+      "types": "./dist/catalog/transform-custom.d.ts"
+    },
+    "./translate": {
+      "import": "./dist/catalog/translate.js",
+      "types": "./dist/catalog/translate.d.ts"
+    },
+    "./trustedadvisor": {
+      "import": "./dist/catalog/trustedadvisor.js",
+      "types": "./dist/catalog/trustedadvisor.d.ts"
+    },
+    "./ts": {
+      "import": "./dist/catalog/ts.js",
+      "types": "./dist/catalog/ts.d.ts"
+    },
+    "./user-subscriptions": {
+      "import": "./dist/catalog/user-subscriptions.js",
+      "types": "./dist/catalog/user-subscriptions.d.ts"
+    },
+    "./uxc": {
+      "import": "./dist/catalog/uxc.js",
+      "types": "./dist/catalog/uxc.d.ts"
+    },
+    "./vendor-insights": {
+      "import": "./dist/catalog/vendor-insights.js",
+      "types": "./dist/catalog/vendor-insights.d.ts"
+    },
+    "./verified-access": {
+      "import": "./dist/catalog/verified-access.js",
+      "types": "./dist/catalog/verified-access.d.ts"
+    },
+    "./verifiedpermissions": {
+      "import": "./dist/catalog/verifiedpermissions.js",
+      "types": "./dist/catalog/verifiedpermissions.d.ts"
+    },
+    "./voiceid": {
+      "import": "./dist/catalog/voiceid.js",
+      "types": "./dist/catalog/voiceid.d.ts"
+    },
+    "./vpc-lattice": {
+      "import": "./dist/catalog/vpc-lattice.js",
+      "types": "./dist/catalog/vpc-lattice.d.ts"
+    },
+    "./vpc-lattice-svcs": {
+      "import": "./dist/catalog/vpc-lattice-svcs.js",
+      "types": "./dist/catalog/vpc-lattice-svcs.d.ts"
+    },
+    "./vpce": {
+      "import": "./dist/catalog/vpce.js",
+      "types": "./dist/catalog/vpce.d.ts"
+    },
+    "./waf": {
+      "import": "./dist/catalog/waf.js",
+      "types": "./dist/catalog/waf.d.ts"
+    },
+    "./waf-regional": {
+      "import": "./dist/catalog/waf-regional.js",
+      "types": "./dist/catalog/waf-regional.d.ts"
+    },
+    "./wafv2": {
+      "import": "./dist/catalog/wafv2.js",
+      "types": "./dist/catalog/wafv2.d.ts"
+    },
+    "./wam": {
+      "import": "./dist/catalog/wam.js",
+      "types": "./dist/catalog/wam.d.ts"
+    },
+    "./wellarchitected": {
+      "import": "./dist/catalog/wellarchitected.js",
+      "types": "./dist/catalog/wellarchitected.d.ts"
+    },
+    "./wickr": {
+      "import": "./dist/catalog/wickr.js",
+      "types": "./dist/catalog/wickr.d.ts"
+    },
+    "./wisdom": {
+      "import": "./dist/catalog/wisdom.js",
+      "types": "./dist/catalog/wisdom.d.ts"
+    },
+    "./workdocs": {
+      "import": "./dist/catalog/workdocs.js",
+      "types": "./dist/catalog/workdocs.d.ts"
+    },
+    "./worklink": {
+      "import": "./dist/catalog/worklink.js",
+      "types": "./dist/catalog/worklink.d.ts"
+    },
+    "./workmail": {
+      "import": "./dist/catalog/workmail.js",
+      "types": "./dist/catalog/workmail.d.ts"
+    },
+    "./workmailmessageflow": {
+      "import": "./dist/catalog/workmailmessageflow.js",
+      "types": "./dist/catalog/workmailmessageflow.d.ts"
+    },
+    "./workspaces": {
+      "import": "./dist/catalog/workspaces.js",
+      "types": "./dist/catalog/workspaces.d.ts"
+    },
+    "./workspaces-instances": {
+      "import": "./dist/catalog/workspaces-instances.js",
+      "types": "./dist/catalog/workspaces-instances.d.ts"
+    },
+    "./workspaces-web": {
+      "import": "./dist/catalog/workspaces-web.js",
+      "types": "./dist/catalog/workspaces-web.d.ts"
+    },
+    "./xray": {
+      "import": "./dist/catalog/xray.js",
+      "types": "./dist/catalog/xray.d.ts"
     }
   },
   "files": [
@@ -47,5 +1847,6 @@
   "devDependencies": {
     "@types/node": "^25.7.0",
     "typescript": "^6.0.3"
-  }
+  },
+  "sideEffects": false
 }

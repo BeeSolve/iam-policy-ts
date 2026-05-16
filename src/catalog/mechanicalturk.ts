@@ -1,0 +1,47 @@
+export const mechanicalturkActions = [
+  "AcceptQualificationRequest",
+  "ApproveAssignment",
+  "AssociateQualificationWithWorker",
+  "CreateAdditionalAssignmentsForHIT",
+  "CreateHIT",
+  "CreateHITType",
+  "CreateHITWithHITType",
+  "CreateQualificationType",
+  "CreateWorkerBlock",
+  "DeleteHIT",
+  "DeleteQualificationType",
+  "DeleteWorkerBlock",
+  "DisassociateQualificationFromWorker",
+  "GetAccountBalance",
+  "GetAssignment",
+  "GetFileUploadURL",
+  "GetHIT",
+  "GetQualificationScore",
+  "GetQualificationType",
+  "ListAssignmentsForHIT",
+  "ListBonusPayments",
+  "ListHITs",
+  "ListHITsForQualificationType",
+  "ListQualificationRequests",
+  "ListQualificationTypes",
+  "ListReviewableHITs",
+  "ListReviewPolicyResultsForHIT",
+  "ListWorkerBlocks",
+  "ListWorkersWithQualificationType",
+  "NotifyWorkers",
+  "RejectAssignment",
+  "RejectQualificationRequest",
+  "SendBonus",
+  "SendTestEventNotification",
+  "UpdateExpirationForHIT",
+  "UpdateHITReviewStatus",
+  "UpdateHITTypeOfHIT",
+  "UpdateNotificationSettings",
+  "UpdateQualificationType",
+] as const;
+
+export type MechanicalturkAction = (typeof mechanicalturkActions)[number];
+
+export function mechanicalturk(action: MechanicalturkAction | "*"): `mechanicalturk:${MechanicalturkAction | "*"}` {
+  return `mechanicalturk:${action}` as `mechanicalturk:${MechanicalturkAction | "*"}`;
+}

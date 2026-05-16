@@ -1,0 +1,46 @@
+export const evidentlyActions = [
+  "BatchEvaluateFeature",
+  "CreateExperiment",
+  "CreateFeature",
+  "CreateLaunch",
+  "CreateProject",
+  "CreateSegment",
+  "DeleteExperiment",
+  "DeleteFeature",
+  "DeleteLaunch",
+  "DeleteProject",
+  "DeleteSegment",
+  "EvaluateFeature",
+  "GetExperiment",
+  "GetExperimentResults",
+  "GetFeature",
+  "GetLaunch",
+  "GetProject",
+  "GetSegment",
+  "ListExperiments",
+  "ListFeatures",
+  "ListLaunches",
+  "ListProjects",
+  "ListSegmentReferences",
+  "ListSegments",
+  "ListTagsForResource",
+  "PutProjectEvents",
+  "StartExperiment",
+  "StartLaunch",
+  "StopExperiment",
+  "StopLaunch",
+  "TagResource",
+  "TestSegmentPattern",
+  "UntagResource",
+  "UpdateExperiment",
+  "UpdateFeature",
+  "UpdateLaunch",
+  "UpdateProject",
+  "UpdateProjectDataDelivery",
+] as const;
+
+export type EvidentlyAction = (typeof evidentlyActions)[number];
+
+export function evidently(action: EvidentlyAction | "*"): `evidently:${EvidentlyAction | "*"}` {
+  return `evidently:${action}` as `evidently:${EvidentlyAction | "*"}`;
+}

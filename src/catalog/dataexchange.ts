@@ -1,0 +1,48 @@
+export const dataexchangeActions = [
+  "AcceptDataGrant",
+  "CancelJob",
+  "CreateAsset",
+  "CreateDataGrant",
+  "CreateDataSet",
+  "CreateEventAction",
+  "CreateJob",
+  "CreateRevision",
+  "DeleteAsset",
+  "DeleteDataGrant",
+  "DeleteDataSet",
+  "DeleteEventAction",
+  "DeleteRevision",
+  "GetAsset",
+  "GetDataGrant",
+  "GetDataSet",
+  "GetEventAction",
+  "GetJob",
+  "GetReceivedDataGrant",
+  "GetRevision",
+  "ListDataGrants",
+  "ListDataSetRevisions",
+  "ListDataSets",
+  "ListEventActions",
+  "ListJobs",
+  "ListReceivedDataGrants",
+  "ListRevisionAssets",
+  "ListTagsForResource",
+  "PublishDataSet",
+  "PublishToDataGrant",
+  "RevokeRevision",
+  "SendApiAsset",
+  "SendDataSetNotification",
+  "StartJob",
+  "TagResource",
+  "UntagResource",
+  "UpdateAsset",
+  "UpdateDataSet",
+  "UpdateEventAction",
+  "UpdateRevision",
+] as const;
+
+export type DataexchangeAction = (typeof dataexchangeActions)[number];
+
+export function dataexchange(action: DataexchangeAction | "*"): `dataexchange:${DataexchangeAction | "*"}` {
+  return `dataexchange:${action}` as `dataexchange:${DataexchangeAction | "*"}`;
+}

@@ -1,0 +1,46 @@
+export const elasticfilesystemActions = [
+  "Backup",
+  "ClientMount",
+  "ClientRootAccess",
+  "ClientWrite",
+  "CreateAccessPoint",
+  "CreateFileSystem",
+  "CreateMountTarget",
+  "CreateReplicationConfiguration",
+  "CreateTags",
+  "DeleteAccessPoint",
+  "DeleteFileSystem",
+  "DeleteFileSystemPolicy",
+  "DeleteMountTarget",
+  "DeleteReplicationConfiguration",
+  "DeleteTags",
+  "DescribeAccessPoints",
+  "DescribeAccountPreferences",
+  "DescribeBackupPolicy",
+  "DescribeFileSystemPolicy",
+  "DescribeFileSystems",
+  "DescribeLifecycleConfiguration",
+  "DescribeMountTargets",
+  "DescribeMountTargetSecurityGroups",
+  "DescribeReplicationConfigurations",
+  "DescribeTags",
+  "ListTagsForResource",
+  "ModifyMountTargetSecurityGroups",
+  "PutAccountPreferences",
+  "PutBackupPolicy",
+  "PutFileSystemPolicy",
+  "PutLifecycleConfiguration",
+  "ReplicationRead",
+  "ReplicationWrite",
+  "Restore",
+  "TagResource",
+  "UntagResource",
+  "UpdateFileSystem",
+  "UpdateFileSystemProtection",
+] as const;
+
+export type ElasticfilesystemAction = (typeof elasticfilesystemActions)[number];
+
+export function elasticfilesystem(action: ElasticfilesystemAction | "*"): `elasticfilesystem:${ElasticfilesystemAction | "*"}` {
+  return `elasticfilesystem:${action}` as `elasticfilesystem:${ElasticfilesystemAction | "*"}`;
+}

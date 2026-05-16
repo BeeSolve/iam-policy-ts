@@ -1,0 +1,48 @@
+export const groundstationActions = [
+  "CancelContact",
+  "CreateConfig",
+  "CreateDataflowEndpointGroup",
+  "CreateDataflowEndpointGroupV2",
+  "CreateEphemeris",
+  "CreateMissionProfile",
+  "DeleteConfig",
+  "DeleteDataflowEndpointGroup",
+  "DeleteEphemeris",
+  "DeleteMissionProfile",
+  "DescribeContact",
+  "DescribeContactVersion",
+  "DescribeEphemeris",
+  "GetAgentConfiguration",
+  "GetAgentTaskResponseUrl",
+  "GetConfig",
+  "GetDataflowEndpointGroup",
+  "GetMinuteUsage",
+  "GetMissionProfile",
+  "GetSatellite",
+  "ListAntennas",
+  "ListConfigs",
+  "ListContacts",
+  "ListContactVersions",
+  "ListDataflowEndpointGroups",
+  "ListEphemerides",
+  "ListGroundStationReservations",
+  "ListGroundStations",
+  "ListMissionProfiles",
+  "ListSatellites",
+  "ListTagsForResource",
+  "RegisterAgent",
+  "ReserveContact",
+  "TagResource",
+  "UntagResource",
+  "UpdateAgentStatus",
+  "UpdateConfig",
+  "UpdateContact",
+  "UpdateEphemeris",
+  "UpdateMissionProfile",
+] as const;
+
+export type GroundstationAction = (typeof groundstationActions)[number];
+
+export function groundstation(action: GroundstationAction | "*"): `groundstation:${GroundstationAction | "*"}` {
+  return `groundstation:${action}` as `groundstation:${GroundstationAction | "*"}`;
+}

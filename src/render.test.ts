@@ -3,7 +3,7 @@ import test from "node:test";
 import { policyToTypescript } from "./render.js";
 import type { IamPolicyDocument } from "./schema.js";
 
-test("policyToTypescript renders known actions with iam helpers", () => {
+test("policyToTypescript renders known actions with per-service functions", () => {
   const policy: IamPolicyDocument = {
     Version: "2012-10-17",
     Statement: [
@@ -16,8 +16,8 @@ test("policyToTypescript renders known actions with iam helpers", () => {
   };
 
   const result = policyToTypescript(policy);
-  assert.ok(result.includes('iam.s3("GetObject")'));
-  assert.ok(result.includes('iam.s3("ListBucket")'));
+  assert.ok(result.includes('s3("GetObject")'));
+  assert.ok(result.includes('s3("ListBucket")'));
   assert.ok(result.includes('"2012-10-17"'));
   assert.ok(result.includes('"Allow"'));
   assert.ok(result.includes('"*"'));
@@ -39,7 +39,7 @@ test("policyToTypescript renders unknown actions as plain strings", () => {
   assert.ok(!result.includes("iam.custom"));
 });
 
-test("policyToTypescript renders hyphenated service with bracket notation", () => {
+test("policyToTypescript renders hyphenated service with camelCase function", () => {
   const policy: IamPolicyDocument = {
     Statement: [
       {
@@ -51,10 +51,10 @@ test("policyToTypescript renders hyphenated service with bracket notation", () =
   };
 
   const result = policyToTypescript(policy);
-  assert.ok(result.includes('iam["access-analyzer"]("ListAnalyzers")'));
+  assert.ok(result.includes('accessAnalyzer("ListAnalyzers")'));
 });
 
-test("policyToTypescript renders NotAction with iam helpers", () => {
+test("policyToTypescript renders NotAction with per-service functions", () => {
   const policy: IamPolicyDocument = {
     Statement: [
       {
@@ -66,7 +66,7 @@ test("policyToTypescript renders NotAction with iam helpers", () => {
   };
 
   const result = policyToTypescript(policy);
-  assert.ok(result.includes('iam.s3("GetObject")'));
+  assert.ok(result.includes('s3("GetObject")'));
 });
 
 test("policyToTypescript renders Condition block", () => {
@@ -125,7 +125,7 @@ test("policyToTypescript handles actions without colon as plain strings", () => 
   assert.ok(result.includes('"noColonAction"'));
 });
 
-test("policyToTypescript renders wildcard action with iam helper", () => {
+test("policyToTypescript renders wildcard action with per-service function", () => {
   const policy: IamPolicyDocument = {
     Statement: [
       {
@@ -137,7 +137,7 @@ test("policyToTypescript renders wildcard action with iam helper", () => {
   };
 
   const result = policyToTypescript(policy);
-  assert.ok(result.includes('iam.s3("*")'));
+  assert.ok(result.includes('s3("*")'));
 });
 
 test("policyToTypescript renders unknown service wildcard as plain string", () => {

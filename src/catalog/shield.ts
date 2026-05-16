@@ -1,0 +1,47 @@
+export const shieldActions = [
+  "AssociateDRTLogBucket",
+  "AssociateDRTRole",
+  "AssociateHealthCheck",
+  "AssociateProactiveEngagementDetails",
+  "CreateProtection",
+  "CreateProtectionGroup",
+  "CreateSubscription",
+  "DeleteProtection",
+  "DeleteProtectionGroup",
+  "DeleteSubscription",
+  "DescribeAttack",
+  "DescribeAttackContributors",
+  "DescribeAttackStatistics",
+  "DescribeDRTAccess",
+  "DescribeEmergencyContactSettings",
+  "DescribeProtection",
+  "DescribeProtectionGroup",
+  "DescribeSubscription",
+  "DisableApplicationLayerAutomaticResponse",
+  "DisableProactiveEngagement",
+  "DisassociateDRTLogBucket",
+  "DisassociateDRTRole",
+  "DisassociateHealthCheck",
+  "EnableApplicationLayerAutomaticResponse",
+  "EnableProactiveEngagement",
+  "GetGlobalThreatData",
+  "GetSubscriptionState",
+  "ListAttacks",
+  "ListMitigations",
+  "ListProtectionGroups",
+  "ListProtections",
+  "ListResourcesInProtectionGroup",
+  "ListTagsForResource",
+  "TagResource",
+  "UntagResource",
+  "UpdateApplicationLayerAutomaticResponse",
+  "UpdateEmergencyContactSettings",
+  "UpdateProtectionGroup",
+  "UpdateSubscription",
+] as const;
+
+export type ShieldAction = (typeof shieldActions)[number];
+
+export function shield(action: ShieldAction | "*"): `shield:${ShieldAction | "*"}` {
+  return `shield:${action}` as `shield:${ShieldAction | "*"}`;
+}
