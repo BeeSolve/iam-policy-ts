@@ -28,7 +28,7 @@ jobs:
       - name: Check for catalog changes
         id: diff
         run: |
-          if git diff --exit-code src/catalog.ts; then
+          if git diff --exit-code src/catalog/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -61,6 +61,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/catalog.ts package.json package-lock.json
+          git add src/catalog/ package.json package-lock.json
           git diff --cached --quiet || git commit -m "v$PUBLISH_VERSION"
           git push
