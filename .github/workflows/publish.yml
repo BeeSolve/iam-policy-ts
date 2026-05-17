@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Commit and push
-        if: steps.diff.outputs.changed == 'true' || env.PUBLISHED == 'true'
+        if: steps.diff.outputs.changed == 'true' || env.PUBLISHED == 'true' || vars.DEBUG == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
