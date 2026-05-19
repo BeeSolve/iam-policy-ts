@@ -1,4 +1,5 @@
 export const ecsActions = [
+  "ContinueServiceDeployment",
   "CreateCapacityProvider",
   "CreateCluster",
   "CreateDaemon",
