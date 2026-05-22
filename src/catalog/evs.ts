@@ -9,6 +9,7 @@ export const evsActions = [
   "DeleteEnvironmentConnector",
   "DeleteEnvironmentHost",
   "DisassociateEipFromVlan",
+  "GetDepotUrl",
   "GetEnvironment",
   "GetVersions",
   "ListEnvironmentConnectors",
