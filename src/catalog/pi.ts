@@ -8,6 +8,7 @@ export const piActions = [
   "GetResourceMetrics",
   "ListAvailableResourceDimensions",
   "ListAvailableResourceMetrics",
+  "ListPerformanceAnalysisReportRecommendations",
   "ListPerformanceAnalysisReports",
   "ListTagsForResource",
   "TagResource",
