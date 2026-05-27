@@ -274,6 +274,7 @@ export const connectActions = [
   "SendIntegrationEvent",
   "SendOutboundChatMessage",
   "SendOutboundEmail",
+  "SendOutboundWebNotification",
   "StartAttachedFileUpload",
   "StartChatContact",
   "StartContactEvaluation",

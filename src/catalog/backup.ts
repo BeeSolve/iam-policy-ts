@@ -54,6 +54,7 @@ export const backupActions = [
   "GetBackupVaultNotifications",
   "GetBackupVaultSharingPolicy",
   "GetLegalHold",
+  "GetPITRMalwareScanResults",
   "GetRecoveryPointIndexDetails",
   "GetRecoveryPointRestoreMetadata",
   "GetRestoreJobMetadata",
