@@ -1,15 +1,21 @@
 export const elementalInferenceActions = [
   "AssociateFeed",
+  "CreateDictionary",
   "CreateFeed",
+  "DeleteDictionary",
   "DeleteFeed",
   "DisassociateFeed",
+  "ExportDictionaryEntries",
+  "GetDictionary",
   "GetFeed",
   "GetMetadata",
+  "ListDictionaries",
   "ListFeeds",
   "ListTagsForResource",
   "PutMedia",
   "TagResource",
   "UntagResource",
+  "UpdateDictionary",
   "UpdateFeed",
 ] as const;
 
