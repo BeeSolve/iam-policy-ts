@@ -43,6 +43,7 @@ export const route53resolverActions = [
   "ListFirewallRuleGroupAssociations",
   "ListFirewallRuleGroups",
   "ListFirewallRules",
+  "ListFirewallRuleTypes",
   "ListOutpostResolvers",
   "ListResolverConfigs",
   "ListResolverDnssecConfigs",
