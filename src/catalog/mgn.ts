@@ -107,6 +107,7 @@ export const mgnActions = [
   "StartNetworkMigrationMapping",
   "StartNetworkMigrationMappingUpdate",
   "StartReplication",
+  "StartSnapshotGroupForMgn",
   "StartTest",
   "StopReplication",
   "TagResource",
