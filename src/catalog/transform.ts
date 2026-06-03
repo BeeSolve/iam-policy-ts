@@ -1,4 +1,5 @@
 export const transformActions = [
+  "AccessTransformProfile",
   "AssociateConnectorResource",
   "CreateProfile",
   "DeleteAgentRuntimeConfiguration",

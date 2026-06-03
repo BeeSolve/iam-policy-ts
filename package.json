@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.6.2",
+  "version": "26.6.3",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
