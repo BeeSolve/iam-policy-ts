@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.6.3",
+  "version": "26.6.4",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -683,6 +683,10 @@
     "./execute-api": {
       "import": "./dist/catalog/execute-api.js",
       "types": "./dist/catalog/execute-api.d.ts"
+    },
+    "./finops-agent": {
+      "import": "./dist/catalog/finops-agent.js",
+      "types": "./dist/catalog/finops-agent.d.ts"
     },
     "./finspace": {
       "import": "./dist/catalog/finspace.js",

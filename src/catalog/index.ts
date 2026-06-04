@@ -167,6 +167,7 @@ export * from "./events.js";
 export * from "./evidently.js";
 export * from "./evs.js";
 export * from "./execute-api.js";
+export * from "./finops-agent.js";
 export * from "./finspace.js";
 export * from "./finspace-api.js";
 export * from "./firehose.js";
