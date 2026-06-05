@@ -71,6 +71,7 @@ export const ivsActions = [
   "StopStream",
   "TagResource",
   "UntagResource",
+  "UpdateAdConfiguration",
   "UpdateChannel",
   "UpdateIngestConfiguration",
   "UpdatePlaybackRestrictionPolicy",

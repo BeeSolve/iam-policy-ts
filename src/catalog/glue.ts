@@ -164,6 +164,7 @@ export const glueActions = [
   "GetSecurityConfiguration",
   "GetSecurityConfigurations",
   "GetSession",
+  "GetSessionEndpoint",
   "GetStage",
   "GetStageAttempt",
   "GetStageAttemptTaskList",
