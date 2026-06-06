@@ -115,6 +115,7 @@ export const bedrockAgentcoreActions = [
   "GetWorkloadIdentity",
   "InvokeAgentRuntime",
   "InvokeAgentRuntimeCommand",
+  "InvokeAgentRuntimeCommandShell",
   "InvokeAgentRuntimeForUser",
   "InvokeAgentRuntimeWithWebSocketStream",
   "InvokeAgentRuntimeWithWebSocketStreamForUser",
