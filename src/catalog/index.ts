@@ -164,6 +164,7 @@ export * from "./emr-serverless.js";
 export * from "./entityresolution.js";
 export * from "./es.js";
 export * from "./events.js";
+export * from "./eventsbilltoaws.js";
 export * from "./evidently.js";
 export * from "./evs.js";
 export * from "./execute-api.js";
