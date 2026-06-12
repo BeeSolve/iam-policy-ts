@@ -45,6 +45,7 @@ export const healthlakeActions = [
   "SubmitPreAuthClaim",
   "TagResource",
   "UntagResource",
+  "UpdateFHIRDatastore",
   "UpdateResource",
   "ValidateResource",
   "VersionReadResource",
