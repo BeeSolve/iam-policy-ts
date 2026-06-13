@@ -1,5 +1,6 @@
 export const s3Actions = [
   "AbortMultipartUpload",
+  "AllowVendedLogDeliveryForResource",
   "AssociateAccessGrantsIdentityCenter",
   "BypassGovernanceRetention",
   "CreateAccessGrant",
