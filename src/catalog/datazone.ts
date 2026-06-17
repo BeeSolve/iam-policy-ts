@@ -66,6 +66,7 @@ export const datazoneActions = [
   "DeleteFormType",
   "DeleteGlossary",
   "DeleteGlossaryTerm",
+  "DeleteLineageEvent",
   "DeleteListing",
   "DeleteNotebook",
   "DeleteProject",
