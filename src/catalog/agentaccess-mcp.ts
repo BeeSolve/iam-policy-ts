@@ -1,4 +1,6 @@
 export const agentaccessMcpActions = [
+  "CallForwardedTool",
+  "CheckConnectionStatus",
   "DoubleClick",
   "GetScreenshot",
   "HoldKey",

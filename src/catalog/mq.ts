@@ -13,6 +13,7 @@ export const mqActions = [
   "DescribeBrokerInstanceOptions",
   "DescribeConfiguration",
   "DescribeConfigurationRevision",
+  "DescribeSharedResources",
   "DescribeUser",
   "ListBrokers",
   "ListConfigurationRevisions",
