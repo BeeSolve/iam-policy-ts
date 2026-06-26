@@ -6,6 +6,7 @@ export const ssmActions = [
   "CreateActivation",
   "CreateAssociation",
   "CreateAssociationBatch",
+  "CreateCloudConnector",
   "CreateDocument",
   "CreateMaintenanceWindow",
   "CreateOpsItem",
@@ -14,6 +15,7 @@ export const ssmActions = [
   "CreateResourceDataSync",
   "DeleteActivation",
   "DeleteAssociation",
+  "DeleteCloudConnector",
   "DeleteDocument",
   "DeleteInventory",
   "DeleteMaintenanceWindow",
@@ -68,6 +70,7 @@ export const ssmActions = [
   "GetAutomationExecution",
   "GetCalendar",
   "GetCalendarState",
+  "GetCloudConnector",
   "GetCommandInvocation",
   "GetConnectionStatus",
   "GetDefaultPatchBaseline",
@@ -96,6 +99,7 @@ export const ssmActions = [
   "LabelParameterVersion",
   "ListAssociations",
   "ListAssociationVersions",
+  "ListCloudConnectors",
   "ListCommandInvocations",
   "ListCommands",
   "ListComplianceItems",
@@ -141,6 +145,7 @@ export const ssmActions = [
   "UnlabelParameterVersion",
   "UpdateAssociation",
   "UpdateAssociationStatus",
+  "UpdateCloudConnector",
   "UpdateDocument",
   "UpdateDocumentDefaultVersion",
   "UpdateDocumentMetadata",
@@ -155,6 +160,7 @@ export const ssmActions = [
   "UpdatePatchBaseline",
   "UpdateResourceDataSync",
   "UpdateServiceSetting",
+  "ValidateCloudConnector",
 ] as const;
 
 export type SsmAction = (typeof ssmActions)[number];
