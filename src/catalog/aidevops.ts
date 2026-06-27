@@ -69,6 +69,7 @@ export const aidevopsActions = [
   "TagResource",
   "UntagResource",
   "UpdateAgentSpace",
+  "UpdateApprovalAction",
   "UpdateAsset",
   "UpdateAssetFile",
   "UpdateAssociation",

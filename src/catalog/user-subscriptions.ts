@@ -1,10 +1,20 @@
 export const userSubscriptionsActions = [
   "CreateClaim",
+  "CreateClaimAddOn",
+  "DeleteAutoTopUpRule",
   "DeleteClaim",
+  "GetAutoTopUpRule",
+  "GetEffectiveUsageLimit",
+  "GetUsageLimitHistory",
   "ListApplicationClaims",
+  "ListClaimAddOns",
   "ListClaims",
+  "ListEntitlements",
+  "ListUsageLimits",
   "ListUserSubscriptions",
+  "SetAutoTopUpRule",
   "SetOverageConfig",
+  "SetUsageLimit",
   "UpdateClaim",
 ] as const;
 
