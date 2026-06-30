@@ -1,19 +1,27 @@
 export const artifactActions = [
   "AcceptAgreement",
   "AcceptNdaForAgreement",
+  "CreateComplianceInquiry",
+  "ExportComplianceInquiry",
   "GetAccountSettings",
   "GetAgreement",
+  "GetComplianceInquiryMetadata",
   "GetCustomerAgreement",
   "GetNdaForAgreement",
   "GetReport",
   "GetReportMetadata",
   "GetTermForReport",
   "ListAgreements",
+  "ListComplianceInquiries",
+  "ListComplianceInquiryQueries",
   "ListCustomerAgreements",
   "ListReports",
   "ListReportVersions",
+  "ListTagsForResource",
   "PutAccountSettings",
+  "TagResource",
   "TerminateAgreement",
+  "UntagResource",
 ] as const;
 
 export type ArtifactAction = (typeof artifactActions)[number];

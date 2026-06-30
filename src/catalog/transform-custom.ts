@@ -38,6 +38,7 @@ export const transformCustomActions = [
   "ListTagsForResource",
   "ListTransformationPackageMetadata",
   "ListTransformationPackageShares",
+  "SendTelemetryEvent",
   "ShareTransformationPackage",
   "TagResource",
   "UnshareTransformationPackage",

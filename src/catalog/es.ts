@@ -82,6 +82,7 @@ export const esActions = [
   "GetPackageVersionHistory",
   "GetUpgradeHistory",
   "GetUpgradeStatus",
+  "InsightFeedback",
   "ListApplications",
   "ListDataSourceAttachments",
   "ListDataSources",
