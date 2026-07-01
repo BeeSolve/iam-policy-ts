@@ -3,6 +3,7 @@ export const eksActions = [
   "AssociateAccessPolicy",
   "AssociateEncryptionConfig",
   "AssociateIdentityProviderConfig",
+  "CancelUpdate",
   "CreateAccessEntry",
   "CreateAddon",
   "CreateCapability",
