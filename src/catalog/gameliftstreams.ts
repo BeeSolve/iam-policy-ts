@@ -3,6 +3,7 @@ export const gameliftstreamsActions = [
   "AssociateApplications",
   "CreateApplication",
   "CreateStreamGroup",
+  "CreateStreamSessionAdminShell",
   "CreateStreamSessionConnection",
   "DeleteApplication",
   "DeleteStreamGroup",
