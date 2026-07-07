@@ -407,6 +407,7 @@ export * from "./sts.js";
 export * from "./support.js";
 export * from "./support-console.js";
 export * from "./supportapp.js";
+export * from "./supportauthz.js";
 export * from "./supportplans.js";
 export * from "./sustainability.js";
 export * from "./swf.js";

@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.7.3",
+  "version": "26.7.7",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -1643,6 +1643,10 @@
     "./supportapp": {
       "import": "./dist/catalog/supportapp.js",
       "types": "./dist/catalog/supportapp.d.ts"
+    },
+    "./supportauthz": {
+      "import": "./dist/catalog/supportauthz.js",
+      "types": "./dist/catalog/supportauthz.d.ts"
     },
     "./supportplans": {
       "import": "./dist/catalog/supportplans.js",
