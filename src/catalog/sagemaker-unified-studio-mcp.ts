@@ -1,7 +1,5 @@
 export const sagemakerUnifiedStudioMcpActions = [
-  "CallPrivilegedTool",
-  "CallReadOnlyTool",
-  "InvokeMcp",
+  "AuthorizeVpce",
 ] as const;
 
 export type SagemakerUnifiedStudioMcpAction = (typeof sagemakerUnifiedStudioMcpActions)[number];

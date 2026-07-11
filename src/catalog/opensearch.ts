@@ -9,6 +9,7 @@ export const opensearchActions = [
   "ListAutoOptimizeJobs",
   "StartDirectQuery",
   "SubmitAutoOptimizeJob",
+  "ViewLoginPage",
 ] as const;
 
 export type OpensearchAction = (typeof opensearchActions)[number];
