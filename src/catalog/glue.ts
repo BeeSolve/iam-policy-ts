@@ -1,4 +1,5 @@
 export const glueActions = [
+  "AccessDataQualityRuntimeConfiguration",
   "AuthorizeInboundIntegration",
   "BatchCreatePartition",
   "BatchDeleteConnection",
