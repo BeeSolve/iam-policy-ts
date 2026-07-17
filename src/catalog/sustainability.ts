@@ -2,6 +2,8 @@ export const sustainabilityActions = [
   "GetCarbonFootprintSummary",
   "GetEstimatedCarbonEmissions",
   "GetEstimatedCarbonEmissionsDimensionValues",
+  "GetEstimatedWaterAllocation",
+  "GetEstimatedWaterAllocationDimensionValues",
 ] as const;
 
 export type SustainabilityAction = (typeof sustainabilityActions)[number];
