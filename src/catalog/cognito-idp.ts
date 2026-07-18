@@ -12,6 +12,7 @@ export const cognitoIdpActions = [
   "AdminForgetDevice",
   "AdminGetDevice",
   "AdminGetUser",
+  "AdminGetUserAuthFactors",
   "AdminInitiateAuth",
   "AdminLinkProviderForUser",
   "AdminListDevices",
