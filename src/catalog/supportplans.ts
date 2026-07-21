@@ -1,9 +1,17 @@
 export const supportplansActions = [
+  "AcceptSupportAgreement",
+  "CancelSupportAgreement",
+  "CreateSupportAgreement",
   "CreateSupportPlanSchedule",
+  "GetSupportAgreement",
   "GetSupportPlan",
   "GetSupportPlanUpdateStatus",
+  "ListSupportAgreementRevisions",
+  "ListSupportAgreements",
   "ListSupportPlanModifiers",
+  "RejectSupportAgreement",
   "StartSupportPlanUpdate",
+  "UpdateSupportAgreement",
 ] as const;
 
 export type SupportplansAction = (typeof supportplansActions)[number];

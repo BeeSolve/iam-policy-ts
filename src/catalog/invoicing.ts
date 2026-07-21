@@ -16,11 +16,13 @@ export const invoicingActions = [
   "ListTagsForResource",
   "PutInvoiceEmailDeliveryPreferences",
   "PutProcurementPortalPreference",
+  "SendProcurementPortalValidation",
   "StartInvoiceCorrection",
   "TagResource",
   "UntagResource",
   "UpdateInvoiceUnit",
   "UpdateProcurementPortalPreferenceStatus",
+  "VerifyProcurementPortalValidation",
 ] as const;
 
 export type InvoicingAction = (typeof invoicingActions)[number];
