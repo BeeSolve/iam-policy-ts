@@ -265,6 +265,7 @@ export const connectActions = [
   "SearchQuickConnects",
   "SearchResourceTags",
   "SearchRoutingProfiles",
+  "SearchRules",
   "SearchSecurityProfiles",
   "SearchUserHierarchyGroups",
   "SearchUsers",
