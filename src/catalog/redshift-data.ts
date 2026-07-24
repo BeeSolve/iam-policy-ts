@@ -8,6 +8,7 @@ export const redshiftDataActions = [
   "GetStatementResult",
   "ListDatabases",
   "ListSchemas",
+  "ListSessions",
   "ListStatements",
   "ListTables",
 ] as const;

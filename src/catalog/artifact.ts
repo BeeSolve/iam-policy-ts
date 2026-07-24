@@ -19,6 +19,7 @@ export const artifactActions = [
   "ListReportVersions",
   "ListTagsForResource",
   "PutAccountSettings",
+  "PutComplianceInquiryFeedback",
   "TagResource",
   "TerminateAgreement",
   "UntagResource",
