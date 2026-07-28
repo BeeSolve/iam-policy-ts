@@ -103,6 +103,7 @@ export const partnercentralActions = [
   "PutBusinessPlan",
   "PutProfileVisibility",
   "PutSellingSystemSettings",
+  "QueryDataset",
   "RecallBenefitApplication",
   "RejectChannelHandshake",
   "RejectConnectionInvitation",
