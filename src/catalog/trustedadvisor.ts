@@ -31,6 +31,7 @@ export const trustedadvisorActions = [
   "ListOrganizationRecommendations",
   "ListRecommendationResources",
   "ListRecommendations",
+  "ListRecommendationsForResource",
   "ListRoots",
   "RefreshCheck",
   "SetAccountAccess",

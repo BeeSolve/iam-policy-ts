@@ -51,6 +51,7 @@ export const odbActions = [
   "ListDbNodes",
   "ListDbServers",
   "ListDbSystemShapes",
+  "ListFlexComponents",
   "ListGiVersions",
   "ListOdbNetworks",
   "ListOdbPeeringConnections",

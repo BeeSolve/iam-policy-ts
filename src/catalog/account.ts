@@ -9,6 +9,7 @@ export const accountActions = [
   "GetContactInformation",
   "GetGovCloudAccountInformation",
   "GetPrimaryEmail",
+  "GetPrimaryEmailUpdateStatus",
   "GetRegionOptStatus",
   "ListRegions",
   "PutAccountName",
