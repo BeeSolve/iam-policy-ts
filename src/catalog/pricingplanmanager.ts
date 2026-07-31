@@ -1,4 +1,5 @@
 export const pricingplanmanagerActions = [
+  "ApprovePaidSubscription",
   "AssociateResourcesToSubscription",
   "CancelSubscription",
   "CancelSubscriptionChange",

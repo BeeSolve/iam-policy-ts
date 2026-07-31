@@ -13,6 +13,8 @@ export const invoicingActions = [
   "ListInvoiceSummaries",
   "ListInvoiceUnits",
   "ListProcurementPortalPreferences",
+  "ListProcurementPortals",
+  "ListProcurementPortalSuppliers",
   "ListTagsForResource",
   "PutInvoiceEmailDeliveryPreferences",
   "PutProcurementPortalPreference",

@@ -161,6 +161,7 @@ export const bedrockAgentcoreActions = [
   "ListGatewayTargets",
   "ListHarnessEndpoints",
   "ListHarnesses",
+  "ListHarnessVersions",
   "ListMemories",
   "ListMemoryExtractionJobs",
   "ListMemoryRecords",

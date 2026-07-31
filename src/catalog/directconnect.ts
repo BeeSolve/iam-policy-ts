@@ -52,6 +52,7 @@ export const directconnectActions = [
   "DescribeVirtualInterfaces",
   "DisassociateConnectionFromLag",
   "DisassociateMacSecKey",
+  "ListVirtualInterfaceRoutes",
   "ListVirtualInterfaceTestHistory",
   "StartBgpFailoverTest",
   "StopBgpFailoverTest",
