@@ -222,6 +222,7 @@ export const quicksightActions = [
   "ListVPCConnections",
   "PassDataSet",
   "PassDataSource",
+  "PassTopic",
   "PredictQAResults",
   "PutDataSetRefreshProperties",
   "QuickSuiteUsageMetrics",

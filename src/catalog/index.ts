@@ -61,6 +61,7 @@ export * from "./bcm-recommended-actions.js";
 export * from "./bedrock.js";
 export * from "./bedrock-agentcore.js";
 export * from "./bedrock-mantle.js";
+export * from "./bedrock-websearch.js";
 export * from "./billing.js";
 export * from "./billingconductor.js";
 export * from "./braket.js";
