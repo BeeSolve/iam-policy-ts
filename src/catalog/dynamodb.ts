@@ -62,6 +62,7 @@ export const dynamodbActions = [
   "RestoreTableFromBackup",
   "RestoreTableToPointInTime",
   "Scan",
+  "SearchVectors",
   "StartAwsBackupJob",
   "TagResource",
   "UntagResource",
