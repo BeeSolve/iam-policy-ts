@@ -8,6 +8,7 @@ export * from "./acm-pca.js";
 export * from "./aco-automation.js";
 export * from "./action-recommendations.js";
 export * from "./activate.js";
+export * from "./agent-registry.js";
 export * from "./agentaccess-mcp.js";
 export * from "./aidevops.js";
 export * from "./aiops.js";

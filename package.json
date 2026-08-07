@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.8.6",
+  "version": "26.8.7",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -47,6 +47,10 @@
     "./activate": {
       "import": "./dist/catalog/activate.js",
       "types": "./dist/catalog/activate.d.ts"
+    },
+    "./agent-registry": {
+      "import": "./dist/catalog/agent-registry.js",
+      "types": "./dist/catalog/agent-registry.d.ts"
     },
     "./agentaccess-mcp": {
       "import": "./dist/catalog/agentaccess-mcp.js",

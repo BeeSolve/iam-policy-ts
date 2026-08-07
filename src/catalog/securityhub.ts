@@ -102,6 +102,7 @@ export const securityhubActions = [
   "ListControlEvaluationSummaries",
   "ListEnabledProductsForImport",
   "ListFindingAggregators",
+  "ListFreeTrialStatusesV2",
   "ListInvitations",
   "ListMembers",
   "ListOrganizationAdminAccounts",

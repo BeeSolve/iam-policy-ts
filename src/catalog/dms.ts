@@ -73,6 +73,7 @@ export const dmsActions = [
   "DescribeSchemas",
   "DescribeTableStatistics",
   "ExportMetadataModelAssessment",
+  "GetMetadataModel",
   "GetTargetSelectionRules",
   "ImportCertificate",
   "ListDataProviders",
