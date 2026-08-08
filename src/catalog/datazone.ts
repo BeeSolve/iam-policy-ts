@@ -11,6 +11,7 @@ export const datazoneActions = [
   "BatchGetCellRun",
   "BatchPutAttributesMetadata",
   "BatchPutLinkedTypes",
+  "BatchUpdateNotifications",
   "CancelMessage",
   "CancelMetadataGenerationRun",
   "CancelSubscription",
