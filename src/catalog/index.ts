@@ -3,6 +3,7 @@ export * from "./a2c.js";
 export * from "./a4b.js";
 export * from "./access-analyzer.js";
 export * from "./account.js";
+export * from "./account-access.js";
 export * from "./acm.js";
 export * from "./acm-pca.js";
 export * from "./aco-automation.js";
