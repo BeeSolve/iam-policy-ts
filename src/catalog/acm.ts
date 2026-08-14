@@ -21,6 +21,7 @@ export const acmActions = [
   "ListAcmeDomainValidations",
   "ListAcmeEndpoints",
   "ListAcmeExternalAccountBindings",
+  "ListCertificateDomainValidations",
   "ListCertificates",
   "ListTagsForCertificate",
   "ListTagsForResource",
