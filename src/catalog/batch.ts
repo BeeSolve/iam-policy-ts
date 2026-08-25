@@ -31,6 +31,7 @@ export const batchActions = [
   "ListServiceJobs",
   "ListTagsForResource",
   "RegisterJobDefinition",
+  "SetCapacityTags",
   "SubmitJob",
   "SubmitServiceJob",
   "TagResource",

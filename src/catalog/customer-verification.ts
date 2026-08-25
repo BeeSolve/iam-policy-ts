@@ -3,6 +3,8 @@ export const customerVerificationActions = [
   "CreateUploadUrls",
   "GetCustomerVerificationDetails",
   "GetCustomerVerificationEligibility",
+  "GetInheritanceConfig",
+  "PutInheritanceConfig",
   "UpdateCustomerVerificationDetails",
 ] as const;
 
