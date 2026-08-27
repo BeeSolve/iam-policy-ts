@@ -65,6 +65,7 @@ export const mgnActions = [
   "ListNetworkMigrationDeployedStacks",
   "ListNetworkMigrationDeployedStacksDeletions",
   "ListNetworkMigrationDeployments",
+  "ListNetworkMigrationExecutionArtifacts",
   "ListNetworkMigrationExecutions",
   "ListNetworkMigrationMapperSegmentConstructs",
   "ListNetworkMigrationMapperSegments",

@@ -26,6 +26,7 @@ export const codecommitActions = [
   "EvaluatePullRequestApprovalRules",
   "GetApprovalRuleTemplate",
   "GetBlob",
+  "GetBlobDifferences",
   "GetBranch",
   "GetComment",
   "GetCommentReactions",
