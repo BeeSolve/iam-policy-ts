@@ -4,6 +4,7 @@ export const bedrockMantleActions = [
   "CallWithBearerToken",
   "CancelFineTuningJob",
   "CancelInference",
+  "CountTokens",
   "CreateCustomizedModel",
   "CreateFile",
   "CreateFineTuningJob",

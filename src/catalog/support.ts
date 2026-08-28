@@ -1,6 +1,7 @@
 export const supportActions = [
   "AddAttachmentsToSet",
   "AddCommunicationToCase",
+  "AddRelatedItemToCase",
   "CreateCase",
   "DescribeAttachment",
   "DescribeCaseAttributes",
@@ -10,6 +11,7 @@ export const supportActions = [
   "DescribeCommunications",
   "DescribeCreateCaseOptions",
   "DescribeIssueTypes",
+  "DescribeRelatedItems",
   "DescribeServices",
   "DescribeSeverityLevels",
   "DescribeSupportedLanguages",
@@ -18,6 +20,8 @@ export const supportActions = [
   "DescribeTrustedAdvisorCheckResult",
   "DescribeTrustedAdvisorChecks",
   "DescribeTrustedAdvisorCheckSummaries",
+  "DisconnectLiveContactForCase",
+  "DownloadAttachment",
   "GetInteraction",
   "InitiateCallForCase",
   "InitiateChatForCase",
@@ -33,6 +37,7 @@ export const supportActions = [
   "StartInteraction",
   "UpdateCaseSeverity",
   "UpdateInteraction",
+  "UploadAttachment",
 ] as const;
 
 export type SupportAction = (typeof supportActions)[number];
