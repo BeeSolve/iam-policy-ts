@@ -40,6 +40,7 @@ export const healthlakeActions = [
   "PublishDataTransformationProfile",
   "QuestionnairePackage",
   "ReadResource",
+  "RestoreFHIRDatastore",
   "RetrieveAttributionStatus",
   "SearchEverything",
   "SearchWithGet",
