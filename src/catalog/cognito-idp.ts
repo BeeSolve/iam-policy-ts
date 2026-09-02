@@ -4,6 +4,7 @@ export const cognitoIdpActions = [
   "AdminAddUserToGroup",
   "AdminConfirmSignUp",
   "AdminCreateUser",
+  "AdminDeleteSoftwareToken",
   "AdminDeleteUser",
   "AdminDeleteUserAttributes",
   "AdminDisableProviderForUser",
