@@ -13,6 +13,7 @@ export const paymentCryptographyActions = [
   "EncryptData",
   "ExportKey",
   "GenerateAs2805KekValidation",
+  "GenerateAuthRequestCryptogram",
   "GenerateCardValidationData",
   "GenerateMac",
   "GenerateMacEmvPinChange",
