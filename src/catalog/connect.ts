@@ -204,6 +204,7 @@ export const connectActions = [
   "ListDataTableValues",
   "ListDefaultVocabularies",
   "ListEntitySecurityProfiles",
+  "ListEvaluationFormAIVersions",
   "ListEvaluationForms",
   "ListEvaluationFormVersions",
   "ListExtractionDefinitions",
