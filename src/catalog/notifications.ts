@@ -1,4 +1,5 @@
 export const notificationsActions = [
+  "AccessSensitiveEvents",
   "AssociateChannel",
   "AssociateManagedNotificationAccountContact",
   "AssociateManagedNotificationAdditionalChannel",
@@ -36,9 +37,11 @@ export const notificationsActions = [
   "ListTagsForResource",
   "PutFeatureOptInStatus",
   "RegisterNotificationHub",
+  "SubscribeSensitiveEvents",
   "TagResource",
   "UntagResource",
   "UpdateEventRule",
+  "UpdateManagedNotificationChannelAssociation",
   "UpdateNotificationConfiguration",
 ] as const;
 
