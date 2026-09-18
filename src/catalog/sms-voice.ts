@@ -65,6 +65,7 @@ export const smsVoiceActions = [
   "DiscardRegistrationVersion",
   "GetProtectConfigurationCountryRuleSet",
   "GetResourcePolicy",
+  "ListAvailablePhoneNumbers",
   "ListNotifyCountries",
   "ListPoolOriginationIdentities",
   "ListProtectConfigurationRuleSetNumberOverrides",
