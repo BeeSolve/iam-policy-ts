@@ -60,6 +60,8 @@ export const wafv2Actions = [
   "UpdateRegexPatternSet",
   "UpdateRuleGroup",
   "UpdateWebACL",
+  "ValidateNetworkSecurityManagerRuleConfiguration",
+  "ValidateNetworkSecurityManagerWebACLConfiguration",
 ] as const;
 
 export type Wafv2Action = (typeof wafv2Actions)[number];

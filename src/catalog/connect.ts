@@ -234,6 +234,7 @@ export const connectActions = [
   "ListRoutingProfiles",
   "ListRules",
   "ListSecurityKeys",
+  "ListSecurityProfileAIAgents",
   "ListSecurityProfileApplications",
   "ListSecurityProfileFlowModules",
   "ListSecurityProfilePermissions",

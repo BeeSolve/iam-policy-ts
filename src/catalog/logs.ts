@@ -76,6 +76,7 @@ export const logsActions = [
   "GetScheduledQueryHistory",
   "GetStorageTierPolicy",
   "GetTransformer",
+  "IntegrateWithDataset",
   "IntegrateWithS3Table",
   "Link",
   "ListAggregateLogGroupSummaries",
