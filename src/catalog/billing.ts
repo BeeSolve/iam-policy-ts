@@ -19,6 +19,7 @@ export const billingActions = [
   "GetResourcePolicy",
   "GetSellerOfRecord",
   "ListBillingViews",
+  "ListBillingViewSegments",
   "ListEnterpriseSupportLinkedAccountCharges",
   "ListSourceViewsForBillingView",
   "ListTagsForResource",

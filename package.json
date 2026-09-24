@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.9.23",
+  "version": "26.9.24",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -1143,6 +1143,10 @@
     "./network-security-director": {
       "import": "./dist/catalog/network-security-director.js",
       "types": "./dist/catalog/network-security-director.d.ts"
+    },
+    "./network-security-manager": {
+      "import": "./dist/catalog/network-security-manager.js",
+      "types": "./dist/catalog/network-security-manager.d.ts"
     },
     "./networkflowmonitor": {
       "import": "./dist/catalog/networkflowmonitor.js",

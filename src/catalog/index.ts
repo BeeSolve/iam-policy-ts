@@ -282,6 +282,7 @@ export * from "./neptune-db.js";
 export * from "./neptune-graph.js";
 export * from "./network-firewall.js";
 export * from "./network-security-director.js";
+export * from "./network-security-manager.js";
 export * from "./networkflowmonitor.js";
 export * from "./networkmanager.js";
 export * from "./networkmanager-chat.js";

@@ -44,6 +44,7 @@ export const kinesisActions = [
   "UpdateMaxRecordSize",
   "UpdateShardCount",
   "UpdateStreamMode",
+  "UpdateStreamRecordDistributionStrategy",
   "UpdateStreamWarmThroughput",
 ] as const;
 
