@@ -61,6 +61,7 @@ export const securityagentActions = [
   "HandleProviderRegistrationCallback",
   "ImportSecurityRequirements",
   "InitiateProviderRegistration",
+  "ListActorMessages",
   "ListAgentSpaces",
   "ListApplications",
   "ListArtifacts",
