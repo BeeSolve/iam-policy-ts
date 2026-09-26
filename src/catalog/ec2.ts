@@ -772,6 +772,7 @@ export const ec2Actions = [
   "ReleaseIpamPoolAllocation",
   "ReplaceIamInstanceProfileAssociation",
   "ReplaceImageCriteriaInAllowedImagesSettings",
+  "ReplaceImageInstanceTypeSpecification",
   "ReplaceNetworkAclAssociation",
   "ReplaceNetworkAclEntry",
   "ReplaceRoute",
@@ -822,6 +823,7 @@ export const ec2Actions = [
   "UpdateInterruptibleCapacityReservationAllocation",
   "UpdateSecurityGroupRuleDescriptionsEgress",
   "UpdateSecurityGroupRuleDescriptionsIngress",
+  "ValidateSecurityGroupQuotasForInterface",
   "WithdrawByoipCidr",
 ] as const;
 

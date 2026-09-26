@@ -3,6 +3,7 @@ export const sagemakerActions = [
   "AddAssociation",
   "AddTags",
   "AssociateTrialComponent",
+  "AttachClusterNodeNetworkInterface",
   "AttachClusterNodeVolume",
   "BatchAddClusterNodes",
   "BatchDeleteClusterNodes",
