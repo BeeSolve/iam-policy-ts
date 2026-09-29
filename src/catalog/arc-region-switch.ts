@@ -15,6 +15,7 @@ export const arcRegionSwitchActions = [
   "ListPlansInRegion",
   "ListRoute53HealthChecks",
   "ListRoute53HealthChecksInRegion",
+  "ListServiceQuotaWarnings",
   "ListTagsForResource",
   "PutResourcePolicy",
   "StartPlanExecution",

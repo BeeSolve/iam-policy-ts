@@ -405,6 +405,7 @@ export * from "./ssmmessages.js";
 export * from "./sso.js";
 export * from "./sso-directory.js";
 export * from "./sso-oauth.js";
+export * from "./startups.js";
 export * from "./states.js";
 export * from "./storagegateway.js";
 export * from "./sts.js";
