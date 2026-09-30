@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.9.29",
+  "version": "26.9.30",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -688,10 +688,6 @@
       "import": "./dist/catalog/eventsbilltoaws.js",
       "types": "./dist/catalog/eventsbilltoaws.d.ts"
     },
-    "./evidently": {
-      "import": "./dist/catalog/evidently.js",
-      "types": "./dist/catalog/evidently.d.ts"
-    },
     "./evs": {
       "import": "./dist/catalog/evs.js",
       "types": "./dist/catalog/evs.d.ts"
@@ -883,10 +879,6 @@
     "./iotdeviceadvisor": {
       "import": "./dist/catalog/iotdeviceadvisor.js",
       "types": "./dist/catalog/iotdeviceadvisor.d.ts"
-    },
-    "./iotevents": {
-      "import": "./dist/catalog/iotevents.js",
-      "types": "./dist/catalog/iotevents.d.ts"
     },
     "./iotfleethub": {
       "import": "./dist/catalog/iotfleethub.js",
