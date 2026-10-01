@@ -15,7 +15,9 @@ export const accountActions = [
   "PutAccountName",
   "PutAlternateContact",
   "PutContactInformation",
+  "SendPhoneNumberVerification",
   "StartPrimaryEmailUpdate",
+  "VerifyPhoneNumber",
 ] as const;
 
 export type AccountAction = (typeof accountActions)[number];

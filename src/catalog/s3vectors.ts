@@ -13,11 +13,13 @@ export const s3vectorsActions = [
   "ListTagsForResource",
   "ListVectorBuckets",
   "ListVectors",
+  "PutVectorBucketDefaultIndexMode",
   "PutVectorBucketPolicy",
   "PutVectors",
   "QueryVectors",
   "TagResource",
   "UntagResource",
+  "UpdateIndexMode",
 ] as const;
 
 export type S3vectorsAction = (typeof s3vectorsActions)[number];
