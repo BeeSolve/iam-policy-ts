@@ -17,6 +17,7 @@ export const wafv2Actions = [
   "DescribeAllManagedProducts",
   "DescribeManagedProductsByVendor",
   "DescribeManagedRuleGroup",
+  "DescribeTopContributorsByEvent",
   "DisassociateFirewallManager",
   "DisassociateWebACL",
   "GenerateMobileSdkReleaseUrl",

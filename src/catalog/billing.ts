@@ -20,6 +20,8 @@ export const billingActions = [
   "GetSellerOfRecord",
   "ListBillingViews",
   "ListBillingViewSegments",
+  "ListBusinessSupportAccountCharges",
+  "ListBusinessSupportSubscriptionHistory",
   "ListEnterpriseSupportLinkedAccountCharges",
   "ListSourceViewsForBillingView",
   "ListTagsForResource",
