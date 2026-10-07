@@ -1835,7 +1835,10 @@
   },
   "files": [
     "dist",
-    "!dist/**/*.js.map"
+    "!dist/**/*.js.map",
+    "!dist/**/*.d.ts.map",
+    "DOCS.md",
+    "docs/how-to"
   ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
