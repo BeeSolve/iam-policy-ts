@@ -164,6 +164,7 @@ export * from "./elemental-support-cases.js";
 export * from "./elemental-support-content.js";
 export * from "./emr-containers.js";
 export * from "./emr-serverless.js";
+export * from "./end-user-messaging.js";
 export * from "./entityresolution.js";
 export * from "./es.js";
 export * from "./events.js";

@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.10.2",
+  "version": "26.10.8",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -671,6 +671,10 @@
     "./emr-serverless": {
       "import": "./dist/catalog/emr-serverless.js",
       "types": "./dist/catalog/emr-serverless.d.ts"
+    },
+    "./end-user-messaging": {
+      "import": "./dist/catalog/end-user-messaging.js",
+      "types": "./dist/catalog/end-user-messaging.d.ts"
     },
     "./entityresolution": {
       "import": "./dist/catalog/entityresolution.js",
