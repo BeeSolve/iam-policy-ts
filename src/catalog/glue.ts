@@ -175,6 +175,8 @@ export const glueActions = [
   "GetStatement",
   "GetStorage",
   "GetStorageUnit",
+  "GetSystemLogsForJobRun",
+  "GetSystemLogsForSession",
   "GetTable",
   "GetTableOptimizer",
   "GetTables",
