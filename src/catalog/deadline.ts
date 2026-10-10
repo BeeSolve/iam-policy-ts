@@ -75,6 +75,7 @@ export const deadlineActions = [
   "ListJobs",
   "ListLicenseEndpoints",
   "ListLimits",
+  "ListMemberships",
   "ListMeteredProducts",
   "ListMonitors",
   "ListQueueEnvironments",

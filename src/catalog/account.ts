@@ -15,6 +15,7 @@ export const accountActions = [
   "PutAccountName",
   "PutAlternateContact",
   "PutContactInformation",
+  "ReopenAccount",
   "SendPhoneNumberVerification",
   "StartPrimaryEmailUpdate",
   "VerifyPhoneNumber",
