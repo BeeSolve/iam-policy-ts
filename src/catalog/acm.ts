@@ -3,6 +3,7 @@ export const acmActions = [
   "CreateAcmeDomainValidation",
   "CreateAcmeEndpoint",
   "CreateAcmeExternalAccountBinding",
+  "CreateTimeStamp",
   "DeleteAcmeDomainValidation",
   "DeleteAcmeEndpoint",
   "DeleteAcmeExternalAccountBinding",

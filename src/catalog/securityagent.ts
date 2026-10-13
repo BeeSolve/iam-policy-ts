@@ -6,6 +6,8 @@ export const securityagentActions = [
   "BatchDeleteSecurityRequirements",
   "BatchDeleteThreatModels",
   "BatchDeleteThreats",
+  "BatchDisassociateFindingIssue",
+  "BatchExportFindings",
   "BatchGetAgentSpaces",
   "BatchGetArtifactMetadata",
   "BatchGetCodeReviewJobs",

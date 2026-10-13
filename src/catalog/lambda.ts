@@ -90,6 +90,7 @@ export const lambdaActions = [
   "ListMicrovmImageVersions",
   "ListMicrovms",
   "ListNetworkConnectors",
+  "ListNetworkConnectorVersions",
   "ListProvisionedConcurrencyConfigs",
   "ListTags",
   "ListVersionsByFunction",
