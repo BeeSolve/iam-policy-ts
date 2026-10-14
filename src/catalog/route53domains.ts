@@ -13,6 +13,7 @@ export const route53domainsActions = [
   "EnableDomainTransferLock",
   "GetContactReachabilityStatus",
   "GetDomainDetail",
+  "GetDomainPrices",
   "GetDomainSuggestions",
   "GetOperationDetail",
   "ListDomains",
