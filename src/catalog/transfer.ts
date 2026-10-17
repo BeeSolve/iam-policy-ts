@@ -32,6 +32,7 @@ export const transferActions = [
   "DescribeWebApp",
   "DescribeWebAppCustomization",
   "DescribeWorkflow",
+  "ExportHostKey",
   "ImportCertificate",
   "ImportHostKey",
   "ImportSshPublicKey",
