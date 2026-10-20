@@ -10,6 +10,7 @@ export const workspacesInstancesActions = [
   "ListRegions",
   "ListTagsForResource",
   "ListWorkspaceInstances",
+  "ModifyVolume",
   "TagResource",
   "UntagResource",
 ] as const;
