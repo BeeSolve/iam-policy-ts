@@ -140,6 +140,7 @@ export const redshiftActions = [
   "ModifyEndpointAccess",
   "ModifyEventSubscription",
   "ModifyIntegration",
+  "ModifyLakehouseConfiguration",
   "ModifyQev2IdcApplication",
   "ModifyRedshiftIdcApplication",
   "ModifySavedQuery",

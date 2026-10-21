@@ -41,6 +41,7 @@ export * from "./arc-region-switch.js";
 export * from "./arc-zonal-shift.js";
 export * from "./arsenal.js";
 export * from "./artifact.js";
+export * from "./assurance.js";
 export * from "./athena.js";
 export * from "./auditmanager.js";
 export * from "./autoscaling.js";

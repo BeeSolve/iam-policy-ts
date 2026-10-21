@@ -61,6 +61,7 @@ export const redshiftServerlessActions = [
   "UpdateAutonomicsDenylist",
   "UpdateCustomDomainAssociation",
   "UpdateEndpointAccess",
+  "UpdateLakehouseConfiguration",
   "UpdateNamespace",
   "UpdateScheduledAction",
   "UpdateSnapshot",

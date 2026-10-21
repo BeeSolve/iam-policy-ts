@@ -31,6 +31,7 @@ export const dynamodbActions = [
   "DescribeTableReplicaAutoScaling",
   "DescribeTimeToLive",
   "DisableKinesisStreamingDestination",
+  "DisassociateTableReplica",
   "EnableKinesisStreamingDestination",
   "ExportTableToPointInTime",
   "GetAbacStatus",
