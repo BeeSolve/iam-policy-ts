@@ -1,5 +1,6 @@
 export const route53resolverActions = [
   "AssociateFirewallRuleGroup",
+  "AssociateFirewallRuleGroupWithService",
   "AssociateResolverEndpointIpAddress",
   "AssociateResolverQueryLogConfig",
   "AssociateResolverRule",

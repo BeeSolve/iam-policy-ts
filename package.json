@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.10.21",
+  "version": "26.10.23",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -475,6 +475,10 @@
     "./consolidatedbilling": {
       "import": "./dist/catalog/consolidatedbilling.js",
       "types": "./dist/catalog/consolidatedbilling.d.ts"
+    },
+    "./continuum": {
+      "import": "./dist/catalog/continuum.js",
+      "types": "./dist/catalog/continuum.d.ts"
     },
     "./controlcatalog": {
       "import": "./dist/catalog/controlcatalog.js",

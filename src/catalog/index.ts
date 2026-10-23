@@ -115,6 +115,7 @@ export * from "./connect.js";
 export * from "./connect-campaigns.js";
 export * from "./consoleapp.js";
 export * from "./consolidatedbilling.js";
+export * from "./continuum.js";
 export * from "./controlcatalog.js";
 export * from "./controltower.js";
 export * from "./cost-optimization-hub.js";

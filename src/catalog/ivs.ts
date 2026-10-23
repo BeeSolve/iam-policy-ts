@@ -63,6 +63,7 @@ export const ivsActions = [
   "ListStreamSessions",
   "ListTagsForResource",
   "PutMetadata",
+  "RevokeConnectionToken",
   "StartComposition",
   "StartParticipantReplication",
   "StartViewerSessionRevocation",
