@@ -47,6 +47,7 @@ export const transcribeActions = [
   "TagResource",
   "UntagResource",
   "UpdateCallAnalyticsCategory",
+  "UpdateLanguageModel",
   "UpdateMedicalVocabulary",
   "UpdateVocabulary",
   "UpdateVocabularyFilter",

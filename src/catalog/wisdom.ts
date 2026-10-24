@@ -70,6 +70,8 @@ export const wisdomActions = [
   "NotifyRecommendationsReceived",
   "PutFeedback",
   "QueryAssistant",
+  "RegisterAssistantReplicaKey",
+  "RegisterKnowledgeBaseReplicaKey",
   "RemoveAssistantAIAgent",
   "RemoveKnowledgeBaseTemplateUri",
   "RenderMessageTemplate",
