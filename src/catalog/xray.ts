@@ -1,6 +1,7 @@
 export const xrayActions = [
   "BatchGetTraces",
   "BatchGetTraceSummaryById",
+  "CallWithBearerToken",
   "CancelTraceRetrieval",
   "CreateGroup",
   "CreateSamplingRule",

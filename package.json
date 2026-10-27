@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.10.24",
+  "version": "26.10.27",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -415,10 +415,6 @@
     "./codepipeline": {
       "import": "./dist/catalog/codepipeline.js",
       "types": "./dist/catalog/codepipeline.d.ts"
-    },
-    "./codestar": {
-      "import": "./dist/catalog/codestar.js",
-      "types": "./dist/catalog/codestar.d.ts"
     },
     "./codestar-connections": {
       "import": "./dist/catalog/codestar-connections.js",

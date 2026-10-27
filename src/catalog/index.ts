@@ -100,7 +100,6 @@ export * from "./codeguru-profiler.js";
 export * from "./codeguru-reviewer.js";
 export * from "./codeguru-security.js";
 export * from "./codepipeline.js";
-export * from "./codestar.js";
 export * from "./codestar-connections.js";
 export * from "./codestar-notifications.js";
 export * from "./codewhisperer.js";
