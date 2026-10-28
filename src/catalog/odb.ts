@@ -84,6 +84,7 @@ export const odbActions = [
   "UpdateAutonomousDatabaseBackup",
   "UpdateCloudExadataInfrastructure",
   "UpdateExadbVmCluster",
+  "UpdateExascaleCloudExadataInfrastructure",
   "UpdateExascaleDbStorageVault",
   "UpdateGrantShare",
   "UpdateOdbNetwork",

@@ -110,6 +110,7 @@ export const partnercentralActions = [
   "RejectChannelHandshake",
   "RejectConnectionInvitation",
   "RejectEngagementInvitation",
+  "SearchOpportunities",
   "SearchPartnerCentralContent",
   "SearchPartnerProfiles",
   "SendEmailVerificationCode",
