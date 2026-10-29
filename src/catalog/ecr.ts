@@ -51,6 +51,7 @@ export const ecrActions = [
   "PutSigningConfiguration",
   "RegisterPullTimeUpdateExclusion",
   "ReplicateImage",
+  "ReplicateImageDelete",
   "SetRepositoryPolicy",
   "StartImageScan",
   "StartLifecyclePolicyPreview",
