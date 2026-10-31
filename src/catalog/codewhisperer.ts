@@ -14,6 +14,7 @@ export const codewhispererActions = [
   "ListProfiles",
   "ListTagsForResource",
   "TagResource",
+  "TestOtelConnection",
   "UntagResource",
   "UpdateCustomization",
   "UpdateProfile",

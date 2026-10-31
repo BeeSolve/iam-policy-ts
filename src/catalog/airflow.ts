@@ -1,4 +1,5 @@
 export const airflowActions = [
+  "AccessAirflowResource",
   "CreateCliToken",
   "CreateEnvironment",
   "CreateWebLoginToken",
