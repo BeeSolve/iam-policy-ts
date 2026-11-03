@@ -5,10 +5,13 @@ export const pollyActions = [
   "GetSpeechSynthesisTask",
   "ListLexicons",
   "ListSpeechSynthesisTasks",
+  "ListTagsForResource",
   "PutLexicon",
   "StartSpeechSynthesisStream",
   "StartSpeechSynthesisTask",
   "SynthesizeSpeech",
+  "TagResource",
+  "UntagResource",
 ] as const;
 
 export type PollyAction = (typeof pollyActions)[number];
