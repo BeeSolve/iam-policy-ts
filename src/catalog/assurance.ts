@@ -29,7 +29,6 @@ export const assuranceActions = [
   "DeleteProject",
   "DeregisterOrganizationDelegatedAdmin",
   "DisableFramework",
-  "DownloadEvidence",
   "EnableFramework",
   "GetAnnotation",
   "GetAssessment",
@@ -70,7 +69,6 @@ export const assuranceActions = [
   "ListPermissionSetAssignments",
   "ListPermissionSets",
   "ListProjects",
-  "ListResourcesForControl",
   "ListTagsForResource",
   "ListTaskHistory",
   "ListTasks",
@@ -82,7 +80,6 @@ export const assuranceActions = [
   "RevokePermissionSet",
   "StartAssessment",
   "StartAssessmentReportExport",
-  "StartResourceDiscovery",
   "TagResource",
   "UntagResource",
   "UpdateAnnotation",
@@ -96,7 +93,6 @@ export const assuranceActions = [
   "UpdatePermissionSet",
   "UpdateProject",
   "UpdateTask",
-  "UploadEvidence",
   "VendConnectionAccessToken",
 ] as const;
 
