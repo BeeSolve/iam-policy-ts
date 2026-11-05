@@ -1,4 +1,5 @@
 export const shieldActions = [
+  "AllowVendedLogDeliveryForResource",
   "AssociateDRTLogBucket",
   "AssociateDRTRole",
   "AssociateHealthCheck",

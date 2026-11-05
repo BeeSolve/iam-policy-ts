@@ -1,4 +1,5 @@
 export const s3tablesActions = [
+  "CompleteTableMigration",
   "CreateNamespace",
   "CreateTable",
   "CreateTableBucket",
@@ -25,6 +26,7 @@ export const s3tablesActions = [
   "GetTableMaintenanceConfiguration",
   "GetTableMaintenanceJobStatus",
   "GetTableMetadataLocation",
+  "GetTableMigration",
   "GetTablePolicy",
   "GetTableRecordExpirationConfiguration",
   "GetTableRecordExpirationJobStatus",
@@ -33,6 +35,7 @@ export const s3tablesActions = [
   "GetTableStorageClass",
   "ListNamespaces",
   "ListTableBuckets",
+  "ListTableMigrations",
   "ListTables",
   "ListTagsForResource",
   "PutTableBucketEncryption",
@@ -49,9 +52,12 @@ export const s3tablesActions = [
   "PutTableReplication",
   "PutTableStorageClass",
   "RenameTable",
+  "StartTableMigration",
+  "SyncTableMigration",
   "TagResource",
   "UntagResource",
   "UpdateTableMetadataLocation",
+  "UpdateTableMigration",
 ] as const;
 
 export type S3tablesAction = (typeof s3tablesActions)[number];
