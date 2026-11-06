@@ -26,6 +26,7 @@ export const route53domainsActions = [
   "RenewDomain",
   "ResendContactReachabilityEmail",
   "ResendOperationAuthorization",
+  "RestoreDomain",
   "RetrieveDomainAuthCode",
   "TransferDomain",
   "TransferDomainToAnotherAwsAccount",

@@ -46,6 +46,7 @@ export const assuranceActions = [
   "GetInvitation",
   "GetPermissionSet",
   "GetProject",
+  "GetResourceActivitiesQueryResults",
   "GetTask",
   "ListAssessmentAnnotations",
   "ListAssessmentJournalRecords",
@@ -80,6 +81,7 @@ export const assuranceActions = [
   "RevokePermissionSet",
   "StartAssessment",
   "StartAssessmentReportExport",
+  "StartResourceActivitiesQuery",
   "TagResource",
   "UntagResource",
   "UpdateAnnotation",
@@ -93,7 +95,6 @@ export const assuranceActions = [
   "UpdatePermissionSet",
   "UpdateProject",
   "UpdateTask",
-  "VendConnectionAccessToken",
 ] as const;
 
 export type AssuranceAction = (typeof assuranceActions)[number];

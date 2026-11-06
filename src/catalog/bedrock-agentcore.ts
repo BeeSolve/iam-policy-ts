@@ -148,6 +148,7 @@ export const bedrockAgentcoreActions = [
   "InvokeGateway",
   "InvokeHarness",
   "InvokeRegistryMcp",
+  "InvokeWebAnswer",
   "InvokeWebSearch",
   "ListABTests",
   "ListActors",

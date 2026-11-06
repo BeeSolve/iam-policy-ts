@@ -1,5 +1,6 @@
 export const healthAgentActions = [
   "ActivateSubscription",
+  "BatchRefillPatientPharmacyPrescriptions",
   "CancelAppointment",
   "CreateAgent",
   "CreateDomain",
@@ -29,6 +30,7 @@ export const healthAgentActions = [
   "ListPatientAppointments",
   "ListPatientInsuranceCoverages",
   "ListPatientMedications",
+  "ListPatientPharmacyPrescriptions",
   "ListProviders",
   "ListSessionRecords",
   "ListSubscriptions",

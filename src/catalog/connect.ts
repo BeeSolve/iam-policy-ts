@@ -348,6 +348,7 @@ export const connectActions = [
   "UpdateMetricContent",
   "UpdateMetricMetadata",
   "UpdateNotificationContent",
+  "UpdateOutboundEmailContactMessage",
   "UpdateParticipantAuthentication",
   "UpdateParticipantRoleConfig",
   "UpdatePhoneNumber",
