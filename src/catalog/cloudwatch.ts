@@ -44,6 +44,7 @@ export const cloudwatchActions = [
   "DescribeAlarmsForMetric",
   "DescribeAnomalyDetectors",
   "DescribeInsightRules",
+  "DetectGroupOutliers",
   "DisableAlarmActions",
   "DisableInsightRules",
   "EnableAlarmActions",
