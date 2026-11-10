@@ -125,6 +125,7 @@ export const esActions = [
   "StartServiceSoftwareUpdate",
   "SwitchoverReplication",
   "UpdateApplication",
+  "UpdateClone",
   "UpdateDataSource",
   "UpdateDirectQueryDataSource",
   "UpdateDomainConfig",

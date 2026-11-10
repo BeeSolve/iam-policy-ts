@@ -2,6 +2,7 @@ export const signinActions = [
   "Authenticate",
   "AuthorizeOAuth2Access",
   "CreateAccount",
+  "CreateBearerToken",
   "CreateOAuth2PublicClient",
   "CreateOAuth2Token",
   "CreateTrustedIdentityPropagationApplicationForConsole",

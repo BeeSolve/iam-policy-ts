@@ -3,6 +3,7 @@ export const agentaccessMcpActions = [
   "CheckConnectionStatus",
   "CloseSession",
   "DoubleClick",
+  "ExecuteSequence",
   "GetScreenshot",
   "GetSessionInfo",
   "HoldKey",
@@ -20,6 +21,7 @@ export const agentaccessMcpActions = [
   "ToggleAppSwitcher",
   "TripleClick",
   "TypeText",
+  "Wait",
 ] as const;
 
 export type AgentaccessMcpAction = (typeof agentaccessMcpActions)[number];

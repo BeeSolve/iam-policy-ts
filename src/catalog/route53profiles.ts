@@ -16,6 +16,7 @@ export const route53profilesActions = [
   "PutProfilePolicy",
   "TagResource",
   "UntagResource",
+  "UpdateProfileAssociation",
   "UpdateProfileResourceAssociation",
 ] as const;
 

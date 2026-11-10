@@ -136,6 +136,7 @@ export const securityhubActions = [
   "UpdateOrganizationConfiguration",
   "UpdateSecurityControl",
   "UpdateSecurityHubConfiguration",
+  "UpdateSecurityHubV2",
   "UpdateStandardsControl",
 ] as const;
 
