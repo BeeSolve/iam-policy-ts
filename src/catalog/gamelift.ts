@@ -1,5 +1,6 @@
 export const gameliftActions = [
   "AcceptMatch",
+  "AllowVendedLogDeliveryForResource",
   "ClaimGameServer",
   "CreateAlias",
   "CreateBuild",

@@ -84,6 +84,7 @@ export const cloudwatchActions = [
   "GetSpace",
   "GetSpaceCredentials",
   "GetSpaceCredentialsForOrganization",
+  "GetSpaceDataAccess",
   "GetTelemetryQueryResults",
   "GetTopologyDiscoveryStatus",
   "GetTopologyMap",

@@ -1,6 +1,7 @@
 export const omicsActions = [
   "AbortMultipartReadSetUpload",
   "AcceptShare",
+  "AuthorizeRunProcessing",
   "BatchDeleteReadSet",
   "CancelAnnotationImportJob",
   "CancelRun",
