@@ -1,4 +1,5 @@
 export const airflowServerlessActions = [
+  "CreateAirflowUiUrl",
   "CreateWorkflow",
   "DeleteWorkflow",
   "GetTaskInstance",

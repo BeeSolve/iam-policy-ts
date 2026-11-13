@@ -85,6 +85,7 @@ export const appstreamActions = [
   "UpdateDirectoryConfig",
   "UpdateEntitlement",
   "UpdateFleet",
+  "UpdateImageBuilder",
   "UpdateImagePermissions",
   "UpdateStack",
   "UpdateThemeForStack",

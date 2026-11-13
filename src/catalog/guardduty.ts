@@ -68,6 +68,7 @@ export const guarddutyActions = [
   "ListDetectors",
   "ListFilters",
   "ListFindings",
+  "ListInvestigationRecords",
   "ListInvestigations",
   "ListInvitations",
   "ListIPSets",
