@@ -92,6 +92,7 @@ export const securityagentActions = [
   "ListThreatModels",
   "ListThreats",
   "PutDesignReviewFeedback",
+  "ResumePentestJob",
   "StartCodeRemediation",
   "StartCodeReviewJob",
   "StartPentestJob",
