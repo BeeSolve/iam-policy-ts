@@ -20,6 +20,7 @@ export const s3vectorsActions = [
   "TagResource",
   "UntagResource",
   "UpdateIndexMode",
+  "UpdateMetadataConfiguration",
 ] as const;
 
 export type S3vectorsAction = (typeof s3vectorsActions)[number];

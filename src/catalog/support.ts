@@ -34,6 +34,7 @@ export const supportActions = [
   "ResolveCase",
   "ResolveInteraction",
   "SearchForCases",
+  "SearchInteractions",
   "StartInteraction",
   "UpdateCaseSeverity",
   "UpdateInteraction",

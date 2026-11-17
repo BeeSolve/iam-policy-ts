@@ -301,6 +301,7 @@ export * from "./opsworks.js";
 export * from "./opsworks-cm.js";
 export * from "./organizations.js";
 export * from "./osis.js";
+export * from "./osm.js";
 export * from "./outposts.js";
 export * from "./panorama.js";
 export * from "./partnercentral.js";
