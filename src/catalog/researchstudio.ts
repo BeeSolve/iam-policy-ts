@@ -5,6 +5,7 @@ export const researchstudioActions = [
   "DeletePrincipal",
   "GetApplication",
   "ListApplications",
+  "UpdateApplication",
 ] as const;
 
 export type ResearchstudioAction = (typeof researchstudioActions)[number];

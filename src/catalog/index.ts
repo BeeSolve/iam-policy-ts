@@ -20,6 +20,7 @@ export * from "./amplifybackend.js";
 export * from "./amplifyuibuilder.js";
 export * from "./aoss.js";
 export * from "./apigateway.js";
+export * from "./apiportal.js";
 export * from "./app-integrations.js";
 export * from "./appconfig.js";
 export * from "./appfabric.js";
