@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.11.18",
+  "version": "26.11.19",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -19,6 +19,10 @@
     "./a4b": {
       "import": "./dist/catalog/a4b.js",
       "types": "./dist/catalog/a4b.d.ts"
+    },
+    "./abuse": {
+      "import": "./dist/catalog/abuse.js",
+      "types": "./dist/catalog/abuse.d.ts"
     },
     "./access-analyzer": {
       "import": "./dist/catalog/access-analyzer.js",
@@ -255,6 +259,10 @@
     "./bcm-data-exports": {
       "import": "./dist/catalog/bcm-data-exports.js",
       "types": "./dist/catalog/bcm-data-exports.d.ts"
+    },
+    "./bcm-data-hub": {
+      "import": "./dist/catalog/bcm-data-hub.js",
+      "types": "./dist/catalog/bcm-data-hub.d.ts"
     },
     "./bcm-pricing-calculator": {
       "import": "./dist/catalog/bcm-pricing-calculator.js",

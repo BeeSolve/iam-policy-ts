@@ -1,4 +1,6 @@
 export const healthActions = [
+  "ConfigureTags",
+  "ConfigureTagsForOrganization",
   "DescribeAffectedAccountsForOrganization",
   "DescribeAffectedEntities",
   "DescribeAffectedEntitiesForOrganization",
@@ -11,8 +13,18 @@ export const healthActions = [
   "DescribeEventsForOrganization",
   "DescribeEventTypes",
   "DescribeHealthServiceStatusForOrganization",
+  "DescribeTagKeys",
+  "DescribeTagKeysForOrganization",
+  "DescribeTags",
+  "DescribeTagsForOrganization",
+  "DescribeTagsOnboardingStatus",
+  "DescribeTagsOnboardingStatusForOrganization",
   "DisableHealthServiceAccessForOrganization",
+  "DisableTags",
+  "DisableTagsForOrganization",
   "EnableHealthServiceAccessForOrganization",
+  "EnableTags",
+  "EnableTagsForOrganization",
 ] as const;
 
 export type HealthAction = (typeof healthActions)[number];

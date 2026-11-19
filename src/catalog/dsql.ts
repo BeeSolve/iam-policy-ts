@@ -1,5 +1,6 @@
 export const dsqlActions = [
   "AddPeerCluster",
+  "AllowVendedLogDeliveryForResource",
   "CreateCluster",
   "CreateStream",
   "DbConnect",

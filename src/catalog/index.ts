@@ -1,6 +1,7 @@
 export * from "./_meta.js";
 export * from "./a2c.js";
 export * from "./a4b.js";
+export * from "./abuse.js";
 export * from "./access-analyzer.js";
 export * from "./account.js";
 export * from "./account-access.js";
@@ -60,6 +61,7 @@ export * from "./backup-storage.js";
 export * from "./batch.js";
 export * from "./bcm-dashboards.js";
 export * from "./bcm-data-exports.js";
+export * from "./bcm-data-hub.js";
 export * from "./bcm-pricing-calculator.js";
 export * from "./bcm-recommended-actions.js";
 export * from "./bedrock.js";

@@ -84,6 +84,8 @@ export const iamActions = [
   "GetOutboundWebIdentityFederationInfo",
   "GetPolicy",
   "GetPolicyVersion",
+  "GetRequestAuthorizationDetails",
+  "GetRequestAuthorizationPolicy",
   "GetRole",
   "GetRolePolicy",
   "GetRoleTemplateVersion",

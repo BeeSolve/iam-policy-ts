@@ -1,4 +1,5 @@
 export const configActions = [
+  "AllowVendedLogDeliveryForResource",
   "AssociateResourceTypes",
   "BatchGetAggregateResourceConfig",
   "BatchGetResourceConfig",
