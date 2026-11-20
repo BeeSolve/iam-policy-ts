@@ -178,6 +178,7 @@ export const iamActions = [
   "UpdateCloudFrontPublicKey",
   "UpdateGroup",
   "UpdateLoginProfile",
+  "UpdateOpenIDConnectProvider",
   "UpdateOpenIDConnectProviderThumbprint",
   "UpdateRole",
   "UpdateRoleDescription",

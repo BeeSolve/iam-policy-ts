@@ -14,6 +14,7 @@ export const bcmPricingCalculatorActions = [
   "GetBillEstimate",
   "GetBillScenario",
   "GetPreferences",
+  "GetUsageLinesEstimatedCost",
   "GetWorkloadEstimate",
   "ListBillEstimateCommitments",
   "ListBillEstimateInputCommitmentModifications",

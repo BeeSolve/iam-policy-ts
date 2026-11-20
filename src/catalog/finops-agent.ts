@@ -26,6 +26,7 @@ export const finopsAgentActions = [
   "GetDocumentContent",
   "GetDocumentMetadata",
   "GetIntegration",
+  "GetOrganizationAccess",
   "GetTask",
   "GetTurn",
   "ListAgentSpaces",
@@ -45,6 +46,7 @@ export const finopsAgentActions = [
   "UpdateAutomation",
   "UpdateConnection",
   "UpdateDocument",
+  "UpdateOrganizationAccess",
 ] as const;
 
 export type FinopsAgentAction = (typeof finopsAgentActions)[number];

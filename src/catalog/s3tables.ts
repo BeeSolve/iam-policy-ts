@@ -12,6 +12,7 @@ export const s3tablesActions = [
   "DeleteTableBucketReplication",
   "DeleteTablePolicy",
   "DeleteTableReplication",
+  "DisassociateTableReplication",
   "GetNamespace",
   "GetTable",
   "GetTableBucket",

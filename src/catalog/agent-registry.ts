@@ -1,4 +1,5 @@
 export const agentRegistryActions = [
+  "CompleteRegistryRecordTokenAuth",
   "CreateRegistry",
   "CreateRegistryRecord",
   "DeleteRegistry",

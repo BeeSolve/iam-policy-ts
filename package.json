@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.11.19",
+  "version": "26.11.20",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -95,6 +95,10 @@
     "./aoss": {
       "import": "./dist/catalog/aoss.js",
       "types": "./dist/catalog/aoss.d.ts"
+    },
+    "./apex": {
+      "import": "./dist/catalog/apex.js",
+      "types": "./dist/catalog/apex.d.ts"
     },
     "./apigateway": {
       "import": "./dist/catalog/apigateway.js",

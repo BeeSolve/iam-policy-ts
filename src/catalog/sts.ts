@@ -8,11 +8,13 @@ export const stsActions = [
   "GetCallerIdentity",
   "GetDelegatedAccessToken",
   "GetFederationToken",
+  "GetScopedCredentials",
   "GetServiceBearerToken",
   "GetSessionToken",
   "GetWebIdentityToken",
   "SetContext",
   "SetSourceIdentity",
+  "SetWebIdentityTokenScope",
   "TagGetWebIdentityToken",
   "TagSession",
 ] as const;
