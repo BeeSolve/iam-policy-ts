@@ -45,6 +45,7 @@ export const transcribeActions = [
   "StartStreamTranscriptionWebSocket",
   "StartTranscriptionJob",
   "TagResource",
+  "TranscribeAudio",
   "UntagResource",
   "UpdateCallAnalyticsCategory",
   "UpdateLanguageModel",

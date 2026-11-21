@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.11.20",
+  "version": "26.11.21",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -55,6 +55,10 @@
     "./activate": {
       "import": "./dist/catalog/activate.js",
       "types": "./dist/catalog/activate.d.ts"
+    },
+    "./agent-discovery": {
+      "import": "./dist/catalog/agent-discovery.js",
+      "types": "./dist/catalog/agent-discovery.d.ts"
     },
     "./agent-registry": {
       "import": "./dist/catalog/agent-registry.js",
@@ -1835,6 +1839,10 @@
     "./worklink": {
       "import": "./dist/catalog/worklink.js",
       "types": "./dist/catalog/worklink.d.ts"
+    },
+    "./workload-telemetry": {
+      "import": "./dist/catalog/workload-telemetry.js",
+      "types": "./dist/catalog/workload-telemetry.d.ts"
     },
     "./workmail": {
       "import": "./dist/catalog/workmail.js",

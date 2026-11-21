@@ -1,8 +1,11 @@
 export const pollyActions = [
+  "CreateVoice",
   "DeleteLexicon",
+  "DeleteVoice",
   "DescribeVoices",
   "GetLexicon",
   "GetSpeechSynthesisTask",
+  "GetVoice",
   "ListLexicons",
   "ListSpeechSynthesisTasks",
   "ListTagsForResource",

@@ -14,6 +14,7 @@ export const codeconnectionsActions = [
   "GetInstallationUrl",
   "GetRepositoryLink",
   "GetRepositorySyncStatus",
+  "GetResourcePolicy",
   "GetResourceSyncStatus",
   "GetSyncBlockerSummary",
   "GetSyncConfiguration",

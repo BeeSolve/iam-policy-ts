@@ -1,6 +1,7 @@
 export const signinActions = [
   "Authenticate",
   "AuthorizeOAuth2Access",
+  "BatchRevokeSessions",
   "CreateAccount",
   "CreateBearerToken",
   "CreateOAuth2PublicClient",
@@ -10,8 +11,10 @@ export const signinActions = [
   "DeleteResourcePermissionStatement",
   "GetConsoleAuthorizationConfiguration",
   "GetResourcePolicy",
+  "GetSession",
   "IntrospectOAuth2Token",
   "ListResourcePermissionStatements",
+  "ListSessions",
   "ListTrustedIdentityPropagationApplicationsForConsole",
   "PutConsoleAuthorizationConfiguration",
   "PutResourcePermissionStatement",
