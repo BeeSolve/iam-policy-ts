@@ -125,6 +125,7 @@ export const redshiftActions = [
   "ListSavedQueries",
   "ListSchemas",
   "ListTables",
+  "ModifyAccountAttributes",
   "ModifyAquaConfiguration",
   "ModifyAuthenticationProfile",
   "ModifyAutonomicsDenylist",
