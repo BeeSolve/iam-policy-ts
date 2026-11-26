@@ -19,6 +19,7 @@ export * from "./airflow.js";
 export * from "./airflow-serverless.js";
 export * from "./amplify.js";
 export * from "./amplifybackend.js";
+export * from "./amplifygen3.js";
 export * from "./amplifyuibuilder.js";
 export * from "./aoss.js";
 export * from "./apex.js";

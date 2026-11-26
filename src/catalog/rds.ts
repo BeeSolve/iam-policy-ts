@@ -104,6 +104,7 @@ export const rdsActions = [
   "DescribeRecommendations",
   "DescribeReservedDBInstances",
   "DescribeReservedDBInstancesOfferings",
+  "DescribeSchemas",
   "DescribeSourceRegions",
   "DescribeTenantDatabases",
   "DescribeValidDBInstanceModifications",

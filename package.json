@@ -1,6 +1,6 @@
 {
   "name": "@beesolve/iam-policy-ts",
-  "version": "26.11.25",
+  "version": "26.11.26",
   "description": "Type-safe IAM policy helpers with auto-generated action catalog from AWS",
   "type": "module",
   "exports": {
@@ -91,6 +91,10 @@
     "./amplifybackend": {
       "import": "./dist/catalog/amplifybackend.js",
       "types": "./dist/catalog/amplifybackend.d.ts"
+    },
+    "./amplifygen3": {
+      "import": "./dist/catalog/amplifygen3.js",
+      "types": "./dist/catalog/amplifygen3.d.ts"
     },
     "./amplifyuibuilder": {
       "import": "./dist/catalog/amplifyuibuilder.js",
